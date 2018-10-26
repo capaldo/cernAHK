@@ -1,2 +1,2 @@
 # cernAHK
-AHK scrips to document
+AHK scripts to use with Cerner's DynDoc.  
