@@ -231,7 +231,6 @@ return
 
 ; refresh at main screen
 ; ======================
-
 !^`::
 Sleep 300
 Send {Alt}
