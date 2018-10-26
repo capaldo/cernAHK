@@ -4,7 +4,6 @@
 ; set the launchpoint zoom to 75%, this is to prevent the assignment window from appearing above the 
 ; selected patient
 
-
 ; ======================
 ; CAPSLOCK TO HYPER
 ; ======================
@@ -63,28 +62,10 @@ MouseGetPos, xpos, ypos
 MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 
+; dialog which sets the clipboard contents, useful for prior to inserting diagnosis
 #Space::
 InputBox, Clipboard, clipscrap
 return
-
-#q::
-Gui, Add, Text, x12 y70 w80 h30, LZO ; This just displays the text LZO
-Gui, Add, Text, x12 y120 w80 h30, Holest ; This just displays the text Holest
-Gui, Add, Text, x12 y170 w80 h30, Urea ; This just displays the text Urea
-Gui, Add, Edit, x122 y20 w80 h20 vWDS, ; This is the actual input box, so we must attach a variable to it. IE: vWDS
-Gui, Add, Edit, x122 y70 w80 h20 vLZO, ; This is the actual input box, so we must attach a variable to it. IE: vLZO
-Gui, Add, Edit, x122 y130 w80 h20 vHolest, ; This is the actual input box, so we must attach a variable to it. IE: vHolest
-Gui, Add, Edit, x122 y180 w80 h20 vUrea, ; This is the actual input box, so we must attach a variable to it. IE: vUrea
-Gui, Add, Button, x250 y450 w40 h30, OK ; Button to submit the information
-; Generated using SmartGUI Creator 4.0 ; Useless, delete it :)
-Gui, Show, x500 y500 h500 w500, general chart ; Display the GUI, x and y tell where to show the window at on the screen and h and w tell what size to make it
-Return
-
-ButtonOK: ; Execute the following actions when the button from the GUI OK is pressed
-Gui, Submit ; Save all the information in the GUI (The variables)
-Gui, Destroy ; Destroy the GUI to get it out of the way
-Return
-
 
 ; ======================
 ; launchpoint
@@ -92,14 +73,11 @@ Return
 
 ; assign staff
 ; ======================
-; westc: Click, 165, 176 
-; tamc: Click, 72, 176 // mlp: Click, 72, 355
-; wk: Click, 72, 220 // mlp: Click, 72, 172 
-;
+; pp: 
 ; ======================
 
 ; scribe and doc
-
+; ======================
 !^a::
 MouseGetPos x, y
 Sleep 100
@@ -122,9 +100,9 @@ MouseMove, 15, 200, 0, R
 Sleep 500
 Click, left
 Sleep 2000
-Click, 165, 220 ; CHANGE to modify staff selection
+Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send Martinez ; CHANGE based on name
+Send DOC ; CHANGE based on name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -132,6 +110,7 @@ Send {Enter}
 return
 
 ; assign dr only
+; ======================
 !a::
 MouseGetPos x, y
 Sleep 100
@@ -150,7 +129,7 @@ Click, left
 Sleep 2000
 Click, 165, 220 ; CHANGE to modify staff selection
 Sleep 200
-Send Martinez ; CHANGE based on name
+Send cab ; CHANGE based on name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -159,6 +138,7 @@ return
 
 
 ; alternate doc
+; ======================
 ~Capslock & z::
 MouseGetPos x, y
 Sleep 100
@@ -183,7 +163,7 @@ Click, left
 Sleep 2000
 Click, 165, 220 ; CHANGE to modify staff selection
 Sleep 200
-Send Shaff ; CHANGE based on name
+Send DOC ; CHANGE based on name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -215,13 +195,13 @@ Click, left
 Sleep 2000
 Click, 72, 176 ; CHANGE to modify ap selection
 Sleep 200
-Send hev ; CHANGE based on ap
+Send DOC ; CHANGE based on ap
 Sleep 100
 Send {Enter}
 Sleep 200
 Click, 72, 355 ; CHANGE to modify mlp selection
 Sleep 200
-Send morat ; CHANGE based on mlp name
+Send MLP ; CHANGE based on mlp name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -251,6 +231,7 @@ return
 
 ; refresh at main screen
 ; ======================
+
 !^`::
 Sleep 300
 Send {Alt}
@@ -396,11 +377,11 @@ Send {Enter}
 Sleep 1000
 Click, 326, 380 ; click follow-up
 Sleep 300
-Click, 1752, 333 ; click plus
-Sleep 1500
-Click, 186, 333, 2 ; CHANGE double click basic follow-up
+Click, 1527, 333 ; click plus
+Sleep 2500
+Click, 164, 570, 2 ; CHANGE double click basic follow-up
 Sleep 400
-Click, 776, 1010 ; click 'Ok'
+Click, 776, 990 ; click 'Ok'
 return
 
 ; insert education
@@ -466,12 +447,12 @@ return
 ; save chart
 ; ======================
 ~Capslock & s::
-MouseGetPos x, y
-Click, 1690, 975
-MouseMove %x%, %y%
+Send !d
+Sleep 100
+Send {Enter}
 return
 
-; initial save
+; initial save dialog
 ; ======================
 #s::
 Send {Tab 5}
@@ -480,6 +461,7 @@ Send {Enter}
 return
 
 ; launchpoint
+; ======================
 ^1::
 Sleep 200
 Send !v
@@ -488,6 +470,7 @@ Send {Enter}
 return
 
 ;tracking list
+; ======================
 ^2::
 Sleep 200
 Send !v
@@ -497,30 +480,35 @@ Send {Enter}
 return
 
 ; select tab 1
+; ======================
 !1::
 Sleep 100
 Click, 115, 140
 return
 
 ; select tab 2
+; ======================
 !2::
 Sleep 100
 Click, 265, 140
 return
 
 ; select tab 3
+; ======================
 !3::
 Sleep 100
 Click, 450, 140
 return
 
 ; select tab 4
+; ======================
 !4::
 Sleep 100
 Click, 630, 140
 return
 
 ; select line left or right
+; ======================
 ~Capslock & Up::
 Send +{Home}
 return
@@ -531,6 +519,7 @@ return
 
 
 ; open documentation
+; ======================
 !^d::
 MouseMove 1163, 585
 Sleep 300
@@ -546,6 +535,7 @@ Send {Enter}
 return
 
 ; sign
+; ======================
 !^s::
 Sleep 100
 Send ^g
@@ -556,33 +546,25 @@ MouseMove, StartX, StartY
 return
 
 ; refresh
+; ======================
 !^r::
 MouseGetPos, StartX, StartY
 Sleep 50
-Click, 1884, 234
+Click, 1637, 176
 Sleep 50
 MouseMove, StartX, StartY
 return
 
 ; open work note
+; ======================
 ~Capslock & w::
-Sleep 200
-MouseMove 1163, 585
-Click 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
 Send !p
-Sleep 100
-Send {Down 6}
-Sleep 100
-Send {Right}
-Sleep 100
-Send {Down}
-Sleep 100
+Sleep 50
 Send {Enter}
-Sleep 3000
-Send {Enter}
+Sleep 100
+Send n
+Sleep 100
+Send d
 return
 
 ; open patient pharmacy
@@ -665,6 +647,24 @@ Sleep 200
 SendEvent {Click 892, 499, down}{click 1023, 499, up} ; CHANGE if resized
 Sleep 200
 Click 1039, 510
+return
+
+; search for fin
+
+F1::
+Send !p
+Sleep 100
+Send {Enter}
+Sleep 50
+Send {Enter}
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^v
+Sleep 100
+Send {Enter}
+Sleep 50
+Send {Enter}
 return
 
 ; select tab1 inside chart
@@ -1308,29 +1308,31 @@ return
 
 ; current time
 ~Capslock & t::
-MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
 Send !c
 Sleep 100
-Send {Down}
-Sleep 100
 Send {Enter}
-Sleep 1000
-Click, 315, 325
-Sleep 200
-Click, 1765, 330
-Sleep 200
-Click, 1730, 365
-Sleep 200
-Send t
-Sleep 200
+Sleep 100
+Send a
+Sleep 500
 Send {Tab}
-Sleep 200
+Sleep 50
+Send u
+Sleep 50
+Send {Space}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Enter}
+Sleep 300
+Send t
+Sleep 50
+Send {Tab}
+Sleep 50
 Send n
-Sleep 200
-Click 17, 44
+Sleep 50
+MouseMove 22, 37
+Sleep 50
+Click 22, 37
 return
 
 ; edit time with clipboard
@@ -1816,4 +1818,3 @@ return
 
 ; utilize the find function to navigate through the workflow
 ;; then either tab to navigate further or possible click script function on behalf of dragon/possible launch application function?
-
