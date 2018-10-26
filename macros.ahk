@@ -565,6 +565,9 @@ Sleep 100
 Send n
 Sleep 100
 Send d
+Sleep 3000
+MouseMove 688, 422
+Click, 688, 422, 2
 return
 
 ; open patient pharmacy
