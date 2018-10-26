@@ -20,10 +20,11 @@ SetCapslockState, AlwaysOff
 
 ;; remap capslock to hyper
 ;; if capslock is toggled, remap it to esc
-
 ;; note: must use tidle prefix to fire hotkey once it is pressed
 ;; not until the hotkey is released
+
 ~Capslock::
+
 ;; must use downtemp to emulate hyper key, you cannot use down in this case
 ;; according to https://autohotkey.com/docs/commands/Send.htm, downtemp is as same as down except for ctrl/alt/shift/win keys
 ;; in those cases, downtemp tells subsequent sends that the key is not permanently down, and may be
@@ -37,6 +38,7 @@ SetCapslockState, AlwaysOff
      Send {Esc}
  }
 return
+
 
 ; ======================
 ; miscellaneous
@@ -171,6 +173,7 @@ Send {Enter}
 return
 
 ; assign mid-level too
+; ======================
 ^Numpad0::
 MouseGetPos x, y
 Sleep 100
@@ -193,7 +196,7 @@ MouseMove, 15, 200, 0, R
 Sleep 500
 Click, left
 Sleep 2000
-Click, 72, 176 ; CHANGE to modify ap selection
+Click, 72, 176 ; CHANGE to modify selection
 Sleep 200
 Send DOC ; CHANGE based on ap
 Sleep 100
@@ -207,7 +210,6 @@ Send {Enter}
 Sleep 100
 Send {Enter}
 return
-
 
 ; open new chart
 ; ======================
@@ -582,6 +584,7 @@ Click, 149, 162
 return
 
 ; tracking select
+; ======================
 ^Numpad1::
 Sleep 100
 MouseMove 65,327
@@ -646,6 +649,8 @@ Click 65, 600
 return
 
 ; temp macro because the physician time isnt auto-importing
+;; good example on how to use the drag function for the mouse, will not remove
+; ======================
 ~Capslock & F1::
 Sleep 200
 SendEvent {Click 892, 499, down}{click 1023, 499, up} ; CHANGE if resized
@@ -654,7 +659,7 @@ Click 1039, 510
 return
 
 ; search for fin
-
+; ======================
 F1::
 Send !p
 Sleep 100
@@ -672,6 +677,7 @@ Send {Enter}
 return
 
 ; select tab1 inside chart
+; ======================
 ^]::
 Sleep 50
 MouseMove 421, 289
@@ -680,6 +686,7 @@ Click 421, 289
 return
 
 ; select tab2 inside chart
+; ======================
 ^[::
 Sleep 50
 MouseMove 290, 289
@@ -703,12 +710,8 @@ return
 
 ; ctrl + g saves the chart, this is built-in
 
-; remap close tab to hyper + escape
-~Capslock & Esc::
-Send !{F4}
-return
-
 ; remap f9 navigation
+; ======================
 ~Capslock & Right::
 Send {F9}
 return
@@ -1018,10 +1021,25 @@ Sleep 50
 Send {Backspace}
 return
 
+; clear line
+:*:cc::
+Send {Home}
+Sleep 50
+Send +^{Right}
+Send +^{Right}
+Sleep 50
+Send ^x
+Sleep 50
+Send +{End}
+Sleep 50
+Send {Backspace}
+return
+
 ; hpi
 ; =================
 
 ; change hpi to peds
+; ======================
 :*:\hpeds::
 Sleep 100
 Send +{F9}
@@ -1035,6 +1053,8 @@ Sleep 100
 Send {End}
 return
 
+; patient denies shortcut
+; ======================
 :*:\ptd::
 Send ptd
 Sleep 500
@@ -1044,6 +1064,7 @@ return
 
 ; physical exam
 ; ======================
+
 
 ; pediatric PE (general section)
 :*:\pgenpeds::
@@ -1056,173 +1077,6 @@ Sleep 50
 Send [pGeneral_peds
 Sleep 1000
 Send {Enter}
-return
-
-; pe skin, clears the line
-:*:\pskin::
-Send {End}
-Sleep 50
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send Skin
-Send :
-Sleep 50
-Send +{Home}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
-return
-
-; pe neck, clears the line
-:*:\pneck::
-Send {End}
-Sleep 50
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send Neck
-Send :
-Sleep 50
-Send +{Home}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
-return
-
-; pe enmt, clears the line
-:*:\penmt::
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send ENMT
-Send :
-Sleep 50
-Send +{Home}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
-return
-
-; pe eye, clears the line
-:*:\peye::
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send Eyes
-Send :
-Sleep 50
-Send +{Home}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
-return
-
-
-; pe neuro, clears the line
-:*:\pneuro::
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send Neurological
-Send :
-Sleep 50
-Send +{Home}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
-return
-
-
-; pe head, clears the line
-:*:\phead::
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send Head
-Send :
-Sleep 50
-Send +{Home}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
-return
-
-; pe back, clears the line
-:*:\pback::
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send Back
-Send :
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
-return
-
-; pe musculoskseletal, clears the line
-:*:\pmusc::
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send Musculoskeletal
-Send :
-Sleep 50
-Send +{Home}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
-return
-
-:*:\pgastro::
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send Gastrointestinal
-Send :
-Sleep 50
-Send +{Home}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send {Space}
 return
 
 ; discharge
