@@ -571,12 +571,12 @@ Click, 688, 422, 2
 return
 
 ; open patient pharmacy
+; ======================
 ^p::
-Sleep 200
 Send !p
-Sleep 200
-Send {Down}
-Send pa
+Sleep 100
+Send p
+Sleep 50
 Send {Enter}
 return
 
