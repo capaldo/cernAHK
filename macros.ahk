@@ -1033,6 +1033,8 @@ Sleep 50
 Send +{End}
 Sleep 50
 Send {Backspace}
+Sleep 50
+Send ^v
 return
 
 ; hpi
