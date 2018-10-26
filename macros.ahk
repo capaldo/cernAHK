@@ -573,11 +573,13 @@ return
 ; open patient pharmacy
 ; ======================
 ^p::
-Send !p
+Send !c
 Sleep 100
-Send p
-Sleep 50
 Send {Enter}
+Sleep 50
+Send pa
+Sleep 50
+Click, 149, 162
 return
 
 ; tracking select
