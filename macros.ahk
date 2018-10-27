@@ -1675,3 +1675,24 @@ return
 
 ; utilize the find function to navigate through the workflow
 ;; then either tab to navigate further or possible click script function on behalf of dragon/possible launch application function?
+
+; smart clear line
+:*:ll::
+Send ^f
+Sleep 300
+Send :
+Sleep 50
+Send {Tab}
+Sleep 20
+Send {Tab}
+Sleep 20
+Send {Tab}
+Sleep 20
+Send {Tab}
+Sleep 20
+Send {Enter}
+Sleep 20
+Send {Escape}
+Sleep 200
+Send {Right}
+return
