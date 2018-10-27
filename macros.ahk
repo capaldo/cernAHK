@@ -474,9 +474,7 @@ return
 ^2::
 Send !v
 Sleep 100
-Send {Down}
-Sleep 50
-Send {Enter}
+Send t
 return
 
 ; select tab 1
