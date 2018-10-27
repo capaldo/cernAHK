@@ -1700,3 +1700,18 @@ Send +{End}
 Sleep 20
 Send {Backspace}
 return
+
+; macro2macro
+^!+8::
+Send CHART general
+Sleep 50
+Send {Tab}
+Sleep 50
+Send inserts the general chart template
+Sleep 50
+Send {Tab}
+Sleep 50
+Send insert general chart
+Sleep 50
+
+return
