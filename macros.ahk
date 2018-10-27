@@ -1695,4 +1695,8 @@ Sleep 20
 Send {Escape}
 Sleep 200
 Send {Right}
+Sleep 20
+Send +{End}
+Sleep 20
+Send {Backspace}
 return
