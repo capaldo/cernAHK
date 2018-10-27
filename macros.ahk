@@ -464,47 +464,46 @@ return
 ; launchpoint
 ; ======================
 ^1::
-Sleep 200
 Send !v
-Sleep 200
+Sleep 100
 Send {Enter}
 return
 
 ;tracking list
 ; ======================
 ^2::
-Sleep 200
 Send !v
-Sleep 200
+Sleep 100
 Send {Down}
+Sleep 50
 Send {Enter}
 return
 
 ; select tab 1
 ; ======================
 !1::
-Sleep 100
+Sleep 50
 Click, 115, 140
 return
 
 ; select tab 2
 ; ======================
 !2::
-Sleep 100
+Sleep 50
 Click, 265, 140
 return
 
 ; select tab 3
 ; ======================
 !3::
-Sleep 100
+Sleep 50
 Click, 450, 140
 return
 
 ; select tab 4
 ; ======================
 !4::
-Sleep 100
+Sleep 50
 Click, 630, 140
 return
 
