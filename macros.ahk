@@ -1713,5 +1713,7 @@ Send {Tab}
 Sleep 50
 Send insert general chart
 Sleep 50
-
+Send {Tab}
+Sleep 50
+Send {Space}
 return
