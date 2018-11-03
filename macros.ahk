@@ -1702,18 +1702,245 @@ Send {Backspace}
 return
 
 ; macro2macro
+; macro2macro
 ^!+8::
 Send CHART general
-Sleep 50
+Sleep 150
 Send {Tab}
-Sleep 50
+Sleep 150
 Send inserts the general chart template
-Sleep 50
+Sleep 150
 Send {Tab}
-Sleep 50
+Sleep 150
 Send insert general chart
-Sleep 50
+Sleep 150
 Send {Tab}
-Sleep 50
+Sleep 150
 Send {Space}
+Sleep 350
+Click, 1100, 315
+Sleep 150
+Send {Tab}
+Sleep 150
+Click, 1100, 320
+Sleep 350
+Click, 1100, 360
+Sleep 150
+Send 100
+Sleep 150
+Click, 1100, 375
+Sleep 350
+Click, 1100, 460
+Sleep 150
+Send {Tab}
+Sleep 150
+Click, 1100, 455
+Sleep 350
+Click, 1100, 490
+Sleep 150
+Send 100
+Sleep 100
+Click, 1100, 515
+Sleep 350
+Click, 1100, 555
+Sleep 150
+Send //uchpigen
+Sleep 150
+Click, 1100, 568
+Sleep 350
+Click, 1100, 600
+Sleep 150
+Send 1200
+Sleep 150
+Click, 1100, 630
+Sleep 350
+Click, 1100, 700
+Sleep 150
+Send {Enter}
+Sleep 150
+Click, 1100, 705
+Sleep 350
+Click, 1100, 735
+Sleep 150
+Send 100 
+Sleep 100
+Send {Tab}
+Sleep 100
+Click, 1100, 755
+Sleep 350
+Click, 1100, 845
+Sleep 150
+Send {Tab}
+Sleep 100
+Click, 300, 240 ; MAKE SMALL START
+Sleep 150
+Click, 300, 260
+Sleep 150
+Click, 300, 290
+Sleep 150
+Click, 300, 315
+Sleep 150
+Click, 300, 340
+Sleep 150
+Click, 300, 365
+Sleep 150
+Click, 300, 385
+Sleep 150
+Click, 300, 415
+Sleep 150
+Click, 300, 440 ; MAKE SMALL END
+Sleep 150
+Click, 1100, 460
+Sleep 350
+Click, 1100, 495
+Sleep 150
+Send 100
+Click, 1100, 515
+Sleep 350
+Click, 1100, 565
+Sleep 150
+Send //ucrosgen
+Sleep 150
+Click, 1100, 570
+Sleep 350
+Click, 1100, 605
+Sleep 150
+Send 1200
+Sleep 150
+Click, 1100, 625
+Sleep 350
+Click, 1100, 710
+Sleep 150
+Send {Enter}
+Sleep 150
+Click, 1100, 710
+Sleep 350
+Click, 1100, 735
+Sleep 150
+Send 100
+Sleep 100
+Click, 1100, 755
+Sleep 350
+Click, 1100, 850
+Sleep 150
+Send {Tab}
+Sleep 150
+Click, 1100, 840
+Sleep 350
+Click, 1100, 870
+Sleep 150
+Send 100
+Sleep 100
+Click, 300, 460 ; MAKE SMALL START
+Sleep 100
+Click, 300, 485
+Sleep 150
+Click, 300, 515
+Sleep 150
+Click, 300, 540
+Sleep 150
+Click, 300, 560
+Sleep 150
+Click, 300, 590
+Sleep 150
+Click, 300, 610 ; MAKE SMALL END
+Sleep 150
+Click, 1100, 635
+Sleep 350
+Click, 1100, 720
+Sleep 150
+Send {Tab}
+Sleep 150
+Click, 1100, 720
+Sleep 350
+Click, 1100, 750
+Sleep 150
+Send 100
+Sleep 150
+Click, 1100, 770
+Sleep 350
+Click, 1100, 825
+Sleep 150
+Send //ucpegen
+Sleep 150
+Click, 1100, 825
+Sleep 350
+Click, 1100, 875
+Sleep 150
+Send 1200
+Sleep 150
+Click, 1100, 880
+Sleep 350
+Click, 1100, 965
+Sleep 150
+Send {Enter}
+Click, 300, 630 ; MAKE SMALL START
+Sleep 100
+Click, 300, 666
+Sleep 150
+Click, 300, 685
+Sleep 150
+Click, 300, 715
+Sleep 150
+Click, 300, 740 ; MAKE SMALL END
+Sleep 150
+Click, 1100, 765
+Sleep 350
+Click, 1100, 800
+Sleep 150
+Send 100
+Sleep 100
+Click, 1100, 815
+Sleep 350
+Click, 1100, 900
+Sleep 150
+Send {Tab}
+Sleep 150
+Click, 1100, 900
+Sleep 350
+Click, 1100, 930
+Sleep 150
+Send 100
+Sleep 150
+Click, 1100, 955
+Sleep 350
+Click, 1100, 1035
+Sleep 150
+Send {Tab}
+Sleep 150
+Click, 1100, 955
+Sleep 350
+Click, 1100, 988
+Sleep 150
+Send 100
+Sleep 150
+Click, 1100, 955
+Sleep 350
+Click, 1100, 1035
+Sleep 150
+Send {Tab}
+Sleep 150
+Click, 1100, 955
+Sleep 350
+Click, 1100, 988
+Send 100
+Sleep 150
+Click, 1100, 955
+Sleep 350
+Click, 1100, 1010
+Sleep 150
+Send //ucmdm
+Sleep 150
+Click, 1100, 955
+Sleep 350
+Click, 1100, 988
+Sleep 150
+Send 1200
+Sleep 150
+Click, 1100, 955
+Sleep 350
+Click, 1100, 1035
+Sleep 150
+Send {Enter}
+Sleep 150
 return
