@@ -286,16 +286,14 @@ return
 ; print from inside the chart
 ; ======================
 ^!p::
-Sleep 300
-Send {Alt}
-Sleep 800
-Send t
+Sleep 200
+Send !t
 Send {Down 3} ; possible change back, new option above print called report
-Sleep 300
+Sleep 100
 Send {Right DownTemp}
-Sleep 300
+Sleep 100
 Send {Enter}
-Sleep 300
+Sleep 100
 Send {Enter}
 Sleep 1000
 Send {Enter}
@@ -435,9 +433,7 @@ return
 ; ======================
 ^!w::
 MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
+Sleep 200
 Send !c
 Sleep 100
 Send {Down}
@@ -866,6 +862,7 @@ return
 :*:\rpt::
 Send reports
 return
+
 ; ======================
 
 
