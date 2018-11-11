@@ -528,6 +528,12 @@ return
 Send !d
 Sleep 100
 Send {Enter}
+SetTitleMatchMode, 2
+WinWait, Save
+Send {Tab 5}
+Sleep 100
+Send {Enter}
+Sleep 50
 return
 
 ; initial save dialog
@@ -905,6 +911,10 @@ return
 
 :*:\accfam::
 Send accompanied by family
+return
+
+:*:\mvmt::
+Send movement
 return
 
 :*:\accmom::
@@ -1798,6 +1808,8 @@ return
 
 ; smart clear line
 ~Capslock & c::
+Send {End}
+Sleep 50
 Send ^f
 WinWait, Find
 Send :
