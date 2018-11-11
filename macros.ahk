@@ -215,17 +215,15 @@ return
 ; ======================
 ~Capslock & o::
 MouseMove 1163, 585
-Send {Alt}
-Sleep 500
+Sleep 100
 Send !p
 Sleep 100
-Send {Down 3}
-Sleep 100
-Send {Right}
-Sleep 100
-Send {Down}
-Sleep 100
 Send {Enter}
+Sleep 100
+Send n
+Sleep 100
+Send d
+Sleep 100
 Send {Enter}
 SetTitleMatchMode, 2
 WinWait, Opened by
@@ -528,6 +526,12 @@ return
 Send !d
 Sleep 100
 Send {Enter}
+IfWinActive, Save Note
+{
+Send {Tab 5}
+Sleep 100
+Send {Enter}
+}
 return
 
 ; initial save dialog
