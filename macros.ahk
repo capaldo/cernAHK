@@ -614,11 +614,9 @@ Send ^g
 WinWait, Sign/Submit Note
 Sleep 1000
 MouseGetPos, StartX, StartY
-Click, 200, 217 ; CHANGE
-Sleep 100
-MouseMove, 317, 320 ; CHANGE
-Sleep 150
-Click, 317, 320 ; CHANGE
+Click, 80, 200
+Sleep 50
+Click, 317, 330
 Sleep 100
 Click 948, 664
 Sleep 100
@@ -1100,11 +1098,47 @@ Sleep 50
 Send {Backspace}
 return
 
-; clear line
+; clear box
 :*:cc::
 Send ^a
 Sleep 50
 Send {Backspace}
+return
+
+; immunizations utd
+:*:\imm::
+Send ^f
+WinWait, Find
+Send Immunizations
+Sleep 50
+Send {Enter}
+Sleep 50
+Send {Escape}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [immUTD
+Sleep 1200
+Send {Enter}
+return
+
+; immunizations utd
+:*:\teta::
+Send ^f
+WinWait, Find
+Send Immunizations: up-to-date
+Sleep 50
+Send {Enter}
+Sleep 50
+Send {Escape}
+Sleep 50
+Send {Right}
+Sleep 50
+Send {Enter}
+Sleep 50
+Send [teta
+Sleep 1200
+Send {Enter}
 return
 
 ; hpi
@@ -1761,15 +1795,13 @@ return
 ; Notes: 
 ; =================
 
-; utilize the find function to navigate through the workflow
-;; then either tab to navigate further or possible click script function on behalf of dragon/possible launch application function?
 
 ; smart clear line
-:*:ll::
+~Capslock & c::
 Send ^f
 WinWait, Find
 Send :
-Sleep 50
+Sleep 20
 Send {Tab}
 Sleep 20
 Send {Tab}
@@ -1781,12 +1813,15 @@ Sleep 20
 Send {Enter}
 Sleep 20
 Send {Escape}
-Sleep 150
+SetTitleMatchMode, 2
+WinWait, Opened by
 Send {Right}
 Sleep 20
 Send +{End}
 Sleep 20
 Send {Backspace}
+Sleep 20
+Send {Space}
 return
 
 
@@ -2070,7 +2105,8 @@ Send {Enter}
 Sleep 150
 return
 
-
+; auto-closing around text
+; ========================
 :*:"::
 Send ""
 Sleep 20
