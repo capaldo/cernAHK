@@ -528,12 +528,6 @@ return
 Send !d
 Sleep 100
 Send {Enter}
-SetTitleMatchMode, 2
-WinWait, Save
-Send {Tab 5}
-Sleep 100
-Send {Enter}
-Sleep 50
 return
 
 ; initial save dialog
@@ -913,10 +907,6 @@ return
 Send accompanied by family
 return
 
-:*:\mvmt::
-Send movement
-return
-
 :*:\accmom::
 Send accompanied by mother
 return
@@ -1209,8 +1199,6 @@ Send +{F9}
 Send {Down}
 Send {Enter}
 Sleep 100
-Send {End}
-Send {End}
 Send {End}
 return
 
@@ -1808,8 +1796,6 @@ return
 
 ; smart clear line
 ~Capslock & c::
-Send {End}
-Sleep 50
 Send ^f
 WinWait, Find
 Send :
