@@ -66,7 +66,7 @@ return
 
 ; dialog which sets the clipboard contents, useful for prior to inserting diagnosis
 #Space::
-InputBox, Clipboard, clipscrap
+InputBox[Height, 100, 500], Clipboard, clipscrap
 return
 
 ; ======================
@@ -104,7 +104,7 @@ Click, left
 Sleep 2000
 Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send DOC ; CHANGE based on name
+Send diaz ; CHANGE based on name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -227,8 +227,87 @@ Send {Down}
 Sleep 100
 Send {Enter}
 Send {Enter}
-Sleep 4000
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 3500
 Click 1080, 455, 2
+Sleep 200
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 2000
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [hgen
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [rgen
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [pgen
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [mdm_per
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [dmed
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Enter}
+Sleep 50
+Send [script
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Tab} ; attestation starts here
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Enter}
+Sleep 50
+Send [attest
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {End}
+Sleep 50 
+Send {Space}
 return
 
 ; refresh at main screen
@@ -286,14 +365,16 @@ return
 ; print from inside the chart
 ; ======================
 ^!p::
-Sleep 200
-Send !t
+Sleep 300
+Send {Alt}
+Sleep 800
+Send t
 Send {Down 3} ; possible change back, new option above print called report
-Sleep 100
+Sleep 300
 Send {Right DownTemp}
-Sleep 100
+Sleep 300
 Send {Enter}
-Sleep 100
+Sleep 300
 Send {Enter}
 Sleep 1000
 Send {Enter}
@@ -376,11 +457,11 @@ Send {Enter}
 Sleep 1000
 Click, 326, 380 ; click follow-up
 Sleep 300
-Click, 1527, 333 ; click plus
-Sleep 2500
-Click, 164, 570, 2 ; CHANGE double click basic follow-up
+Click, 1750, 333 ; click plus
+WinWait, Patient Education
+Click, 160, 595, 2 ; CHANGE double click basic follow-up
 Sleep 400
-Click, 776, 990 ; click 'Ok'
+Click, 770, 1022 ; click 'Ok'
 return
 
 ; insert education
@@ -435,7 +516,7 @@ return
 MouseMove 1163, 585
 Sleep 200
 Send !c
-Sleep 100
+Sleep 200
 Send {Down}
 Sleep 100
 Send {Enter}
@@ -514,28 +595,33 @@ return
 
 ; open documentation
 ; ======================
-!^d::
+^d::
 MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
+Sleep 100
 Send !c
 Sleep 100
 Send {Down}
 Sleep 100
 Send d
-Sleep 300
+Sleep 100
 Send {Enter}
 return
 
 ; sign
 ; ======================
 !^s::
-Sleep 100
 Send ^g
-Sleep 3500
+WinWait, Sign/Submit Note
+Sleep 1000
 MouseGetPos, StartX, StartY
+Click, 200, 217 ; CHANGE
+Sleep 100
+MouseMove, 317, 320 ; CHANGE
+Sleep 150
+Click, 317, 320 ; CHANGE
+Sleep 100
 Click 948, 664
+Sleep 100
 MouseMove, StartX, StartY
 return
 
@@ -862,7 +948,6 @@ return
 :*:\rpt::
 Send reports
 return
-
 ; ======================
 
 
@@ -1017,18 +1102,9 @@ return
 
 ; clear line
 :*:cc::
-Send {Home}
-Sleep 50
-Send +^{Right}
-Send +^{Right}
-Sleep 50
-Send ^x
-Sleep 50
-Send +{End}
+Send ^a
 Sleep 50
 Send {Backspace}
-Sleep 50
-Send ^v
 return
 
 ; hpi
@@ -1167,6 +1243,37 @@ Sleep 100
 Send {Enter}
 Sleep 100
 Send a
+SetTitleMatchMode, 2
+WinWait, Ad Hoc
+Send {Tab}
+Sleep 50
+Send u
+Sleep 50
+Send {Space}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Enter}
+SetTitleMatchMode, 2
+WinWait, Time Seen
+Send t
+Sleep 50
+Send {Tab}
+Sleep 50
+Send n
+Sleep 50
+MouseMove 22, 37
+Sleep 50
+Click 22, 37
+return
+
+; edit time with clipboard
+^t::
+Send !c
+Sleep 100
+Send {Enter}
+Sleep 100
+Send a
 Sleep 500
 Send {Tab}
 Sleep 50
@@ -1182,42 +1289,11 @@ Send t
 Sleep 50
 Send {Tab}
 Sleep 50
-Send n
+Send ^v
 Sleep 50
 MouseMove 22, 37
 Sleep 50
 Click 22, 37
-return
-
-; edit time with clipboard
-!^t::
-MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
-Send !c
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 1000
-Click, 315, 325
-Sleep 300
-Click, 1765, 330
-Sleep 300
-Click, 1730, 365
-Sleep 300
-Send t
-Sleep 300
-Send {Tab}
-Sleep 300
-Send n
-Sleep 300
-Send ^a
-Sleep 300
-Send ^v
-Sleep 300
-Click 17, 44
 return
 
 ; =================
@@ -1226,65 +1302,80 @@ return
 
 ; general chart
 :*:genchart::
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send [hgen
 Sleep 1200
 Send {Enter}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send [rgen
 Sleep 1200
 Send {Enter}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send [pgen
 Sleep 1200
 Send {Enter}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send [mdm_per
 Sleep 1200
 Send {Enter}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send [dmed
 Sleep 1200
 Send {Enter}
-Sleep 100
+Sleep 50
 Send {Enter}
+Sleep 50
 Send [script
 Sleep 1200
 Send {Enter}
-Sleep 100
+Sleep 50
 Send {Tab} ; attestation starts here
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send {Tab}
-Sleep 100
+Sleep 50
 Send {Enter}
-Sleep 100
+Sleep 50
 Send [attest
 Sleep 1200
 Send {Enter}
+Sleep 50
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {End}
+Sleep 50 
+Send {Space}
 return
 
 ; ml chart
@@ -1676,7 +1767,7 @@ return
 ; smart clear line
 :*:ll::
 Send ^f
-Sleep 300
+WinWait, Find
 Send :
 Sleep 50
 Send {Tab}
@@ -1690,7 +1781,7 @@ Sleep 20
 Send {Enter}
 Sleep 20
 Send {Escape}
-Sleep 200
+Sleep 150
 Send {Right}
 Sleep 20
 Send +{End}
@@ -1698,8 +1789,45 @@ Sleep 20
 Send {Backspace}
 return
 
-; macro2macro
-; macro2macro
+
+F6::
+Send !c
+Sleep 100
+Send {Enter}
+Sleep 50
+Send c
+Sleep 50
+Send c
+Sleep 50
+Send {Enter}
+return
+
+F10::
+Send ^w
+Sleep 300
+Send {Tab}
+Sleep 50
+Send {Space}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send ^v
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Enter}
+return
+
+
+; macro2macro miami lakes
 ^!+8::
 Send CHART general
 Sleep 150
@@ -1941,3 +2069,17 @@ Sleep 150
 Send {Enter}
 Sleep 150
 return
+
+
+:*:"::
+Send ""
+Sleep 20
+Send {Left}
+return
+
+:*:(::
+Send ()
+Sleep 20
+Send {Left}
+return
+
