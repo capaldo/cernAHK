@@ -1289,6 +1289,10 @@ return
 
 ; edit time with clipboard
 ^t::
+Send ^a
+Sleep 50
+Send ^x
+Sleep 100
 Send !c
 Sleep 100
 Send {Enter}
