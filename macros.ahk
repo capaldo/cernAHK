@@ -38,7 +38,7 @@ SetCapslockState, AlwaysOff
      Send {Esc}
  }
 return
-
+	
 
 ; ======================
 ; miscellaneous
@@ -268,16 +268,6 @@ Sleep 50
 Send {Tab}
 Sleep 50
 Send {Tab}
-Sleep 50
-Send [dmed
-Sleep 1200
-Send {Enter}
-Sleep 50
-Send {Enter}
-Sleep 50
-Send [script
-Sleep 1200
-Send {Enter}
 Sleep 50
 Send {Tab} ; attestation starts here
 Sleep 50
@@ -526,12 +516,6 @@ return
 Send !d
 Sleep 100
 Send {Enter}
-IfWinActive, Save Note
-{
-Send {Tab 5}
-Sleep 100
-Send {Enter}
-}
 return
 
 ; initial save dialog
@@ -1615,158 +1599,6 @@ return
 ; beta
 ; =================
 
-; combo run 
-F8::
-MouseMove 1163, 585   ; STEP 1 - OPEN CHART
-Send {Alt}
-Sleep 500
-Send !p
-Sleep 100
-Send {Down 3}
-Sleep 100
-Send {Right}
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Send {Enter}
-Sleep 7000
-Click 1080, 455, 2
-Sleep 5000
-Sleep 100 ; STEP 1.5 - INSERT GENERAL CHART
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send [hgen
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send [rgen
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send [pgen
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send [mdm_per
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send [dmed
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Enter}
-Send [script
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab} ; attestation starts here
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-Sleep 100
-Send [attest
-Sleep 1200
-Send {Enter}
-MouseGetPos x, y ; STEP 2 - SAVE CHART
-Click, 1690, 975
-MouseMove %x%, %y%
-Sleep 3000
-Send {Tab 5} ; STEP 3 - SAVE OK
-Sleep 100
-Send {Enter}
-MouseMove 1163, 585  ; STEP 4 - GO TO WORKFLOW
-Sleep 300
-Send {Alt}
-Sleep 300
-Send !c
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 5000
-MouseMove 1163, 585 ; STEP 5 - ADD FOLLOW-UP
-Sleep 500
-Send {Alt}
-Sleep 300
-Send !c
-Sleep 300
-Send {Down}
-Sleep 300
-Send {Enter}
-Sleep 3000
-Click, 326, 380 ; click follow-up
-Sleep 500
-Click, 1752, 333 ; click plus
-Sleep 3000
-Click, 186, 333, 2 ; CHANGE double click basic follow-up
-Sleep 1000
-Click, 776, 1010 ; click 'Ok'
-Sleep 4000
-MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
-Send !c
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter} ; Step 5.5 - ADD TIME SEEN
-Sleep 3000
-Click, 315, 325
-Sleep 500
-Click, 1765, 330
-Sleep 300
-Click, 1730, 365
-Sleep 300
-Send t
-Sleep 300
-Send {Tab}
-Sleep 300
-Send n
-Sleep 300
-Click 17, 44
-Sleep 5000
-MouseMove 1163, 585 ; STEP 6 - GO BACK TO DOCUMENTATION
-Sleep 1000
-Send {Alt}
-Sleep 500
-Send !c
-Sleep 300
-Send {Down}
-Sleep 300
-Send d
-Sleep 300
-Send {Enter}
-return
-
-
-
-
 ; =================
 ; TODO
 ; =================
@@ -1824,6 +1656,34 @@ Sleep 20
 Send {Backspace}
 Sleep 20
 Send {Space}
+return
+
+; smart bold title
+!t::
+Send ^f
+WinWait, Find
+Send :
+Sleep 20
+Send {Tab}
+Sleep 20
+Send {Tab}
+Sleep 20
+Send {Tab}
+Sleep 20
+Send {Tab}
+Sleep 20
+Send {Enter}
+Sleep 20
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Send {Right}
+Sleep 20
+Send +{Home}
+Sleep 20
+Send ^b
+Sleep 20
+Send {End}
 return
 
 
@@ -2121,3 +1981,50 @@ Sleep 20
 Send {Left}
 return
 
+#!^F1::Run http://cernerm/
+
+
+#^`::
+Loop 15
+{
+Send {Enter}
+Sleep 2000
+}
+return
+
+
+; airtable check and copy
+NumpadMult::
+Send {Right}
+Sleep 50
+Send {Enter}
+Sleep 50
+Send {Down}
+Sleep 50
+Send {Left}
+Sleep 50
+Send ^c
+Sleep 50
+Click, 1300, 530
+return
+
+;airtable cleanup name
+~Capslock & =::
+Send {Enter}
+Sleep 50
+Send ^{Backspace}
+Sleep 50
+Send ^{Left}
+Sleep 50
+Send ^{Backspace}
+Sleep 50
+Send {Enter}
+return
+
+; copy phys name
+!F1::
+Sleep 200
+SendEvent {Click 854, 771, down}{click 1800, 771, up}
+Sleep 100
+Send ^c
+return
