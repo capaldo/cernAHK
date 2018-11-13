@@ -8,29 +8,20 @@
 ; CAPSLOCK TO HYPER
 ; ======================
 
-#NoEnv ; recommended for performance and compatibility with future autohotkey releases.
+#NoEnv 
 #UseHook
 #InstallKeybdHook
 #SingleInstance force
 
 SendMode Input
 
-;; deactivate capslock completely
+
 SetCapslockState, AlwaysOff
 
-;; remap capslock to hyper
-;; if capslock is toggled, remap it to esc
-;; note: must use tidle prefix to fire hotkey once it is pressed
-;; not until the hotkey is released
+
 
 ~Capslock::
 
-;; must use downtemp to emulate hyper key, you cannot use down in this case
-;; according to https://autohotkey.com/docs/commands/Send.htm, downtemp is as same as down except for ctrl/alt/shift/win keys
-;; in those cases, downtemp tells subsequent sends that the key is not permanently down, and may be
-;; released whenever a keystroke calls for it.
-;; for example, Send {Ctrl Downtemp} followed later by Send {Left} would produce a normal {Left}
-;; keystroke, not a Ctrl{Left} keystroke
  Send {Ctrl DownTemp}{Shift DownTemp}{Alt DownTemp}{LWin DownTemp}
  KeyWait, Capslock
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
@@ -64,9 +55,75 @@ MouseGetPos, xpos, ypos
 MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 
-; dialog which sets the clipboard contents, useful for prior to inserting diagnosis
+
+#a::
+Sleep 50
+Send ^c
+Sleep 50
+Send ^f
+WinWait, Find
+Send Review of Systems
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^f
+WinWait, Find
+Send ^v
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send +{F9}
+Sleep 50
+Send {F9}
+Sleep 100
+Send {Down}
+Sleep 100
+Send {Enter}
+Sleep 100
+Send +{F9}
+Sleep 100
+Send ^b
+Sleep 100
+Send {Right}
+return
+
 #Space::
-InputBox[Height, 100, 500], Clipboard, clipscrap
+InputBox, ros1,,Positive 1:
+Send ^f
+WinWait, Find
+Send Review of Systems
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Send ^f
+Send %ros1%
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send +{F9}
+Sleep 50
+Send {F9}
+Sleep 100
+Send {Down}
+Sleep 100
+Send {Enter}
+Sleep 100
+Send +{F9}
+Sleep 100
+Send ^b
+Sleep 100
+Send {Right}
 return
 
 ; ======================
@@ -104,7 +161,7 @@ Click, left
 Sleep 2000
 Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send diaz ; CHANGE based on name
+Send ngu ; CHANGE based on name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -214,6 +271,8 @@ return
 ; open new chart
 ; ======================
 ~Capslock & o::
+Send {Alt}
+Sleep 100
 MouseMove 1163, 585
 Sleep 100
 Send !p
@@ -360,7 +419,8 @@ Send t
 Send {Down 3} ; possible change back, new option above print called report
 Sleep 300
 Send {Right DownTemp}
-Sleep 300
+Sleep 300d
+
 Send {Enter}
 Sleep 300
 Send {Enter}
@@ -469,7 +529,7 @@ Click, 333, 426 ; click education
 Sleep 1000
 MouseMove 849, 491
 Sleep 100
-Click, 849, 491, 2
+Click, 849, 491, 1
 return
 
 ; insert AMA follow-up
@@ -600,12 +660,9 @@ return
 !^s::
 Send ^g
 WinWait, Sign/Submit Note
-Sleep 1000
-MouseGetPos, StartX, StartY
-Click, 80, 200
-Sleep 50
-Click, 317, 330
 Sleep 100
+MouseGetPos, StartX, StartY
+Sleep 2500
 Click 948, 664
 Sleep 100
 MouseMove, StartX, StartY
@@ -1276,6 +1333,7 @@ Sleep 50
 Send {Enter}
 SetTitleMatchMode, 2
 WinWait, Time Seen
+Sleep 200
 Send t
 Sleep 50
 Send {Tab}
@@ -1283,7 +1341,7 @@ Sleep 50
 Send n
 Sleep 50
 MouseMove 22, 37
-Sleep 50
+Sleep 500
 Click 22, 37
 return
 
@@ -1394,7 +1452,7 @@ Sleep 50
 Send {Escape}
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 50
+Sleep 500
 Send {Tab}
 Sleep 50
 Send {End}
