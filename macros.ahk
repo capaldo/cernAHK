@@ -15,10 +15,7 @@
 
 SendMode Input
 
-
 SetCapslockState, AlwaysOff
-
-
 
 ~Capslock::
 
@@ -55,7 +52,8 @@ MouseGetPos, xpos, ypos
 MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 
-
+; send typed positive in HPI to ROS
+; ==================================
 #a::
 Sleep 50
 Send ^c
@@ -93,6 +91,8 @@ Sleep 100
 Send {Right}
 return
 
+; select ROS to make positive
+; ===========================
 #Space::
 InputBox, ros1,,Positive 1:
 Send ^f
@@ -161,7 +161,7 @@ Click, left
 Sleep 2000
 Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send ngu ; CHANGE based on name
+Send DOC ; CHANGE based on name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -195,81 +195,8 @@ Sleep 100
 Send {Enter}
 return
 
-
-; alternate doc
-; ======================
-~Capslock & z::
-MouseGetPos x, y
-Sleep 100
-MouseMove 335, %y%
-Sleep 100
-MouseMove 335, %y%
-Sleep 100
-MouseGetPos x, y
-Click, left
-Sleep 100
-MouseMove 430, 190, 0, R
-Sleep 1000
-Click, left
-Sleep 1500
-MouseMove %x%, %y%
-Sleep 200
-Click, right
-Sleep 200
-MouseMove, 15, 200, 0, R
-Sleep 500
-Click, left
-Sleep 2000
-Click, 165, 220 ; CHANGE to modify staff selection
-Sleep 200
-Send DOC ; CHANGE based on name
-Sleep 100
-Send {Enter}
-Sleep 100
-Send {Enter}
-return
-
-; assign mid-level too
-; ======================
-^Numpad0::
-MouseGetPos x, y
-Sleep 100
-MouseMove 335, %y%
-Sleep 100
-MouseMove 335, %y%
-Sleep 100
-MouseGetPos x, y
-Click, left
-Sleep 100
-MouseMove 430, 190, 0, R
-Sleep 1000
-Click, left
-Sleep 1500
-MouseMove %x%, %y%
-Sleep 200
-Click, right
-Sleep 200
-MouseMove, 15, 200, 0, R
-Sleep 500
-Click, left
-Sleep 2000
-Click, 72, 176 ; CHANGE to modify selection
-Sleep 200
-Send DOC ; CHANGE based on ap
-Sleep 100
-Send {Enter}
-Sleep 200
-Click, 72, 355 ; CHANGE to modify mlp selection
-Sleep 200
-Send MLP ; CHANGE based on mlp name
-Sleep 100
-Send {Enter}
-Sleep 100
-Send {Enter}
-return
-
-; open new chart
-; ======================
+; open new chart and insert template
+; ===============================
 ~Capslock & o::
 Send {Alt}
 Sleep 100
@@ -286,7 +213,7 @@ Sleep 100
 Send {Enter}
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 3500
+Sleep 4000
 Click 1080, 455, 2
 Sleep 200
 SetTitleMatchMode, 2
@@ -419,8 +346,7 @@ Send t
 Send {Down 3} ; possible change back, new option above print called report
 Sleep 300
 Send {Right DownTemp}
-Sleep 300d
-
+Sleep 300
 Send {Enter}
 Sleep 300
 Send {Enter}
