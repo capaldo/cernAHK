@@ -301,15 +301,11 @@ return
 Send ^f
 WinWait, Find
 Send :
-Sleep 20
-Send {Tab}
-Sleep 20
-Send {Tab}
-Sleep 20
-Send {Tab}
-Sleep 20
-Send {Tab}
-Sleep 20
+Loop, 4 {
+    Sleep 20
+    Send {Tab}
+    Sleep 20
+}
 Send {Enter}
 Sleep 20
 Send {Escape}
@@ -323,8 +319,6 @@ Send ^b
 Sleep 20
 Send {End}
 return
-
-
 
 
 
@@ -1070,15 +1064,11 @@ return
 Send ^f
 WinWait, Find
 Send :
-Sleep 20
-Send {Tab}
-Sleep 20
-Send {Tab}
-Sleep 20
-Send {Tab}
-Sleep 20
-Send {Tab}
-Sleep 20
+Loop, 4 {
+    Sleep 20
+    Send {Tab}
+    Sleep 20
+}
 Send {Enter}
 Sleep 20
 Send {Escape}
@@ -1155,6 +1145,7 @@ Sleep 50
 Send {End}
 return
 
+; discharge with medication
 :*:\dcmed::
 Send ^x
 Sleep 50
@@ -1181,18 +1172,17 @@ Send {Tab}
 Sleep 50
 Send [dmed
 Sleep 1200
-
 Loop, 2 {
     Sleep 50
     Send {Enter}
     Sleep 50
 }
-
 Send [script
 Sleep 1200
 Send {Enter}
 return
 
+; insert medication with testing
 :*:\dctest::
 Send ^x
 Sleep 50
@@ -1284,9 +1274,8 @@ Sleep 50
 Send ^b
 return
 
-:*:\nn::
 
-return
+
 
 ; =================
 ; Time Stamp
@@ -1871,17 +1860,11 @@ Sleep 50
 Send {Tab}
 Sleep 50
 Send ^v
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {Tab}
-Sleep 50
+Loop, 5 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
 Send {Enter}
 return
 
