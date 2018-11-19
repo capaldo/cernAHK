@@ -16,7 +16,6 @@ SendMode Input
 SetCapslockState, AlwaysOff
 
 ~Capslock::
-
  Send {Ctrl DownTemp}{Shift DownTemp}{Alt DownTemp}{LWin DownTemp}
  KeyWait, Capslock
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
