@@ -84,12 +84,14 @@ Sleep 200
 Click, right
 Sleep 200
 MouseMove, 15, 200, 0, R
-Sleep 500
+Sleep 300
 Click, left
-Sleep 2000
+SetTitleMatchMode, 2
+WinWait, Providers for
+Sleep 300
 Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send DOC ; CHANGE based on name
+Send ng ; CHANGE based on name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -162,7 +164,7 @@ Sleep 50
 Send [rgen
 Sleep 1200
 Send {Enter}
-Loop, 2 {
+Loop, 1 {
     Sleep 50
     Send {Tab}
     Sleep 50
@@ -845,7 +847,7 @@ Send urgency
 return
 
 :*:\fahren::
-Send ∞F
+Send 8F
 return
 
 :*:\rpt::
@@ -1150,24 +1152,15 @@ Send ^x
 Sleep 50
 Send ^f
 WinWait Find
-Send Impression and Plan
+Send Patient Instructions
 Sleep 50
 Send {Escape}
 SetTitleMatchMode, 2
 WinWait Opened by
 Sleep 100
-Send ^f
-Sleep 50
-WinWait Find
-Sleep 50
-Send ^v
-Sleep 50
-Send {Escape}
-Sleep 50
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 50
 Send {Tab}
+Sleep 50
+Send +{Tab}
 Sleep 50
 Send [dmed
 Sleep 1200
@@ -1187,24 +1180,15 @@ Send ^x
 Sleep 50
 Send ^f
 WinWait Find
-Send Impression and Plan
+Send Patient Instructions
 Sleep 50
 Send {Escape}
 SetTitleMatchMode, 2
 WinWait Opened by
 Sleep 100
-Send ^f
-Sleep 50
-WinWait Find
-Sleep 50
-Send ^v
-Sleep 50
-Send {Escape}
-Sleep 50
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 50
 Send {Tab}
+Sleep 50
+Send +{Tab}
 Sleep 50
 Send [dmedtest
 Sleep 1200
@@ -1213,7 +1197,6 @@ Loop, 2 {
     Send {Enter}
     Sleep 50
 }
-; insert prescription
 Send [script
 Sleep 1200
 Send {Enter}
@@ -1365,7 +1348,7 @@ Sleep 50
 Send [rgen
 Sleep 1200
 Send {Enter}
-Loop, 2 {
+Loop, 1 {
     Sleep 50
     Send {Tab}
     Sleep 50
@@ -1551,13 +1534,12 @@ return
 ; auto insert ROS based on HPI
 ; ===============================
 ~Capslock & r::
-Sleep 100
+Sleep 300
 Send ^c
 Clipboard := RegExReplace(Clipboard, "and")
 str:= clipboard
 s:=StrSplit(str, ", ")
-Loop, % s.MaxIndex()
-{
+Loop, % s.MaxIndex() {
 Sleep 50
 Send ^c
 Sleep 50
@@ -1571,24 +1553,31 @@ SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 500
 Send {Tab}
-Sleep 50
+Sleep Sleep 100
 Send ^f
-WinWait, Find
 Sleep 50
+WinWait, Find
+Sleep 100
 Send % s[A_Index]
+Sleep 100
+Send +{Home}
+Sleep 300
+Send {Backspace}
 Sleep 50
 Send {Escape}
+Sleep 50
 SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 500
-Send +{F9}
-Sleep 50
+Send ^{Left}
+Send ^{Left}
+Sleep 100
 Send {F9}
-Sleep 100
+Sleep 150
 Send {Down}
-Sleep 100
+Sleep 200
 Send {Enter}
-Sleep 100
+Sleep 200
 Send +{F9}
 Sleep 50
 Send ^b
@@ -1738,6 +1727,31 @@ Send {Escape}
 SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 100
+Send {End}
+return
+
+:*:pskin::
+Send ^f
+WinWait, Find
+Sleep 50
+Send Physical Examination
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {Tab}
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send Skin
+Send {:}
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
 Send {End}
 return
 ; ============================================================
@@ -1911,5 +1925,108 @@ Send ^v
 Sleep 100
 Send {Enter}
 Sleep 50
+Send {Enter}
+return
+
+; ======================
+; ======================
+; ======================
+; P-Zone
+; ======================
+
+; open dc wkflw
+#NumpadAdd::
+Sleep 100
+Send {Alt}
+Sleep 100
+Send !c
+Sleep 50
+Send {Enter}
+Sleep 200
+Loop, 2 {
+Sleep 50
+Send u
+Sleep 50
+}
+Send {Enter}
+return
+
+; dc dx
+#Numpad1::
+Click 340, 380
+Sleep 100
+Click 650, 400
+Loop, 4 {
+Sleep 100
+Send {Tab}
+Sleep 100
+}
+Send {Delete}
+return
+
+; dc ord
+#Numpad2::
+Click 340, 410
+Sleep 100
+Click 544, 488
+return
+
+
+#Numpad3::
+Click 340, 450
+Sleep 100
+Click 650, 400
+Sleep 100
+Send {Tab}
+Sleep 100
+Send {Enter}
+return
+
+^F4::
+Click 340, 410
+Sleep 100
+Click 650, 400
+Sleep 100
+Send {Tab}
+Sleep 100
+Send {Enter}
+return
+
+^F6::
+Click 340, 410
+Sleep 100
+Click 650, 400
+Sleep 100
+Send {Tab}
+Sleep 100
+Send {Enter}
+return
+
+#NumpadSub::
+MouseMove 1163, 585
+Sleep 100
+Send !c
+Sleep 50
+Send {Down}
+Sleep 100
+Send d
+Sleep 100
+Send {Enter}
+Sleep 1500
+Send ^n
+Sleep 2500
+Click 1200, 500, 2
+Sleep 7000
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Enter}
+SetTitleMatchMode, 2
+WinWait, Note
+Sleep 500
+Click, 870, 650
+WinWait, Print
+Sleep 300
 Send {Enter}
 return
