@@ -1569,7 +1569,7 @@ Sleep 50
 Send {Escape}
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 200
+Sleep 500
 Send {Tab}
 Sleep 50
 Send ^f
@@ -1580,7 +1580,7 @@ Sleep 50
 Send {Escape}
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 200
+Sleep 500
 Send +{F9}
 Sleep 50
 Send {F9}
@@ -1611,6 +1611,35 @@ Sleep 1000
 Send {Escape}
 }
 return
+
+:*:s3::
+Send ^f
+clipboard = History of Present Illness
+WinWait Find
+Send ^v
+Sleep 50
+Send {Escape}
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^f
+clipboard = Urgent Care Center with
+Winwait Find
+Send ^v
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait Opened by
+Sleep 500
+Send {Right}
+Sleep 50
+Loop, 6 {
+Sleep 50
+Send +^{Right}
+Sleep 50
+}
+return
+
 
 ; go to different PE sections
 ; =================================================================
