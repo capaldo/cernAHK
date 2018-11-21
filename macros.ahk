@@ -392,9 +392,9 @@ Click, 326, 380 ; click follow-up
 Sleep 300
 Click, 1750, 333 ; click plus
 WinWait, Patient Education
-Click, 160, 595, 2 ; CHANGE double click basic follow-up
+Click, 160, 580, 2 ; CHANGE double click basic follow-up
 Sleep 400
-Click, 770, 1022 ; click 'Ok'
+Click, 780, 1000 ; click 'Ok'
 return
 
 ; insert education
@@ -1850,8 +1850,7 @@ return
 ;airtable cleanup site name
 ; =================
 ~Capslock & =::
-InputBox, recNUM,,Number of Records: 
-Loop, %recNUM% {
+Loop, 41 {
 Send {Enter}
 Sleep 50
 Send ^{Backspace}
@@ -1973,16 +1972,20 @@ return
 
 
 #Numpad3::
-Click 340, 450
+Click 340, 430
 Sleep 100
-Click 650, 400
+Click, 1850, 500
+SetTitleMatchMode, 2
+WinWait, Reconciliation
+Sleep 500
+Click 990, 770
 Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
+Send +{Tab}
+Sleep 50
+Send +{Tab}
 return
 
-^F4::
+#Numpad4::
 Click 340, 410
 Sleep 100
 Click 650, 400
@@ -1992,14 +1995,19 @@ Sleep 100
 Send {Enter}
 return
 
-^F6::
-Click 340, 410
+; fu
+#Numpad5::
+Click 340, 480
 Sleep 100
-Click 650, 400
+Click 480, 380
 Sleep 100
 Send {Tab}
 Sleep 100
 Send {Enter}
+Sleep 100
+WinWait, Patient Education
+Sleep 100
+Click 240, 380, 2
 return
 
 #NumpadSub::
@@ -2029,4 +2037,19 @@ Click, 870, 650
 WinWait, Print
 Sleep 300
 Send {Enter}
+return
+
+#!Numpad1::
+SetTitleMatchMode,2
+WinActivate, Organizer for Capaldo
+return
+
+#!Numpad2::
+SetTitleMatchMode,2
+WinActivate, Organizer for Nguyen
+return
+
+#!Numpad3::
+SetTitleMatchMode,2
+WinActivate, Google Chrome
 return
