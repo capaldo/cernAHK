@@ -579,8 +579,9 @@ Sleep 100
 Send n
 Sleep 100
 Send d
-Sleep 3000
+Sleep 3500
 MouseMove 688, 422
+Sleep 50
 Click, 688, 422, 2
 return
 
@@ -1401,120 +1402,150 @@ return
 Send [workexcuse1
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:work2::
 Send [workexcuse2
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:work3::
 Send [workexcuse3
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:work4::
 Send [workexcuse4
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:work5::
 Send [workexcuse5
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school1::
 Send [schoolexcuse1
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school2::
 Send [schoolexcuse2
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school3::
 Send [schoolexcuse3
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school4::
 Send [schoolexcuse4
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school5::
 Send [schoolexcuse5
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 ; =================
