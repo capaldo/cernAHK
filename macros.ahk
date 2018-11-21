@@ -335,13 +335,14 @@ Send {Alt}
 Sleep 100
 Send t
 Send {Down 3} ; possible change back, new option above print called report
-Sleep 300
+Sleep 200
 Send {Right DownTemp}
-Sleep 300
+Sleep 100
 Send {Enter}
-Sleep 300
+Sleep 100
 Send {Enter}
-Sleep 1000
+WinWait, Print
+Sleep 100
 Send {Enter}
 return
 
