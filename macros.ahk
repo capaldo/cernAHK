@@ -84,12 +84,14 @@ Sleep 200
 Click, right
 Sleep 200
 MouseMove, 15, 200, 0, R
-Sleep 500
+Sleep 300
 Click, left
-Sleep 2000
+SetTitleMatchMode, 2
+WinWait, Providers for
+Sleep 300
 Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send DOC ; CHANGE based on name
+Send ng ; CHANGE based on name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -162,7 +164,7 @@ Sleep 50
 Send [rgen
 Sleep 1200
 Send {Enter}
-Loop, 2 {
+Loop, 1 {
     Sleep 50
     Send {Tab}
     Sleep 50
@@ -333,13 +335,14 @@ Send {Alt}
 Sleep 100
 Send t
 Send {Down 3} ; possible change back, new option above print called report
-Sleep 300
+Sleep 200
 Send {Right DownTemp}
-Sleep 300
+Sleep 100
 Send {Enter}
-Sleep 300
+Sleep 100
 Send {Enter}
-Sleep 1000
+WinWait, Print
+Sleep 100
 Send {Enter}
 return
 
@@ -390,9 +393,9 @@ Click, 326, 380 ; click follow-up
 Sleep 300
 Click, 1750, 333 ; click plus
 WinWait, Patient Education
-Click, 160, 595, 2 ; CHANGE double click basic follow-up
+Click, 160, 580, 2 ; CHANGE double click basic follow-up
 Sleep 400
-Click, 770, 1022 ; click 'Ok'
+Click, 780, 1000 ; click 'Ok'
 return
 
 ; insert education
@@ -576,8 +579,9 @@ Sleep 100
 Send n
 Sleep 100
 Send d
-Sleep 3000
+Sleep 3500
 MouseMove 688, 422
+Sleep 50
 Click, 688, 422, 2
 return
 
@@ -845,7 +849,7 @@ Send urgency
 return
 
 :*:\fahren::
-Send ∞F
+Send 8F
 return
 
 :*:\rpt::
@@ -1150,24 +1154,15 @@ Send ^x
 Sleep 50
 Send ^f
 WinWait Find
-Send Impression and Plan
+Send Patient Instructions
 Sleep 50
 Send {Escape}
 SetTitleMatchMode, 2
 WinWait Opened by
 Sleep 100
-Send ^f
-Sleep 50
-WinWait Find
-Sleep 50
-Send ^v
-Sleep 50
-Send {Escape}
-Sleep 50
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 50
 Send {Tab}
+Sleep 50
+Send +{Tab}
 Sleep 50
 Send [dmed
 Sleep 1200
@@ -1187,24 +1182,15 @@ Send ^x
 Sleep 50
 Send ^f
 WinWait Find
-Send Impression and Plan
+Send Patient Instructions
 Sleep 50
 Send {Escape}
 SetTitleMatchMode, 2
 WinWait Opened by
 Sleep 100
-Send ^f
-Sleep 50
-WinWait Find
-Sleep 50
-Send ^v
-Sleep 50
-Send {Escape}
-Sleep 50
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 50
 Send {Tab}
+Sleep 50
+Send +{Tab}
 Sleep 50
 Send [dmedtest
 Sleep 1200
@@ -1213,7 +1199,6 @@ Loop, 2 {
     Send {Enter}
     Sleep 50
 }
-; insert prescription
 Send [script
 Sleep 1200
 Send {Enter}
@@ -1365,7 +1350,7 @@ Sleep 50
 Send [rgen
 Sleep 1200
 Send {Enter}
-Loop, 2 {
+Loop, 1 {
     Sleep 50
     Send {Tab}
     Sleep 50
@@ -1417,120 +1402,150 @@ return
 Send [workexcuse1
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:work2::
 Send [workexcuse2
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:work3::
 Send [workexcuse3
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:work4::
 Send [workexcuse4
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:work5::
 Send [workexcuse5
 Sleep 1200
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school1::
 Send [schoolexcuse1
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school2::
 Send [schoolexcuse2
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school3::
 Send [schoolexcuse3
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school4::
 Send [schoolexcuse4
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 :*:school5::
 Send [schoolexcuse5
 Sleep 1100
 Send {Enter}
-Sleep 100
+Loop, 2 {
+Sleep 50
 Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
+Sleep 50
+}
 Send {Enter}
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
 return
 
 ; =================
@@ -1551,13 +1566,12 @@ return
 ; auto insert ROS based on HPI
 ; ===============================
 ~Capslock & r::
-Sleep 100
+Sleep 300
 Send ^c
 Clipboard := RegExReplace(Clipboard, "and")
 str:= clipboard
 s:=StrSplit(str, ", ")
-Loop, % s.MaxIndex()
-{
+Loop, % s.MaxIndex() {
 Sleep 50
 Send ^c
 Sleep 50
@@ -1571,24 +1585,31 @@ SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 500
 Send {Tab}
-Sleep 50
+Sleep Sleep 100
 Send ^f
-WinWait, Find
 Sleep 50
+WinWait, Find
+Sleep 100
 Send % s[A_Index]
+Sleep 100
+Send +{Home}
+Sleep 300
+Send {Backspace}
 Sleep 50
 Send {Escape}
+Sleep 50
 SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 500
-Send +{F9}
-Sleep 50
+Send ^{Left}
+Send ^{Left}
+Sleep 100
 Send {F9}
-Sleep 100
+Sleep 150
 Send {Down}
-Sleep 100
+Sleep 200
 Send {Enter}
-Sleep 100
+Sleep 200
 Send +{F9}
 Sleep 50
 Send ^b
@@ -1740,6 +1761,31 @@ WinWait, Opened by
 Sleep 100
 Send {End}
 return
+
+:*:pskin::
+Send ^f
+WinWait, Find
+Sleep 50
+Send Physical Examination
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {Tab}
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send Skin
+Send {:}
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {End}
+return
 ; ============================================================
 
 :*:\chestwall::
@@ -1836,8 +1882,7 @@ return
 ;airtable cleanup site name
 ; =================
 ~Capslock & =::
-InputBox, recNUM,,Number of Records: 
-Loop, %recNUM% {
+Loop, 41 {
 Send {Enter}
 Sleep 50
 Send ^{Backspace}
@@ -1912,4 +1957,131 @@ Sleep 100
 Send {Enter}
 Sleep 50
 Send {Enter}
+return
+
+; ======================
+; ======================
+; ======================
+; P-Zone
+; ======================
+
+; open dc wkflw
+#NumpadAdd::
+Sleep 100
+Send {Alt}
+Sleep 100
+Send !c
+Sleep 50
+Send {Enter}
+Sleep 200
+Loop, 2 {
+Sleep 50
+Send u
+Sleep 50
+}
+Send {Enter}
+return
+
+; dc dx
+#Numpad1::
+Click 340, 380
+Sleep 100
+Click 650, 400
+Loop, 4 {
+Sleep 100
+Send {Tab}
+Sleep 100
+}
+Send {Delete}
+return
+
+; dc ord
+#Numpad2::
+Click 340, 410
+Sleep 100
+Click 544, 488
+return
+
+
+#Numpad3::
+Click 340, 430
+Sleep 100
+Click, 1850, 500
+SetTitleMatchMode, 2
+WinWait, Reconciliation
+Sleep 500
+Click 990, 770
+Sleep 100
+Send +{Tab}
+Sleep 50
+Send +{Tab}
+return
+
+#Numpad4::
+Click 340, 410
+Sleep 100
+Click 650, 400
+Sleep 100
+Send {Tab}
+Sleep 100
+Send {Enter}
+return
+
+; fu
+#Numpad5::
+Click 340, 480
+Sleep 100
+Click 480, 380
+Sleep 100
+Send {Tab}
+Sleep 100
+Send {Enter}
+Sleep 100
+WinWait, Patient Education
+Sleep 100
+Click 240, 380, 2
+return
+
+#NumpadSub::
+MouseMove 1163, 585
+Sleep 100
+Send !c
+Sleep 50
+Send {Down}
+Sleep 100
+Send d
+Sleep 100
+Send {Enter}
+Sleep 1500
+Send ^n
+Sleep 2500
+Click 1200, 500, 2
+Sleep 7000
+Send {Tab}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Enter}
+SetTitleMatchMode, 2
+WinWait, Note
+Sleep 500
+Click, 870, 650
+WinWait, Print
+Sleep 300
+Send {Enter}
+return
+
+#!Numpad1::
+SetTitleMatchMode,2
+WinActivate, Organizer for Capaldo
+return
+
+#!Numpad2::
+SetTitleMatchMode,2
+WinActivate, Organizer for Nguyen
+return
+
+#!Numpad3::
+SetTitleMatchMode,2
+WinActivate, Google Chrome
 return
