@@ -26,13 +26,35 @@ free time to address them.
 A running list of the keyboard shortcuts and *hotstrings* (words which trigger a command) contained in the default script file.
 
 ## General Tools
-### Capslock to Hyper Key
+### Capslock to Hyper Key (REQUIRED)
 * **Description:** Changes the capslock key to act as ctrl + win + shift + alt key combination
 * **Key Combination:** `capslock`
+* **Code:**
+```autohotkey
+#NoEnv 
+#UseHook
+#InstallKeybdHook
+#SingleInstance force
+SendMode Input
+SetCapslockState, AlwaysOff
 
-### Reload AHK
+~Capslock::
+ Send {Ctrl DownTemp}{Shift DownTemp}{Alt DownTemp}{LWin DownTemp}
+ KeyWait, Capslock
+ Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
+ if (A_PriorKey = "Capslock") {
+     Send {Esc}
+ }
+return
+```
+
+### Reload AHK (REQUIRED)
 * **Description:** Reloads the program to either stop a haywire script or to reload and implement any newly added script
 * **Key Combination:** `win + x`
+* **Code:**
+```autohotkey
+#x::Reload
+```
 
 ### Scrap Note
 * **Description:** Opens a blank notepad if no notepad is open, the key combination will bring the notepad into focus
