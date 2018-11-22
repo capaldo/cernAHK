@@ -30,25 +30,25 @@ free time to address them.
 
 #### Capslock to Hyper Key
 * **Description:** Changes the capslock key to act as ctrl + win + shift + alt key combination
-* **Key Combination:** capslock
+* **Key Combination:** `capslock`
 
 #### Reload AHK
 * **Description:** Reloads the program to either stop a haywire script or to reload and implement any newly added script
-* **Key Combination:** win + x
+* **Key Combination:** `win + x`
 
 #### Scrap Note
 * **Description:** Opens a blank notepad if no notepad is open, the key combination will bring the notepad into focus
-* **Key Combination:** capslock + n
+* **Key Combination:** `capslock + n`
 
 #### Mouse Location
 * **Description:** Grabs the current mouse location (x and y coordinates)
-* **Key Combination:** capslock + m
+* **Key Combination:** `capslock + m`
 * **Caveat(s):** 
     - Make sure to close the window or the commands and keyboard will begin to behave incorrectly
 
 #### Cerner Login
 * **Description:** Opens the login page for Cerner
-* **Key Combination:** alt + ctrl + shift + win + F1
+* **Key Combination:** `alt + ctrl + win + F1`
 * **Caveat(s):** 
     - Does not work while documenting remotely
 
@@ -57,21 +57,21 @@ free time to address them.
 
 #### Assign Scribe and Doctor
 * **Description:** Assigns the doctor and scribe to the patient under the mouse
-* **Key Combination:** alt + ctrl + a
+* **Key Combination:** `alt + ctrl + a`
 * **Caveat(s):** 
     - You must click on the patient and hover your mouse (more-or-less) at the vertical center of the patient "rectangle". The horizontal positioning does not matter
     - The Launchpoint *must* be set at 75%
 
 #### Assign Doctor Only
 * **Description:** Assigns only the doctor to the patient under the mouse
-* **Key Combination:** alt + a
+* **Key Combination:** `alt + a`
 * **Caveat(s):** 
     - You *must* click on the patient and hover your mouse (more-or-less) at the vertical center of the patient "rectangle". The horizontal positioning does not matter
     - The Launchpoint *must* be set at 75%
 
 #### Open New Chart and Insert Chart Template
 * **Description:** Opens a new patient chart and inserts a general chart template
-* **Key Combination:** capslock + o
+* **Key Combination:** `capslock + o`
 * **Caveat(s):** 
     - May not work correctly if the system is slow (use win + x if the system is slow)
     - Must edit the script to insert your own autotexts
@@ -87,58 +87,58 @@ free time to address them.
 
 #### Bold Right of Caret
 * **Description:** Bolds right of where you currently are in the text
-* **Key Combination:** capslock + l
+* **Key Combination:** `capslock + l`
 
 #### Bold Left of Caret
 * **Description:** Bolds left of where you currently are in the text
-* **Key Combination:** capslock + j
+* **Key Combination:** `capslock + j`
 
 ### List Item Shortcuts
 
 #### Change Up and Bold
 * **Description:** Changes the list item to 1 option up and bolds that item
-* **Key Combination:** capslock + i
+* **Key Combination:** `capslock + i`
 * **Caveat(s):**
     - Requires to create list items inside autotexts
 
 #### Change Down and Bold
 * **Description:** Changes the list item to 1 option down and bolds that item
-* **Key Combination:** capslock + k
+* **Key Combination:** `capslock + k`
 * **Caveat(s):**
     - Requires to create list items inside autotexts
 
 #### Bold Title (currently testing)
 * **Description:** Bolds the title subsection in each part of the chart
-* **Key Combination:** alt + t
+* **Key Combination:** `alt + t`
 
 
 ### Printing
 
 #### Print Document
 * **Description:** Prints the selected document when inside the chart
-* **Key Combination:** alt + p
+* **Key Combination:** `alt + p`
 
 ### Navigation
 
 #### Go to Launchpoint
 * **Description:** Goes to the Launchpoint
-* **Key Combination:** ctrl + 1
+* **Key Combination:** `ctrl + 1`
 
 #### Go to Tracking List
 * **Description:** Goes to the Tracking List
-* **Key Combination:** ctrl + 2
+* **Key Combination:** `ctrl + 2`
 
 #### Go to Workflow 
 * **Description:** Opens the workflow
-* **Key Combination:** alt + ctrl + w
+* **Key Combination:** `alt + ctrl + w`
 
 #### Open Documentation
 * **Description:** Opens the patient to the Documentation section
-* **Key Combination:** ctrl + d
+* **Key Combination:** `ctrl + d`
 
 #### Save Chart
 * **Description:** Saves the current chart that is open
-* **Key Combination:** 
-  
+* **Key Combination:** `capslock + s`
+
 ### Discharge Navigation
 * TODO: currently needs a prelude description to ensure user setup is correct

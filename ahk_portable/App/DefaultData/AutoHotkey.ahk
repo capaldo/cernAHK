@@ -347,14 +347,6 @@ Sleep 100
 Send t
 return
 
-; save chart
-; ======================
-~Capslock & s::
-Send !d
-Sleep 100
-Send {Enter}
-return
-
 ; open documentation
 ; ======================
 ^d::
@@ -365,6 +357,14 @@ Sleep 100
 Send {Down}
 Sleep 100
 Send d
+Sleep 100
+Send {Enter}
+return
+
+; save chart
+; ======================
+~Capslock & s::
+Send !d
 Sleep 100
 Send {Enter}
 return
