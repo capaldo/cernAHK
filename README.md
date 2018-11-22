@@ -80,7 +80,7 @@ free time to address them.
 
 #### Bold Whole Line
 * **Description:** Bolds the entire current line 
-* **Key Combination:** alt + b
+* **Key Combination:** `alt + b`
 * **Caveat(s):** 
     - Only bolds 1 line at a time
     - Does not bold the line if there is an already existing bolded word
