@@ -113,7 +113,7 @@ A running list of the keyboard shortcuts and *hotstrings* (words which trigger a
 ## Printing
 
 ### Print Document
-* **Description:** Prints the selected document when inside the chart
+* **Description:** Prints the selected document when inside the chart under the *Documentation* section
 * **Key Combination:** `alt + p`
 
 ## Navigation
