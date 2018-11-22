@@ -71,8 +71,8 @@ free time to address them.
 
 #### Open New Chart and Insert Chart Template
 * **Description:** Opens a new patient chart and inserts a general chart template
-* * **Key Combination:** capslock + o
-* * **Caveat(s):** 
+* **Key Combination:** capslock + o
+* **Caveat(s):** 
     - May not work correctly if the system is slow (use win + x if the system is slow)
     - Must edit the script to insert your own autotexts
 
@@ -80,8 +80,8 @@ free time to address them.
 
 #### Bold Whole Line
 * **Description:** Bolds the entire current line 
-* * **Key Combination:** alt + b
-* * **Caveat(s):** 
+* **Key Combination:** alt + b
+* **Caveat(s):** 
     - Only bolds 1 line at a time
     - Does not bold the line if there is an already existing bolded word
 
@@ -114,6 +114,31 @@ free time to address them.
 
 ### Printing
 
-#### Documents
+#### Print Document
 * **Description:** Prints the selected document when inside the chart
 * **Key Combination:** alt + p
+
+### Navigation
+
+#### Go to Launchpoint
+* **Description:** Goes to the Launchpoint
+* **Key Combination:** ctrl + 1
+
+#### Go to Tracking List
+* **Description:** Goes to the Tracking List
+* **Key Combination:** ctrl + 2
+
+#### Go to Workflow 
+* **Description:** Opens the workflow
+* **Key Combination:** alt + ctrl + w
+
+#### Open Documentation
+* **Description:** Opens the patient to the Documentation section
+* **Key Combination:** ctrl + d
+
+#### Save Chart
+* **Description:** Saves the current chart that is open
+* **Key Combination:** 
+  
+### Discharge Navigation
+* TODO: currently needs a prelude description to ensure user setup is correct

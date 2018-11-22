@@ -327,134 +327,9 @@ Send {Enter}
 return
 
 
-
-
-
-; ======================
-; discharge
-; ======================
-
-; insert diagnosis
-; ======================
-~Capslock & d::
-MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
-Send !c
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 500
-Click, 320, 400 ; click dx
-Sleep 500
-Click, 1376, 422 ; click white box
-Sleep 500
-Click, 1376, 422 ; click white box
-Sleep 300
-Send ^v
-return
-
-; insert follow-up
-; ======================
-~Capslock & f::
-MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
-Send !c
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 1000
-Click, 326, 380 ; click follow-up
-Sleep 300
-Click, 1750, 333 ; click plus
-WinWait, Patient Education
-Click, 160, 595, 2 ; CHANGE double click basic follow-up
-Sleep 400
-Click, 770, 1022 ; click 'Ok'
-return
-
-; insert education
-; ======================
-~Capslock & e::
-MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
-Send !c
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 1000
-Click, 333, 426 ; click education
-Sleep 1000
-MouseMove 849, 491
-Sleep 100
-Click, 849, 491, 1
-return
-
-; insert AMA follow-up
-; ======================
-:*:fuama::
-MouseMove 1163, 585
-Sleep 300
-Send {Alt}
-Sleep 300
-Send !c
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 3000
-Click, 326, 380 ; click follow-up
-Sleep 300
-Click, 1752, 333 ; click plus
-Sleep 2000
-Click, 186, 383, 2 ; CHANGE double click follow-up AMA
-Sleep 300
-Click, 776, 1014 ; click ok when the follow-up is right aligned
-return
-
-
-
-
-
 ; ======================
 ; navigation
 ; ======================
-
-; go to workflow
-; ======================
-^!w::
-MouseMove 1163, 585
-Sleep 200
-Send !c
-Sleep 200
-Send {Down}
-Sleep 100
-Send {Enter}
-return
-
-; save chart
-; ======================
-~Capslock & s::
-Send !d
-Sleep 100
-Send {Enter}
-return
-
-; initial save dialog
-; ======================
-#s::
-Send {Tab 5}
-Sleep 100
-Send {Enter}
-return
 
 ; launchpoint
 ; ======================
@@ -470,6 +345,36 @@ return
 Send !v
 Sleep 100
 Send t
+return
+
+; save chart
+; ======================
+~Capslock & s::
+Send !d
+Sleep 100
+Send {Enter}
+return
+
+; open documentation
+; ======================
+^d::
+MouseMove 1163, 585
+Sleep 100
+Send !c
+Sleep 100
+Send {Down}
+Sleep 100
+Send d
+Sleep 100
+Send {Enter}
+return
+
+; initial save dialog
+; ======================
+#s::
+Send {Tab 5}
+Sleep 100
+Send {Enter}
 return
 
 ; select tab 1
@@ -511,20 +416,6 @@ Send +{End}
 return
 
 
-; open documentation
-; ======================
-^d::
-MouseMove 1163, 585
-Sleep 100
-Send !c
-Sleep 100
-Send {Down}
-Sleep 100
-Send d
-Sleep 100
-Send {Enter}
-return
-
 ; sign
 ; ======================
 !^s::
@@ -536,16 +427,6 @@ KeyWait, LButton, D
 Sleep 100
 Click 948, 664
 Sleep 100
-MouseMove %x%, %y%
-return
-
-; refresh
-; ======================
-!^r::
-MouseGetPos x, y
-Sleep 50
-Click, 1637, 176
-Sleep 50
 MouseMove %x%, %y%
 return
 
@@ -562,6 +443,18 @@ Send d
 Sleep 3000
 MouseMove 688, 422
 Click, 688, 422, 2
+return
+
+; go to workflow
+; ======================
+^!w::
+MouseMove 1163, 585
+Sleep 200
+Send !c
+Sleep 200
+Send {Down}
+Sleep 100
+Send {Enter}
 return
 
 ; open patient pharmacy
