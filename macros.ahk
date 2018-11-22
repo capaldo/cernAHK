@@ -91,7 +91,7 @@ WinWait, Providers for
 Sleep 300
 Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send ng ; CHANGE based on name
+Send DOC ; CHANGE based on doctors last name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -118,7 +118,7 @@ Click, left
 Sleep 2000
 Click, 165, 220 ; CHANGE to modify staff selection
 Sleep 200
-Send cab ; CHANGE based on name
+Send DOC ; CHANGE based on doctors last name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -207,21 +207,6 @@ Send {End}
 Sleep 50 
 Send {Space}
 return
-
-; refresh at main screen
-; ======================
-^r::
-Sleep 300
-Send {Alt}
-Sleep 300
-Send t
-Send {Down 3}
-Sleep 300
-Send {Enter}
-return
-
-
-
 
 
 ; ======================

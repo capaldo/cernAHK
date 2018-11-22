@@ -1,11 +1,5 @@
 ; ======================
-; notes
-; ======================
-; set the launchpoint zoom to 75%, this is to prevent the assignment window from appearing above the 
-; selected patient
-
-; ======================
-; CAPSLOCK TO HYPER
+; capslock to hyper key
 ; ======================
 
 #NoEnv 
@@ -22,8 +16,9 @@ SetCapslockState, AlwaysOff
  if (A_PriorKey = "Capslock") {
      Send {Esc}
  }
-return
-	
+
+; ======================
+
 
 ; ======================
 ; miscellaneous
@@ -49,7 +44,7 @@ MouseGetPos, xpos, ypos
 MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 
-; open cerner login
+; opens cerner login
 ; =================
 #!^F1::Run http://cernerm/
 
@@ -153,13 +148,13 @@ Loop, 2 {
     Send {Tab}
     Sleep 50
 }
-Send [hgen
+Send [hgen ; CHANGE to hpi autotext
 Sleep 1200
 Send {Enter}
 Sleep 50
 Send {Tab}
 Sleep 50
-Send [rgen
+Send [rgen ; CHANGE to ros autotext
 Sleep 1200
 Send {Enter}
 Loop, 2 {
@@ -167,7 +162,7 @@ Loop, 2 {
     Send {Tab}
     Sleep 50
 }
-Send [pgen
+Send [pgen ; CHANGE to pe autotext
 Sleep 1200
 Send {Enter}
 Loop, 3 {
@@ -175,7 +170,7 @@ Loop, 3 {
     Send {Tab}
     Sleep 50
 }
-Send [mdm_per
+Send [mdm_per ; CHANGE to mdm autotext
 Sleep 1200
 Send {Enter}
 ; attestation starts here
@@ -186,7 +181,7 @@ Loop, 6 {
 }
 Send {Enter}
 Sleep 50
-Send [attest
+Send [attest ; CHANGE to attestation autotext
 Sleep 1200
 Send {Enter}
 Sleep 50
@@ -205,21 +200,6 @@ Send {End}
 Sleep 50 
 Send {Space}
 return
-
-; refresh at main screen
-; ======================
-^r::
-Sleep 300
-Send {Alt}
-Sleep 300
-Send t
-Send {Down 3}
-Sleep 300
-Send {Enter}
-return
-
-
-
 
 
 ; ======================
@@ -294,9 +274,12 @@ Sleep 100
 Send {Right}
 return
 
-; smart bold title
+; smart bold title (currently testing)
 ; =================
 !t::
+Sleep 50
+Send {End}
+Sleep 50
 Send ^f
 WinWait, Find
 Send :
@@ -1747,39 +1730,8 @@ clipboard = Chest wall: no tenderness
 Send ^v
 return
 
-; =================
-; TODO
-; =================
-
-; add inputbox to clipboard for quick input of time and pertinent negatives/positives/dictations
-
-; \return2 for follow-up return in 2d
-
-; autoexpanding diagnosis'
-; https://www.icd10data.com/ICD10CM/Codes
-;  =conj(l/r) - conjunctivitis -
-;  =lumb - lumbar (?) -
-;  =ank(l/r) - ankle sprain -
-;  =cp - chest pain
-;  =abd - abdominal pain
-;  =bronc - bronchitis - J20.9 -
-;  =abs - abscess
-;     L02.212 - back
-;  =shing - shingles -
-;  =oe(l/r) - otitis externa
-;  =om(l/r) - otitis media
-
-
-; =================
-; Notes: 
-; =================
-
-; =================
-; auto-closing around text
-; =================
-
 ; quotes
-; =================
+; ================
 :*:"::
 Send ""
 Sleep 20
