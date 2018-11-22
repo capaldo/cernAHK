@@ -15,17 +15,17 @@ free time to address them.
 * using the script as-is will disable capslock entirely
 * use ctrl-f inside the script to find the portions of the script which may or may not need to be modified depending on your setup
 
-## Requirements
+### Requirements
 * the main screen (aka launchpoint) needs to be set at 75%, otherwise, many of the commands on that screen may not work
 
-## Included Files
+### Included Files
 * Autohotkey executable with stable macros
 * Macros.ahk file with macros currently being tested and some personal extras for use with other programs
 
 # Overview
+A running list of the keyboard shortcuts and *hotstrings* (words which trigger a command) contained in the default script file.
 
 ## General Tools
-
 ### Capslock to Hyper Key
 * **Description:** Changes the capslock key to act as ctrl + win + shift + alt key combination
 * **Key Combination:** `capslock`
