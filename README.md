@@ -4,7 +4,7 @@ To save time on charting, increase charting accuracy, and reduce burnout.
 # Updates
 *This section is to provide in easy-to-read area for users to read up on what changes have been made and what is being worked on.*
 
-* 11/21/18: Adding README, explanations, and broken down code for user customization (IN PROGRESS)
+* **11/21/18:** Adding README, explanations, and broken down code for user customization (IN PROGRESS)
 
 # Warnings
 All scripts have been tested to prevent any errors which may have clinical implications. Several safeguards have been put in place to prevent any
