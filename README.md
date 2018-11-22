@@ -4,6 +4,8 @@ To save time on charting, increase charting accuracy, and reduce burnout.
 # Updates
 *This section is to provide in easy-to-read area for users to read up on what changes have been made and what is being worked on.*
 
+* 11/21/18: Adding README, explanations, and broken down code for user customization (IN PROGRESS)
+
 # Warnings
 All scripts have been tested to prevent any errors which may have clinical implications. Several safeguards have been put in place to prevent any
 ramifications on patient care. Although this is the case, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes. 
@@ -17,6 +19,8 @@ free time to address them.
 
 ### Requirements
 * the main screen (aka launchpoint) needs to be set at 75%, otherwise, many of the commands on that screen may not work
+* all code listed below required that is labeled REQUIRED
+* knowledge on how to edit Autohotkey (use google)
 
 ### Included Files
 * Autohotkey executable with stable macros
@@ -57,8 +61,16 @@ return
 ```
 
 ### Scrap Note
-* **Description:** Opens a blank notepad if no notepad is open, the key combination will bring the notepad into focus
+* **Description:** Opens a blank notepad if notepad is open, the key combination will bring the notepad into focus
 * **Key Combination:** `capslock + n`
+```autohotkey
+~Capslock & n::
+IfWinExist Untitled - Notepad
+   WinActivate
+else
+   Run Notepad
+return
+```
 
 ### Mouse Location
 * **Description:** Grabs the current mouse location (x and y coordinates)
