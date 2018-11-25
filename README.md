@@ -19,7 +19,7 @@ free time to address them.
 
 ### Requirements
 * the main screen (aka launchpoint) needs to be set at 75%, otherwise, many of the commands on that screen may not work
-* all code listed below required that is labeled REQUIRED
+* all code listed below that is labeled REQUIRED
 * knowledge on how to edit Autohotkey (use google)
 
 ### Included Files
@@ -77,13 +77,21 @@ return
 * **Key Combination:** `capslock + m`
 * **Caveat(s):** 
     - Make sure to close the window or the commands and keyboard will begin to behave incorrectly
+```autohotkey
+~Capslock & m::
+MouseGetPos, xpos, ypos
+MsgBox, The cursor is at X%xpos% Y%ypos%.
+return
+```
 
 ### Cerner Login
 * **Description:** Opens the login page for Cerner
 * **Key Combination:** `alt + ctrl + win + F1`
 * **Caveat(s):** 
     - Does not work while documenting remotely
-
+```autohotkey
+#!^F1::Run http://cernerm/
+```
 
 ## Launchpoint Commands
 
@@ -93,6 +101,40 @@ return
 * **Caveat(s):** 
     - You must click on the patient and hover your mouse (more-or-less) at the vertical center of the patient "rectangle". The horizontal positioning does not matter
     - The Launchpoint *must* be set at 75%
+```autohotkey
+!^a::
+MouseGetPos x, y
+Sleep 100
+MouseMove 335, %y%
+Sleep 100
+MouseMove 335, %y%
+Sleep 100
+MouseGetPos x, y
+Click, left
+Sleep 100
+MouseMove 430, 190, 0, R
+Sleep 1000
+Click, left
+Sleep 1500
+MouseMove %x%, %y%
+Sleep 200
+Click, right
+Sleep 200
+MouseMove, 15, 200, 0, R
+Sleep 300
+Click, left
+SetTitleMatchMode, 2
+WinWait, Providers for
+Sleep 300
+Click, 155, 178 ; CHANGE based on site, staff selection varies
+Sleep 200
+Send ngu ; CHANGE based on doctors last name
+Sleep 100
+Send {Enter}
+Sleep 100
+Send {Enter}
+return
+```
 
 ### Assign Doctor Only
 * **Description:** Assigns only the doctor to the patient under the mouse
@@ -100,6 +142,32 @@ return
 * **Caveat(s):** 
     - You *must* click on the patient and hover your mouse (more-or-less) at the vertical center of the patient "rectangle". The horizontal positioning does not matter
     - The Launchpoint *must* be set at 75%
+```autohotkey
+!a::
+MouseGetPos x, y
+Sleep 100
+MouseMove 335, %y%
+Sleep 100
+MouseMove 335, %y%
+Sleep 100
+MouseGetPos x, y
+MouseMove %x%, %y%
+Sleep 200
+Click, right
+Sleep 200
+MouseMove, 15, 200, 0, R
+Sleep 500
+Click, left
+Sleep 2000
+Click, 165, 220 ; CHANGE to modify staff selection
+Sleep 200
+Send DOC ; CHANGE based on doctors last name
+Sleep 100
+Send {Enter}
+Sleep 100
+Send {Enter}
+return
+```
 
 ### Open New Chart and Insert Chart Template
 * **Description:** Opens a new patient chart and inserts a general chart template
@@ -107,6 +175,87 @@ return
 * **Caveat(s):** 
     - May not work correctly if the system is slow (use win + x if the system is slow)
     - Must edit the script to insert your own autotexts
+```autohotkey
+~Capslock & o::
+MouseGetPos x, y
+Send {Alt}
+Sleep 100
+MouseMove 1163, 585
+Sleep 100
+Send !p
+Sleep 100
+Send {Enter}
+Sleep 100
+Send n
+Sleep 50
+Send d
+Sleep 50
+Send {Enter}
+MouseMove %x%, %y%
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 4000
+Click 1080, 455, 2
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 2500
+Loop, 2 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [hgen ; CHANGE hpi autotext
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [rgen ; CHANGE ros autotext
+Sleep 1200
+Send {Enter}
+Loop, 1 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [pgen ; CHANGE pe autotext
+Sleep 1200
+Send {Enter}
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [mdm_per ; CHANGE mdm autotext
+Sleep 1200
+Send {Enter}
+Loop, 6 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send {Enter}
+Sleep 50
+Send [attest ; CHANGE attestation autotext
+Sleep 1200
+Send {Enter}
+Sleep 50
+; go back to the hpi
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {End}
+Sleep 50 
+Send {Space}
+return
+```
 
 ## Bolding Text
 
