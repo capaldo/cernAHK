@@ -101,6 +101,7 @@ return
 * **Caveat(s):** 
     - You must click on the patient and hover your mouse (more-or-less) at the vertical center of the patient "rectangle". The horizontal positioning does not matter
     - The Launchpoint *must* be set at 75%
+<details>
 ```autohotkey
 !^a::
 MouseGetPos x, y
@@ -135,6 +136,7 @@ Sleep 100
 Send {Enter}
 return
 ```
+</details>
 
 ### Assign Doctor Only
 * **Description:** Assigns only the doctor to the patient under the mouse
