@@ -33,7 +33,13 @@ A running list of the keyboard shortcuts and *hotstrings* (words which trigger a
 ### Capslock to Hyper Key (REQUIRED)
 * **Description:** Changes the capslock key to act as ctrl + win + shift + alt key combination
 * **Key Combination:** `capslock`
-* **Code:**
+
+<details>
+ 
+ <summary>
+ <b>Code:</b>
+</summary> 
+
 ```autohotkey
 #NoEnv 
 #UseHook
@@ -52,17 +58,34 @@ SetCapslockState, AlwaysOff
 return
 ```
 
+</details>
+
 ### Reload AHK (REQUIRED)
 * **Description:** Reloads the program to either stop a haywire script or to reload and implement any newly added script
 * **Key Combination:** `win + x`
-* **Code:**
+
+<details>
+ 
+ <summary>
+ <b>Code:</b>
+</summary> 
+
 ```autohotkey
 #x::Reload
 ```
 
+</details>
+
 ### Scrap Note
 * **Description:** Opens a blank notepad if notepad is open, the key combination will bring the notepad into focus
 * **Key Combination:** `capslock + n`
+
+<details>
+ 
+ <summary>
+ <b>Code:</b>
+</summary> 
+
 ```autohotkey
 ~Capslock & n::
 IfWinExist Untitled - Notepad
@@ -72,11 +95,20 @@ else
 return
 ```
 
+</details>
+
 ### Mouse Location
 * **Description:** Grabs the current mouse location (x and y coordinates)
 * **Key Combination:** `capslock + m`
 * **Caveat(s):** 
     - Make sure to close the window or the commands and keyboard will begin to behave incorrectly
+
+<details>
+ 
+ <summary>
+ <b>Code:</b>
+</summary>
+
 ```autohotkey
 ~Capslock & m::
 MouseGetPos, xpos, ypos
@@ -84,14 +116,25 @@ MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 ```
 
+</details>
+
 ### Cerner Login
 * **Description:** Opens the login page for Cerner
 * **Key Combination:** `alt + ctrl + win + F1`
 * **Caveat(s):** 
     - Does not work while documenting remotely
+    
+<details>
+ 
+ <summary>
+ <b>Code:</b>
+</summary>
+
 ```autohotkey
 #!^F1::Run http://cernerm/
 ```
+
+</details>
 
 ## Launchpoint Commands
 
@@ -151,6 +194,13 @@ return
 * **Caveat(s):** 
     - You *must* click on the patient and hover your mouse (more-or-less) at the vertical center of the patient "rectangle". The horizontal positioning does not matter
     - The Launchpoint *must* be set at 75%
+
+<details>
+ 
+ <summary>
+ <b>Code:</b>
+</summary>
+
 ```autohotkey
 !a::
 MouseGetPos x, y
@@ -177,6 +227,8 @@ Sleep 100
 Send {Enter}
 return
 ```
+
+</details>
 
 ### Open New Chart and Insert Chart Template
 * **Description:** Opens a new patient chart and inserts a general chart template
