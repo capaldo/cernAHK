@@ -91,7 +91,7 @@ WinWait, Providers for
 Sleep 300
 Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send DOC ; CHANGE based on doctors last name
+Send ngu ; CHANGE based on doctors last name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -1252,6 +1252,7 @@ return
 
 ; current time
 ~Capslock & t::
+Sleep 300
 Send !c
 Sleep 100
 Send {Enter}
@@ -1551,8 +1552,6 @@ return
 ; auto insert ROS based on HPI
 ; ===============================
 ~Capslock & r::
-Sleep 300
-Send ^c
 Clipboard := RegExReplace(Clipboard, "and")
 str:= clipboard
 s:=StrSplit(str, ", ")
@@ -2003,13 +2002,9 @@ Send +{Tab}
 return
 
 #Numpad4::
-Click 340, 410
-Sleep 100
-Click 650, 400
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
+Click 340, 455
+Sleep 300
+Click 777, 535, 2
 return
 
 ; fu
@@ -2068,5 +2063,5 @@ return
 
 #!Numpad3::
 SetTitleMatchMode,2
-WinActivate, Google Chrome
+WinActivate, Organizer for Ceballos
 return
