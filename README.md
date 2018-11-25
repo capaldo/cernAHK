@@ -105,7 +105,7 @@ return
 <details>
  
  <summary>
- **Code:**
+ <b>Code:</b>
 </summary> 
 
 ```autohotkey
