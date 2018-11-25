@@ -102,7 +102,7 @@ return
     - You must click on the patient and hover your mouse (more-or-less) at the vertical center of the patient "rectangle". The horizontal positioning does not matter
     - The Launchpoint *must* be set at 75%   
 <details>
- 
+ <summary>**Code:**</summary> 
 ```autohotkey
 !^a::
 MouseGetPos x, y
