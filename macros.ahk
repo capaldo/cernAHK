@@ -20,7 +20,8 @@ SetCapslockState, AlwaysOff
  KeyWait, Capslock
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
  if (A_PriorKey = "Capslock") {
-     Send {Esc}
+     Send {Esc}d
+
  }
 return
 	
@@ -91,7 +92,7 @@ WinWait, Providers for
 Sleep 300
 Click, 155, 178 ; CHANGE based on site, staff selection varies
 Sleep 200
-Send ngu ; CHANGE based on doctors last name
+Send %variable1% ; CHANGE based on doctors last name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -115,10 +116,12 @@ Sleep 200
 MouseMove, 15, 200, 0, R
 Sleep 500
 Click, left
-Sleep 2000
-Click, 165, 220 ; CHANGE to modify staff selection
+SetTitleMatchMode, 2
+WinWait, Providers for
+Sleep 100
+Click, 155, 175 ; CHANGE to modify staff selection
 Sleep 200
-Send DOC ; CHANGE based on doctors last name
+Send %variable1% ; CHANGE based on doctors last name
 Sleep 100
 Send {Enter}
 Sleep 100
@@ -134,9 +137,7 @@ Sleep 100
 MouseMove 1163, 585
 Sleep 100
 Send !p
-Sleep 100
-Send {Enter}
-Sleep 100
+Sleep 150
 Send n
 Sleep 50
 Send d
@@ -145,8 +146,8 @@ Send {Enter}
 MouseMove %x%, %y%
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 4000
-Click 1080, 455, 2
+Sleep 4500
+Click 1080, 400, 2
 SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 2500
@@ -326,6 +327,8 @@ Sleep 100
 Send {Enter}
 Sleep 100
 Send {Enter}
+Sleep 300
+SetTitleMatchMode, 2
 WinWait, Print
 Sleep 100
 Send {Enter}
@@ -370,13 +373,11 @@ Send {Alt}
 Sleep 300
 Send !c
 Sleep 100
-Send {Down}
-Sleep 100
 Send {Enter}
 Sleep 1000
-Click, 326, 380 ; click follow-up
+Click, 326, 305 ; click follow-up
 Sleep 300
-Click, 1750, 333 ; click plus
+Click, 1750, 280 ; click plus
 WinWait, Patient Education
 Click, 160, 580, 2 ; CHANGE double click basic follow-up
 Sleep 400
@@ -481,28 +482,28 @@ return
 ; ======================
 !1::
 Sleep 50
-Click, 115, 140
+Click, 115, 90
 return
 
 ; select tab 2
 ; ======================
 !2::
 Sleep 50
-Click, 265, 140
+Click, 265, 90
 return
 
 ; select tab 3
 ; ======================
 !3::
 Sleep 50
-Click, 450, 140
+Click, 450, 90
 return
 
 ; select tab 4
 ; ======================
 !4::
 Sleep 50
-Click, 630, 140
+Click, 630, 90
 return
 
 ; select line left or right
@@ -573,34 +574,48 @@ return
 ; open patient pharmacy
 ; ======================
 ^p::
+Sleep 50
+Send {Alt}
+Sleep 50
 Send !c
-Sleep 100
-Send {Enter}
 Sleep 50
 Send pa
+Sleep 100
+WinWait Review Patient Preferred Pharmacy
+WinActivate Review Patient Preferred Pharmacy
+Sleep 100
+Click 157, 165
+Loop, 3 {
 Sleep 50
-Click, 149, 162
+Send {Tab}
+Sleep 50
+}
+Send ^a
+Sleep 50
+Send {Backspace}
+Sleep 50
+Send +{Tab 2}
 return
 
 ; tracking select
 ; ======================
 ^Numpad1::
 Sleep 100
-MouseMove 65,327
+MouseMove 65, 270
 Sleep 50
-Click 65, 327
+Click 65, 270
 return
 
 ^Numpad2::
 Sleep 100
-MouseMove 65, 355
+MouseMove 65, 300
 Sleep 50
 Click 65, 355
 return
 
 ^Numpad3::
 Sleep 100
-MouseMove 65,399
+MouseMove 65, 330
 Sleep 50
 Click 65, 390
 return
@@ -921,6 +936,11 @@ return
 :*:\ecch::
 Send ecchymosis
 return
+
+:*:\vpt::
+Send vertebral point tenderness
+return
+
 ; ======================
 
 
@@ -1049,6 +1069,8 @@ return
 ; smart clear line
 ; =================
 ~Capslock & c::
+Send {End}
+Sleep 50
 Send ^f
 WinWait, Find
 Send :
@@ -1179,7 +1201,7 @@ Send +{Tab}
 Sleep 50
 Send [dmedtest
 Sleep 1200
-Loop, 2 {
+Loop, 3 {
     Sleep 50
     Send {Enter}
     Sleep 50
@@ -1252,7 +1274,9 @@ return
 
 ; current time
 ~Capslock & t::
-Sleep 300
+Sleep 100
+Send {Alt}
+Sleep 50
 Send !c
 Sleep 100
 Send {Enter}
@@ -1673,6 +1697,31 @@ Sleep 200
 Send {End}
 return
 
+:*:presp::
+Send ^f
+WinWait, Find
+Sleep 50
+Send Physical Examination
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {Tab}
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send Respiratory
+Send {:}
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 100
+Send {End}
+return
+
 :*:penmt::
 Send ^f
 WinWait, Find
@@ -1770,6 +1819,33 @@ WinWait, Opened by
 Sleep 200
 Send {End}
 return
+
+
+:*:pgastro::
+Send ^f
+WinWait, Find
+Sleep 50
+Send Physical Examination
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {Tab}
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send Gastrointestinal
+Send {:}
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {End}
+return
+
 ; ============================================================
 
 :*:\chestwall::
@@ -2058,10 +2134,28 @@ return
 
 #!Numpad2::
 SetTitleMatchMode,2
-WinActivate, Organizer for Nguyen
+WinActivate, Organizer for %variable1%
 return
 
 #!Numpad3::
 SetTitleMatchMode,2
-WinActivate, Organizer for Ceballos
+WinActivate, Organizer for Ceba
+return
+
+#^!1::
+InputBox, variable1, Reference, Please enter doctors last name:,,,,,,,,%variable1%
+return
+
+!^#2::
+InputBox, variable1, Reference, How Long:,,,,,,,,%variabletime%
+Loop, 7 {
+Sleep 50
+Send {Tab}
+Sleep 50
+}							
+vartime:=%variabletime% * 1000
+Sleep %vartime%
+SetTitleMatchMode,2
+WinActivate, Safely
+Send {Enter}
 return
