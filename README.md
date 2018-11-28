@@ -336,9 +336,32 @@ return
     - Only bolds 1 line at a time
     - Does not bold the line if there is an already existing bolded word
 
+ <details>
+ 
+ <summary>
+ <b>Code:</b>
+</summary>
+```autohotkey
+!b::
+Send {Home}
+Sleep 100
+Send +{Down}
+Sleep 100
+Send ^b
+Sleep 100
+Send {Right}
+return
+```
+</details>
+
 ### Bold Right of Caret
 * **Description:** Bolds right of where you currently are in the text
 * **Key Combination:** `capslock + l`
+
+```autohotkey
+
+```
+
 
 ### Bold Left of Caret
 * **Description:** Bolds left of where you currently are in the text
