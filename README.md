@@ -236,6 +236,14 @@ return
 * **Caveat(s):** 
     - May not work correctly if the system is slow (use win + x if the system is slow)
     - Must edit the script to insert your own autotexts
+
+<details>
+ 
+ <summary>
+ <b>Code:</b>
+</summary>
+
+
 ```autohotkey
 ~Capslock & o::
 MouseGetPos x, y
@@ -317,6 +325,7 @@ Sleep 50
 Send {Space}
 return
 ```
+</details>
 
 ## Bolding Text
 
