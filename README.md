@@ -1,6 +1,3 @@
-# Purpose
-Save time on charting, increase charting accuracy, and reduce burnout.
-
 # Updates
 *This section is to provide in easy-to-read area for users to read up on what changes have been made and what is being worked on.*
 
