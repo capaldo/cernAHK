@@ -1,3 +1,4 @@
+
 ; ======================
 ; notes
 ; ======================
@@ -20,7 +21,7 @@ SetCapslockState, AlwaysOff
  KeyWait, Capslock
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
  if (A_PriorKey = "Capslock") {
-     Send {Esc}d
+     Send {Esc}
 
  }
 return
@@ -285,6 +286,8 @@ return
 ; smart bold title
 ; =================
 !t::
+Send {End}
+Sleep 50
 Send ^f
 WinWait, Find
 Send :
@@ -574,14 +577,12 @@ return
 ; open patient pharmacy
 ; ======================
 ^p::
-Sleep 50
-Send {Alt}
-Sleep 50
 Send !c
 Sleep 50
 Send pa
-Sleep 100
+Sleep 200
 WinWait Review Patient Preferred Pharmacy
+Sleep 200
 WinActivate Review Patient Preferred Pharmacy
 Sleep 100
 Click 157, 165
@@ -1274,12 +1275,7 @@ return
 
 ; current time
 ~Capslock & t::
-Sleep 100
-Send {Alt}
-Sleep 50
 Send !c
-Sleep 100
-Send {Enter}
 Sleep 100
 Send a
 SetTitleMatchMode, 2
@@ -1315,10 +1311,9 @@ Send ^x
 Sleep 100
 Send !c
 Sleep 100
-Send {Enter}
-Sleep 100
 Send a
-Sleep 500
+SetTitleMatchMode, 2
+WinWait, Ad Hoc
 Send {Tab}
 Sleep 50
 Send u
@@ -1328,17 +1323,30 @@ Sleep 50
 Send {Tab}
 Sleep 50
 Send {Enter}
-Sleep 300
+SetTitleMatchMode, 2
+WinWait, Time Seen
+Sleep 200
 Send t
 Sleep 50
 Send {Tab}
 Sleep 50
+Send n
+Sleep 50
+Send ^a
+Sleep 50
 Send ^v
-Sleep 100
+Sleep 50
+Click 250, 70
+Sleep 50
+Send ^a
+Sleep 50
+Send ^v
+Sleep 50
 MouseMove 22, 37
-Sleep 100
+Sleep 500
 Click 22, 37
 return
+
 
 ; =================
 ; chart framework
@@ -1971,8 +1979,6 @@ return
 ; =================
 F6::
 Send !c
-Sleep 100
-Send {Enter}
 Sleep 50
 Send c
 Sleep 50
@@ -2158,4 +2164,11 @@ Sleep %vartime%
 SetTitleMatchMode,2
 WinActivate, Safely
 Send {Enter}
+return
+
+#!^6::
+Loop, 30 {
+Send {Enter}
+Sleep 3000
+}
 return
