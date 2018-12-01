@@ -19,6 +19,7 @@ free time to address them.
 
 ### Requirements
 * the main screen (aka launchpoint) needs to be set at 75%, otherwise, many of the commands on that screen may not work
+* the main screen toolbar must be set by unchecking all options under View > Toolbar > Navigation Toolbar and enabling the "Patient Toolbar" under View > Toolbar >
 * all code listed below that is labeled REQUIRED
 * knowledge on how to edit Autohotkey (use google)
 
@@ -358,14 +359,27 @@ return
 * **Description:** Bolds right of where you currently are in the text
 * **Key Combination:** `capslock + l`
 
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
 ```autohotkey
 
 ```
+</details>
 
 
 ### Bold Left of Caret
 * **Description:** Bolds left of where you currently are in the text
 * **Key Combination:** `capslock + j`
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+```autohotkey
+
+```
+</details>
 
 ## List Item Shortcuts
 
@@ -375,15 +389,42 @@ return
 * **Caveat(s):**
     - Requires to create list items inside autotexts
 
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+```autohotkey
+
+```
+</details>
+
 ### Change Down and Bold
 * **Description:** Changes the list item to 1 option down and bolds that item
 * **Key Combination:** `capslock + k`
 * **Caveat(s):**
     - Requires to create list items inside autotexts
 
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+```autohotkey
+
+```
+</details>
+
 ### Bold Title (currently testing)
 * **Description:** Bolds the title subsection in each part of the chart
 * **Key Combination:** `alt + t`
+
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+```autohotkey
+
+```
+</details>
 
 
 ## Printing
