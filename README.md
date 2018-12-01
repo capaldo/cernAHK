@@ -36,9 +36,8 @@ A running list of the keyboard shortcuts and *hotstrings* (words which trigger a
 * **Key Combination:** `capslock`
 
 <details>
- 
- <summary>
- <b>Code:</b>
+<summary>
+<b>Code:</b>
 </summary> 
 
 ```autohotkey
@@ -58,23 +57,20 @@ SetCapslockState, AlwaysOff
  }
 return
 ```
-
 </details>
 
 ### Reload AHK (REQUIRED)
 * **Description:** Reloads the program to either stop a haywire script or to reload and implement any newly added script
 * **Key Combination:** `win + x`
 
-<details>
- 
- <summary>
+<details> 
+<summary>
  <b>Code:</b>
 </summary> 
 
 ```autohotkey
 #x::Reload
 ```
-
 </details>
 
 ### Scrap Note
@@ -82,9 +78,8 @@ return
 * **Key Combination:** `capslock + n`
 
 <details>
- 
- <summary>
- <b>Code:</b>
+<summary>
+<b>Code:</b>
 </summary> 
 
 ```autohotkey
@@ -95,7 +90,6 @@ else
    Run Notepad
 return
 ```
-
 </details>
 
 ### Mouse Location
@@ -105,8 +99,7 @@ return
     - Make sure to close the window or the commands and keyboard will begin to behave incorrectly
 
 <details>
- 
- <summary>
+<summary>
  <b>Code:</b>
 </summary>
 
@@ -116,7 +109,6 @@ MouseGetPos, xpos, ypos
 MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 ```
-
 </details>
 
 ### Cerner Login
@@ -125,8 +117,7 @@ return
 * **Caveat(s):** 
     - Does not work while documenting remotely
     
-<details>
- 
+ <details>
  <summary>
  <b>Code:</b>
 </summary>
@@ -134,7 +125,6 @@ return
 ```autohotkey
 #!^F1::Run http://cernerm/
 ```
-
 </details>
 
 ## Launchpoint Commands
@@ -197,7 +187,6 @@ return
     - The Launchpoint *must* be set at 75%
 
 <details>
- 
  <summary>
  <b>Code:</b>
 </summary>
@@ -228,7 +217,6 @@ Sleep 100
 Send {Enter}
 return
 ```
-
 </details>
 
 ### Open New Chart and Insert Chart Template
@@ -239,11 +227,9 @@ return
     - Must edit the script to insert your own autotexts
 
 <details>
- 
- <summary>
- <b>Code:</b>
+<summary>
+<b>Code:</b>
 </summary>
-
 
 ```autohotkey
 ~Capslock & o::
@@ -337,11 +323,11 @@ return
     - Only bolds 1 line at a time
     - Does not bold the line if there is an already existing bolded word
 
- <details>
- 
- <summary>
- <b>Code:</b>
+<details>
+<summary>
+<b>Code:</b>
 </summary>
+
 ```autohotkey
 !b::
 Send {Home}
@@ -363,6 +349,7 @@ return
 <summary>
 <b>Code:</b>
 </summary> 
+ 
 ```autohotkey
 
 ```
@@ -376,6 +363,7 @@ return
 <summary>
 <b>Code:</b>
 </summary> 
+ 
 ```autohotkey
 
 ```
@@ -393,6 +381,7 @@ return
 <summary>
 <b>Code:</b>
 </summary> 
+ 
 ```autohotkey
 
 ```
@@ -408,6 +397,7 @@ return
 <summary>
 <b>Code:</b>
 </summary> 
+ 
 ```autohotkey
 
 ```
@@ -421,6 +411,7 @@ return
 <summary>
 <b>Code:</b>
 </summary> 
+ 
 ```autohotkey
 
 ```
@@ -433,27 +424,87 @@ return
 * **Description:** Prints the selected document when inside the chart under the *Documentation* section
 * **Key Combination:** `alt + p`
 
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+ 
+```autohotkey
+
+```
+</details>
+
 ## Navigation
 
 ### Go to Launchpoint
 * **Description:** Goes to the Launchpoint
 * **Key Combination:** `ctrl + 1`
 
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+ 
+```autohotkey
+
+```
+</details>
+
 ### Go to Tracking List
 * **Description:** Goes to the Tracking List
 * **Key Combination:** `ctrl + 2`
+
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+ 
+```autohotkey
+
+```
+</details>
 
 ### Go to Workflow 
 * **Description:** Opens the workflow
 * **Key Combination:** `alt + ctrl + w`
 
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+ 
+```autohotkey
+
+```
+</details>
+
 ### Open Documentation
 * **Description:** Opens the patient to the Documentation section
 * **Key Combination:** `ctrl + d`
 
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+ 
+```autohotkey
+
+```
+</details>
+
 ### Save Chart
 * **Description:** Saves the current chart that is open
 * **Key Combination:** `capslock + s`
+
+<details>
+<summary>
+<b>Code:</b>
+</summary> 
+ 
+```autohotkey
+
+```
+</details>
 
 ## Discharge Navigation
 * TODO: currently needs a prelude description to ensure user setup is correct
