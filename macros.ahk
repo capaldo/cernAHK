@@ -439,12 +439,10 @@ return
 
 ; go to workflow
 ; ======================
-^!w::
+^w::
 MouseMove 1163, 585
 Sleep 200
 Send !c
-Sleep 200
-Send {Down}
 Sleep 100
 Send {Enter}
 return
@@ -562,16 +560,14 @@ return
 ; ======================
 ~Capslock & w::
 Send !p
-Sleep 50
-Send {Enter}
 Sleep 100
 Send n
 Sleep 100
 Send d
 Sleep 3500
-MouseMove 688, 422
+MouseMove 700, 365
 Sleep 50
-Click, 688, 422, 2
+Click, 700, 365, 2
 return
 
 ; open patient pharmacy
@@ -2067,7 +2063,6 @@ Click 340, 410
 Sleep 100
 Click 544, 488
 return
-
 
 #Numpad3::
 Click 340, 430
