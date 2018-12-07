@@ -525,8 +525,6 @@ MouseMove 1163, 585
 Sleep 100
 Send !c
 Sleep 100
-Send {Down}
-Sleep 100
 Send d
 Sleep 100
 Send {Enter}
