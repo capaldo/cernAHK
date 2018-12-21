@@ -1,6 +1,5 @@
 ; Variables (set before using)
-variable1 := Last, First
-
+variable1 := LastName
 
 ; ======================
 ; notes
@@ -25,10 +24,8 @@ SetCapslockState, AlwaysOff
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
  if (A_PriorKey = "Capslock") {
      Send {Esc}
-
  }
 return
-	
 
 ; ======================
 ; miscellaneous
@@ -57,8 +54,6 @@ return
 ; open cerner login
 ; =================
 #!^F1::Run http://cernerm/
-
-
 
 
 
@@ -342,8 +337,6 @@ return
 
 
 
-
-
 ; ======================
 ; discharge
 ; ======================
@@ -431,8 +424,6 @@ Click, 186, 383, 2 ; CHANGE double click follow-up AMA
 Sleep 300
 Click, 776, 1014 ; click ok when the follow-up is right aligned
 return
-
-
 
 
 
@@ -1058,6 +1049,7 @@ return
 :*:=fu::
 Send z09
 return
+
 ; ======================
 
 
@@ -1108,11 +1100,15 @@ return
 :*:\teta::
 Send ^f
 WinWait, Find
-Send Immunizations: up-to-date
+Send Immunizations
 Sleep 50
 Send {Escape}
 Sleep 50
-Send {End}
+Send {Tab}
+Sleep 50 
+Send ^{End}
+Sleep 50
+Send {Enter}
 Sleep 50
 Send {Enter}
 Sleep 50
