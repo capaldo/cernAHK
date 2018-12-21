@@ -1,5 +1,6 @@
 ; Variables (set before using)
-variable1 := LastName
+variable1 := Lastname
+
 
 ; ======================
 ; notes
@@ -26,7 +27,8 @@ SetCapslockState, AlwaysOff
      Send {Esc}
  }
 return
-
+	
+ 
 ; ======================
 ; miscellaneous
 ; ======================
@@ -54,6 +56,8 @@ return
 ; open cerner login
 ; =================
 #!^F1::Run http://cernerm/
+
+
 
 
 
@@ -337,6 +341,8 @@ return
 
 
 
+
+
 ; ======================
 ; discharge
 ; ======================
@@ -424,6 +430,8 @@ Click, 186, 383, 2 ; CHANGE double click follow-up AMA
 Sleep 300
 Click, 776, 1014 ; click ok when the follow-up is right aligned
 return
+
+
 
 
 
@@ -1049,7 +1057,6 @@ return
 :*:=fu::
 Send z09
 return
-
 ; ======================
 
 
@@ -1103,12 +1110,12 @@ WinWait, Find
 Send Immunizations
 Sleep 50
 Send {Escape}
-Sleep 50
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 100
 Send {Tab}
-Sleep 50 
-Send ^{End}
 Sleep 50
-Send {Enter}
+Send ^{End}
 Sleep 50
 Send {Enter}
 Sleep 50
@@ -2172,25 +2179,20 @@ return
 ; P-Zone
 ; ======================
 
-#!Numpad1::
+#^Numpad1::
 SetTitleMatchMode,2
 WinActivate, Organizer for Capaldo
 return
 
-#!Numpad2::
+#^Numpad0::
 SetTitleMatchMode,2
-WinActivate, Organizer for %variable1%
+WinActivate, %variable1%
 return
 
-#!Numpad3::
-SetTitleMatchMode,2
-WinActivate, Organizer for Ceba
+#^Numpad3::
+SetTitleMatchMode 2
+winactivate, Google Chrome
 return
-
-#^!1::
-InputBox, variable1, Reference, Please enter doctors last name:,,,,,,,,%variable1%
-return
-
 
 ; prov sign
 #!^6::
