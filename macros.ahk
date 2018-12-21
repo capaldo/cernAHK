@@ -507,6 +507,60 @@ Sleep 50
 Click, 630, 90
 return
 
+; go to hpi
+:*:\hpi::
+Sleep 50
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^{End}
+Sleep 50 
+Send {Space}
+return
+
+; go to ros
+:*:\ros::
+Sleep 50
+Send ^f
+WinWait, Find
+Send Review of Sys
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^{End}
+Sleep 50 
+Send {Space}
+return
+
+; go to MDM
+:*:\mdm::
+Sleep 50
+Send ^f
+WinWait, Find
+Send Medical Decision M
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^{End}
+Sleep 50 
+Send {Space}
+return
+
 ; select line left or right
 ; ======================
 ~Capslock & Up::
@@ -1099,6 +1153,20 @@ return
 ; change hpi to peds
 ; ======================
 :*:\hpeds::
+Sleep 50
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send {End}
+Sleep 50 
+Send {Space}
 Sleep 100
 Send +{F9}
 Sleep 100
@@ -1141,6 +1209,20 @@ return
 
 ; change discharge to peds
 :*:\dpeds::
+Sleep 50
+Send ^f
+WinWait, Find
+Send Patient Instructions
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send {End}
+Sleep 50 
+Send {Space}
 Sleep 100
 Send +{F9}
 Send {Down}
@@ -1155,7 +1237,6 @@ return
 
 ; discharge with medication
 :*:\dcmed::
-Send ^x
 Sleep 50
 Send ^f
 WinWait Find
@@ -1183,7 +1264,6 @@ return
 
 ; insert medication with testing
 :*:\dctest::
-Send ^x
 Sleep 50
 Send ^f
 WinWait Find
@@ -1215,7 +1295,6 @@ return
 
 ; ama blurb
 :*:\ama::
-Send ^x
 Sleep 50
 Send ^f
 WinWait Find
@@ -2094,108 +2173,6 @@ return
 ; P-Zone
 ; ======================
 
-; open dc wkflw
-#NumpadAdd::
-Sleep 100
-Send {Alt}
-Sleep 100
-Send !c
-Sleep 50
-Send {Enter}
-Sleep 200
-Loop, 2 {
-Sleep 50
-Send u
-Sleep 50
-}
-Send {Enter}
-return
-
-; dc dx
-#Numpad1::
-Click 340, 380
-Sleep 100
-Click 650, 400
-Loop, 4 {
-Sleep 100
-Send {Tab}
-Sleep 100
-}
-Send {Delete}
-return
-
-; dc ord
-#Numpad2::
-Click 340, 410
-Sleep 100
-Click 544, 488
-return
-
-
-#Numpad3::
-Click 340, 430
-Sleep 100
-Click, 1850, 500
-SetTitleMatchMode, 2
-WinWait, Reconciliation
-Sleep 500
-Click 990, 770
-Sleep 100
-Send +{Tab}
-Sleep 50
-Send +{Tab}
-return
-
-#Numpad4::
-Click 340, 455
-Sleep 300
-Click 777, 535, 2
-return
-
-; fu
-#Numpad5::
-Click 340, 480
-Sleep 100
-Click 480, 380
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-Sleep 100
-WinWait, Patient Education
-Sleep 100
-Click 240, 380, 2
-return
-
-#NumpadSub::
-MouseMove 1163, 585
-Sleep 100
-Send !c
-Sleep 50
-Send {Down}
-Sleep 100
-Send d
-Sleep 100
-Send {Enter}
-Sleep 1500
-Send ^n
-Sleep 2500
-Click 1200, 500, 2
-Sleep 7000
-Send {Tab}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {Enter}
-SetTitleMatchMode, 2
-WinWait, Note
-Sleep 500
-Click, 870, 650
-WinWait, Print
-Sleep 300
-Send {Enter}
-return
-
 #!Numpad1::
 SetTitleMatchMode,2
 WinActivate, Organizer for Capaldo
@@ -2230,62 +2207,10 @@ Send {Enter}
 return
 
 
-
+; prov sign
 #!^6::
 Loop, 30 {
 Send {Enter}
 Sleep 3000
 }
-return
-
-:*:\hpi::
-Sleep 50
-Send ^f
-WinWait, Find
-Send History of Present
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send {Tab}
-Sleep 50
-Send ^{End}
-Sleep 50 
-Send {Space}
-return
-
-:*:\ros::
-Sleep 50
-Send ^f
-WinWait, Find
-Send Review of Sys
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send {Tab}
-Sleep 50
-Send ^{End}
-Sleep 50 
-Send {Space}
-return
-
-
-:*:\mdm::
-Sleep 50
-Send ^f
-WinWait, Find
-Send Medical Decision M
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send {Tab}
-Sleep 50
-Send ^{End}
-Sleep 50 
-Send {Space}
 return
