@@ -1,3 +1,6 @@
+; Variables (set before using)
+variable1 := Last, First
+
 
 ; ======================
 ; notes
@@ -2190,20 +2193,6 @@ return
 
 #^!1::
 InputBox, variable1, Reference, Please enter doctors last name:,,,,,,,,%variable1%
-return
-
-!^#2::
-InputBox, variable1, Reference, How Long:,,,,,,,,%variabletime%
-Loop, 7 {
-Sleep 50
-Send {Tab}
-Sleep 50
-}							
-vartime:=%variabletime% * 1000
-Sleep %vartime%
-SetTitleMatchMode,2
-WinActivate, Safely
-Send {Enter}
 return
 
 
