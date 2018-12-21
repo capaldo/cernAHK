@@ -525,6 +525,8 @@ MouseMove 1163, 585
 Sleep 100
 Send !c
 Sleep 100
+Send {Down}
+Sleep 100
 Send d
 Sleep 100
 Send {Enter}
@@ -539,7 +541,7 @@ Sleep 100
 MouseGetPos x, y
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 817, 994
 Sleep 100
 MouseMove %x%, %y%
 return
@@ -850,6 +852,11 @@ return
 :*:\rpt::
 Send reports
 return
+
+:*:\neckp::
+Send neck pain
+return
+
 ; ======================
 
 
@@ -871,10 +878,6 @@ return
 ; ======================
 :*:\mode::
 Send moderate
-return
-
-:*:\md::
-Send mild
 return
 
 :*:\seve::
@@ -1212,8 +1215,26 @@ return
 
 ; ama blurb
 :*:\ama::
+Send ^x
+Sleep 50
+Send ^f
+WinWait Find
+Send Patient Instructions
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait Opened by
+Sleep 100
+Send {Tab}
+Sleep 50
+Send +{Tab}
+Sleep 50
 Send [ama
-Sleep 500
+Sleep 1200
+    Sleep 50
+    Send {Enter}
+Send [script
+Sleep 1200
 Send {Enter}
 return
 
@@ -1422,7 +1443,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:work2::
@@ -1437,7 +1458,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:work3::
@@ -1452,7 +1473,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:work4::
@@ -1467,7 +1488,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:work5::
@@ -1482,7 +1503,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:school1::
@@ -1497,7 +1518,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:school2::
@@ -1512,7 +1533,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:school3::
@@ -1527,7 +1548,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:school4::
@@ -1542,7 +1563,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 :*:school5::
@@ -1557,7 +1578,7 @@ Sleep 50
 Send {Enter}
 KeyWait, LButton, D
 Sleep 100
-Click 948, 664
+Click 819, 994
 return
 
 ; =================
@@ -1748,6 +1769,30 @@ Sleep 200
 Send {End}
 return
 
+:*:pneck::
+Send ^f
+WinWait, Find
+Sleep 50
+Send Physical Examination
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {Tab}
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send Neck:
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {End}
+return
+
 :*:pback::
 Send ^f
 WinWait, Find
@@ -1789,6 +1834,30 @@ WinWait, Find
 Sleep 20
 Send Neurological:
 Send {Enter}
+Sleep 20
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 100
+Send {End}
+return
+
+:*:pcardio::
+Send ^f
+WinWait, Find
+Sleep 20
+Send Physical Examination
+Sleep 20
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 200
+Send {Tab}
+Sleep 20
+Send ^f
+WinWait, Find
+Sleep 20
+Send Cardiovascular:
 Sleep 20
 Send {Escape}
 SetTitleMatchMode, 2
@@ -2062,6 +2131,7 @@ Sleep 100
 Click 544, 488
 return
 
+
 #Numpad3::
 Click 340, 430
 Sleep 100
@@ -2159,9 +2229,63 @@ WinActivate, Safely
 Send {Enter}
 return
 
+
+
 #!^6::
 Loop, 30 {
 Send {Enter}
 Sleep 3000
 }
+return
+
+:*:\hpi::
+Sleep 50
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^{End}
+Sleep 50 
+Send {Space}
+return
+
+:*:\ros::
+Sleep 50
+Send ^f
+WinWait, Find
+Send Review of Sys
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^{End}
+Sleep 50 
+Send {Space}
+return
+
+
+:*:\mdm::
+Sleep 50
+Send ^f
+WinWait, Find
+Send Medical Decision M
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^{End}
+Sleep 50 
+Send {Space}
 return
