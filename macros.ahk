@@ -1,5 +1,5 @@
 ; Variables (set before using)
-variable1 := LastName
+variable1 := Diaz
 
 
 ; ======================
@@ -1319,9 +1319,6 @@ Send [ama
 Sleep 1200
     Sleep 50
     Send {Enter}
-Send [script
-Sleep 1200
-Send {Enter}
 return
 
 ; insert moderate + constant blurb
