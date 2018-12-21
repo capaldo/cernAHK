@@ -1,5 +1,5 @@
 ; Variables (set before using)
-variable1 := Diaz
+variable1 := LastName
 
 
 ; ======================
