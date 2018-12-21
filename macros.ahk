@@ -1,5 +1,5 @@
 ; Variables (set before using)
-variable1 := Lastname
+variable1 := Diaz
 
 
 ; ======================
@@ -25,10 +25,11 @@ SetCapslockState, AlwaysOff
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
  if (A_PriorKey = "Capslock") {
      Send {Esc}
+
  }
 return
 	
- 
+
 ; ======================
 ; miscellaneous
 ; ======================
@@ -384,9 +385,9 @@ Click, 326, 305 ; click follow-up
 Sleep 300
 Click, 1750, 280 ; click plus
 WinWait, Patient Education
-Click, 160, 580, 2 ; CHANGE double click basic follow-up
+Click, 160, 595, 2 ; CHANGE double click basic follow-up
 Sleep 400
-Click, 780, 1000 ; click 'Ok'
+Click, 780, 1010 ; click 'Ok'
 return
 
 ; insert education
