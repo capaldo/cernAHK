@@ -2,13 +2,10 @@
 *This section is to provide in easy-to-read area for users to read up on what changes have been made and what is being worked on.*
 
 * **11/21/18:** Adding README, explanations, and broken down code for user customization (IN PROGRESS)
+* **12/01/18:** Added toolbar setup to prevent the buttons from stealing keyboard shortcuts.
 
 # Warnings
-All scripts have been tested to prevent any errors which may have clinical implications. Several safeguards have been put in place to prevent any
-ramifications on patient care. Although this is the case, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes. 
-
-If there are any recommendations improvement or problems please submit an issue and I will do my best during my
-free time to address them.
+All scripts do not venture into the orders section of the chart but, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes.
 
 # General Information
 * using the script as-is will disable capslock entirely
