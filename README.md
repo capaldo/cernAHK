@@ -2,7 +2,7 @@
 *This section is to provide in easy-to-read area for users to read up on what changes have been made and what is being worked on.*
 
 * **11/21/18:** Adding README, explanations, and broken down code for user customization (IN PROGRESS)
-* **12/01/18:** Added toolbar setup to prevent the buttons from stealing keyboard shortcuts.
+* **12/01/18:** Added toolbar setup to prevent the buttons from "stealing" keyboard shortcuts.
 
 # Warnings
 All scripts do not venture into the orders section of the chart but, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes.
