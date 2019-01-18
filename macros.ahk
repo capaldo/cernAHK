@@ -2223,3 +2223,12 @@ Send {Enter}
 Sleep 3000
 }
 return
+
+; example on how to quickly add a statement to be inserted into the chart via clipboard-setting and pasting
+; clipboard := ""
+; clipboard =
+; (
+; Patient verbalized understanding of treatment options and agrees with plan. Patient verbalized understanding of the importance of close follow up for results discussed. Discussed case with Dr. Nguyen.
+; )
+; Sleep 100
+; Send ^v
