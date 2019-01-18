@@ -1,6 +1,3 @@
-; Variables (set before using)
-variable1 := Diaz
-
 
 ; ======================
 ; notes
@@ -1479,7 +1476,7 @@ Loop, 3 {
     Send {Tab}
     Sleep 50
 }
-Send [mdm_per
+Send [mdm_
 Sleep 1200
 Send {Enter}
 ; send attestation (2 tabs if inputting discharge)
@@ -1747,7 +1744,7 @@ Send {Escape}
 }
 return
 
-:*:s3::
+:*:\s3::
 Send ^f
 clipboard = History of Present Illness
 WinWait Find
@@ -2005,6 +2002,33 @@ return
 :*:\chestwall::
 clipboard = Chest wall: no tenderness
 Send ^v
+return
+
+; =================
+; MLP
+; =================
+; sign and forward to provider
+#F1::
+Loop, 2 {
+Sleep 50
+Send {Tab}
+Sleep 50
+}
+Send {Space}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Space}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send Provider, Name ; CHANGE
+Loop,6 {
+Sleep 50
+Send {Tab}
+Sleep 50
+}
+Send {Enter}
 return
 
 ; =================
