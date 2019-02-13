@@ -386,7 +386,7 @@ return
 * **Description:** Select the text left of where you currently are in the text
 * **Key Combination:** `capslock + up`
 
-  <details>
+<details>
 <summary>
 <b>Code:</b>
 </summary>
@@ -402,7 +402,7 @@ return
 * **Description:** Select text right of where you currently are in the text
 * **Key Combination:** `capslock + down`
 
-  <details>
+<details>
 <summary>
 <b>Code:</b>
 </summary>
@@ -669,7 +669,7 @@ return
 * **Caveats:** 
     - Patients with unusually long or short names might be closed.
 
-  <details>
+<details>
 <summary>
 <b>Code:</b>
 </summary>
@@ -711,7 +711,7 @@ return
 * **Caveat(s):** Does not always work if the system is slow or working remotely on a poor internet connection
 * **TODO:** add remaining sections
 
-  <details>
+<details>
 <summary>
 <b>Code:</b>
 </summary>
