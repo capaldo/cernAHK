@@ -4,6 +4,7 @@
 * **11/21/18:** Adding README, explanations, and broken down code for user customization.
 * **12/01/18:** Added toolbar setup to prevent the buttons from "stealing" keyboard shortcuts.
 * **02/12/19:** Added more code snippets and macros.
+* **05/16/19:** Working to update the scripts to function with the recent changes.
 
 # Warnings
 All scripts do not venture into the orders section of the chart but, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes.
