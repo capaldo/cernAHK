@@ -775,4 +775,7 @@ return
 </details>
 
 ## Discharge Navigation
-* TODO: currently needs a prelude description to ensure user setup is correct
+- [ ] needs a prelude description to ensure user setup is correct
+- [ ] update to be in line with new system changes
+- [ ] add workflow area script
+- [ ] website for easier navigation
