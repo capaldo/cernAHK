@@ -1,5 +1,3 @@
-# DEPRECATED – due to organization specific changes to the EMR, this is no longer being maintained
-
 # Updates
 *This section is to provide in easy-to-read area for users to read up on what changes have been made and what is being worked on.*
 
