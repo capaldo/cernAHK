@@ -33,6 +33,38 @@ else
    Run Notepad
 return
 
+; ======================
+; miscellaneous
+; ======================
+
+; reload ahk (either due to newly added script or to stop running macro)
+; ======================
+#x::Reload
+
+; open a blank notepad
+; ======================
+~Capslock & n::
+IfWinExist Untitled - Notepad
+   WinActivate
+else
+   Run Notepad
+return
+
+; get mouse position
+; ======================
+~Capslock & m::
+MouseGetPos, xpos, ypos
+MsgBox, The cursor is at X%xpos% Y%ypos%.
+return
+
+; opens cerner login
+; =================
+#!^F1::Run http://cernerm/
+
+; ======================
+; combo stuff
+; ======================
+
 ; open new chart and insert template
 ; ===============================
 ~Capslock & o::
