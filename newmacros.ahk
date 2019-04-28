@@ -129,3 +129,76 @@ Send {End}
 Sleep 50 
 Send {Space}
 return
+
+; ======================
+; bolding
+; ======================
+
+; whole line
+; ======================
+!b::
+Send {Home}
+Sleep 100
+Send +{Down}
+Sleep 100
+Send ^b
+Sleep 100
+Send {Right}
+return
+
+; bold right of caret
+; ======================
+~Capslock & l::
+Send +{End}
+Sleep 200
+Send ^b
+Sleep 200
+Send {Right DownTemp}
+return
+
+; bold left of caret
+; ======================
+~Capslock & j::
+Send +{Home}
+Sleep 50
+Send ^b
+Sleep 50
+Send {Right DownTemp}
+return
+
+; ======================
+; change list item and bold
+; ======================
+
+; select up the list item ahead of the caret
+; ======================
+~Capslock & i::
+Send {F9}
+Sleep 100
+Send {Up}
+Sleep 100
+Send {Enter}
+Sleep 100
+Send +{F9}
+Sleep 100
+Send ^b
+Sleep 100
+Send {Right}
+return
+
+; select down the list item ahead of the caret
+; ======================
+~Capslock & k::
+Send {F9}
+Sleep 100
+Send {Down}
+Sleep 100
+Send {Enter}
+Sleep 100
+Send +{F9}
+Sleep 100
+Send ^b
+Sleep 100
+Send {Right}
+return
+
