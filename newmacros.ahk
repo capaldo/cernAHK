@@ -223,3 +223,54 @@ Send {Enter}
 Sleep 1000
 Send {Enter}
 return
+
+
+; ======================
+; navigation
+; ======================
+
+; launchpoint
+; ======================
+^1::
+Send !v
+Sleep 100
+Send {Enter}
+return
+
+;tracking list
+; ======================
+^2::
+Send !v
+Sleep 100
+Send t
+return
+
+; open documentation
+; ======================
+^d::
+MouseMove 1163, 585
+Sleep 100
+Send !c
+Sleep 100
+Send {Down}
+Sleep 100
+Send d
+Sleep 100
+Send {Enter}
+return
+
+; save chart
+; ======================
+~Capslock & s::
+Send !d
+Sleep 100
+Send {Enter}
+return
+
+; initial save dialog
+; ======================
+#s::
+Send {Tab 6}
+Sleep 100
+Send {Enter}
+return
