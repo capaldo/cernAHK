@@ -138,7 +138,7 @@ WinWait, Sign/Submit Note
 Sleep 100
 MouseGetPos x, y
 KeyWait, LButton, D
-Sleep 100
+Sleep 250
 Click 948, 664
 Sleep 100
 MouseMove %x%, %y%
