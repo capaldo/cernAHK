@@ -1,11 +1,5 @@
 ; ======================
-; notes
-; ======================
-; set the launchpoint zoom to 75%, this is to prevent the assignment window from appearing above the 
-; selected patient
-
-; ======================
-; CAPSLOCK TO HYPER
+; capslock2hyper
 ; ======================
 
 #NoEnv 
@@ -23,14 +17,6 @@ SetCapslockState, AlwaysOff
      Send {Esc}
 
  }
-return
-
-; open blank notepad
-~Capslock & n::
-IfWinExist Untitled - Notepad
-   WinActivate
-else
-   Run Notepad
 return
 
 ; ======================
