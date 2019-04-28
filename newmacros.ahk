@@ -292,3 +292,38 @@ Send {Enter}
 return
 
 
+
+
+; =================
+; Time Stamp
+; =================
+
+; current time
+~Capslock & t::
+Send !c
+Sleep 100
+Send a
+SetTitleMatchMode, 2
+WinWait, Ad Hoc
+Send {Tab}
+Sleep 50
+Send u
+Sleep 50
+Send {Space}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Enter}
+SetTitleMatchMode, 2
+WinWait, Time Seen
+Sleep 1000
+Send t
+Sleep 50
+Send {Tab}
+Sleep 50
+Send n
+Sleep 50
+MouseMove 22, 37
+Sleep 500
+Click 22, 37
+return
