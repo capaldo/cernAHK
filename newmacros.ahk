@@ -130,6 +130,22 @@ Sleep 50
 Send {Space}
 return
 
+; sign
+; ======================
+!^s::
+Send ^g
+WinWait, Sign/Submit Note
+Sleep 100
+MouseGetPos x, y
+KeyWait, LButton, D
+Sleep 100
+Click 948, 664
+Sleep 100
+MouseMove %x%, %y%
+return
+
+
+
 ; ======================
 ; bolding
 ; ======================
@@ -274,3 +290,5 @@ Send {Tab 6}
 Sleep 100
 Send {Enter}
 return
+
+
