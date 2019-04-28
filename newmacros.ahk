@@ -202,3 +202,24 @@ Sleep 100
 Send {Right}
 return
 
+; ======================
+; printing
+; ======================
+
+; print from inside the chart
+; ======================
+!p::
+Sleep 200
+Send {Alt}
+Sleep 100
+Send t
+Send {Down 3} ; possible change back, new option above print called report
+Sleep 300
+Send {Right DownTemp}
+Sleep 300
+Send {Enter}
+Sleep 300
+Send {Enter}
+Sleep 1000
+Send {Enter}
+return
