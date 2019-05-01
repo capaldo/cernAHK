@@ -47,7 +47,7 @@ MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 
 ; opens cerner login
-; =================
+; ======================
 #!^F1::Run http://cernerm/
 
 ; ======================
@@ -55,7 +55,7 @@ return
 ; ======================
 
 ; open new chart and insert template
-; ===============================
+; ======================
 ~Capslock & o::
 MouseGetPos x, y
 Send !p
@@ -297,11 +297,13 @@ return
 
 
 
-; =================
+; ======================
 ; Time Stamp
-; =================
+; ======================
 
 ; current time
+; ======================
+
 ~Capslock & t::
 Send !c
 Sleep 100
@@ -330,3 +332,190 @@ MouseMove 22, 37
 Sleep 500
 Click 22, 37
 return
+
+; ======================
+
+
+; ======================
+; auto-text
+; ======================
+
+; hpi / ros
+; ======================
+
+:*:\lace::
+Send laceration
+return
+
+:*:\dizz::
+Send dizziness
+return
+
+:*:\tend::
+Send tenderness
+return
+
+:*:\naus::
+Send nausea
+return
+
+:*:\vomi::
+Send vomiting
+return
+
+:*:\diar::
+Send diarrhea
+return
+
+:*:\bodya::
+Send body aches
+return
+
+:*:\rn::
+Send runny nose
+return
+
+:*:\cp::
+Send chest pain
+return
+
+:*:\sob::
+Send shortness of breath
+return
+
+:*:\backp::
+Send back pain
+return
+
+:*:\fev::
+Send fever
+return
+
+:*:\disch::
+Send discharge
+return
+
+:*:\red::
+Send redness
+return
+
+:*:\swell::
+Send swelling
+return
+
+:*:\healw::
+Send healing wound
+return
+
+:*:\resolva::
+Send resolving abscess
+return
+
+:*:\st::
+Send sore throat
+return
+
+:*:\earp::
+Send ear pain
+return
+
+:*:\ha::
+Send headache
+return
+
+:*:\abdp::
+Send abdominal pain
+return
+
+:*:\nc::
+Send nasal congestion
+return
+
+:*:\numb::
+Send numbness
+return
+
+:*:\ting::
+Send tingling
+return
+
+:*:\ucc::
+Send Urgent Care Center
+return
+
+:*:\accfam::
+Send accompanied by family
+return
+
+:*:\accmom::
+Send accompanied by mother
+return
+
+:*:\accdad::
+Send accompanied by father
+return
+
+:*:\ptr::
+Send Patient reports
+return
+
+:*:\pts::
+Send Patient states
+return
+
+:*:\loc::
+Send loss of consciousness
+return
+
+:*:\freq::
+Send frequency
+return
+
+:*:\dys::
+Send dysuria
+return
+
+:*:\urg::
+Send urgency
+return
+
+:*:\fahren::
+Send ∞F
+return
+
+:*:\rpt::
+Send reports
+return
+; ======================
+
+
+; history
+; ======================
+
+:*:\htn::
+Send hypertension
+return
+
+:*:\dm::
+Send diabetes mellitus
+return
+
+; ======================
+
+
+; severity
+; ======================
+:*:\mode::
+Send moderate
+return
+
+:*:\md::
+Send mild
+return
+
+:*:\seve::
+Send severe
+return
+
+; ======================
+
