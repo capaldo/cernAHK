@@ -6,6 +6,10 @@
 * **02/12/19:** Added more code snippets and macros.
 * **04/16/19:** Working to update the scripts to function with the recent changes.
 
+# TODO
+- [ ] update the readme
+- [ ] make all text snippets universal, making the hotstrings and hotkey universal
+
 # Warnings
 All scripts do not venture into the orders section of the chart but, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes.
 
