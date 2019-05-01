@@ -1,5 +1,5 @@
 ; ======================
-; capslock2hyper
+; capslock to hyper key
 ; ======================
 
 #NoEnv 
@@ -15,9 +15,12 @@ SetCapslockState, AlwaysOff
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
  if (A_PriorKey = "Capslock") {
      Send {Esc}
-
  }
-return
+
+; ======================
+
+
+
 
 ; ======================
 ; miscellaneous
