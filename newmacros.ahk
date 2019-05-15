@@ -20,6 +20,15 @@ SetCapslockState, AlwaysOff
 ; ======================
 
 
+; remap f9 navigation
+; ======================
+~Capslock & Right::
+Send {F9}
+return
+
+~Capslock & Left::
+Send +{F9}
+return
 
 
 ; ======================
