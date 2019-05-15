@@ -89,7 +89,7 @@ Sleep 50
 Send [rgen ; CHANGE to ros autotext
 Sleep 1200
 Send {Enter}
-Loop, 2 {
+Loop, 3 {
     Sleep 50
     Send {Tab}
     Sleep 50
@@ -518,8 +518,6 @@ Send severe
 return
 
 ; ======================
-
-
 
 :*:\modc::
 Send Patient describes the symptoms as moderate in severity and constant.
