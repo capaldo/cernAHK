@@ -519,3 +519,8 @@ return
 
 ; ======================
 
+
+
+:*:\modc::
+Send Patient describes the symptoms as moderate in severity and constant.
+return
