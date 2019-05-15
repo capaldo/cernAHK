@@ -89,7 +89,7 @@ Sleep 50
 Send [rgen ; CHANGE to ros autotext
 Sleep 1200
 Send {Enter}
-Loop, 1 {
+Loop, 2 {
     Sleep 50
     Send {Tab}
     Sleep 50
