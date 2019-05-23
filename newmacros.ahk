@@ -1,7 +1,6 @@
 ; ======================
 ; capslock to hyper key
 ; ======================
-
 #NoEnv 
 #UseHook
 #InstallKeybdHook
@@ -16,28 +15,19 @@ SetCapslockState, AlwaysOff
  if (A_PriorKey = "Capslock") {
      Send {Esc}
  }
-
-
 ; ======================
 
 
 ; remap f9 navigation
 ; ======================
+
 ~Capslock & Right::
-
 Send {F9 DownTemp}
-
 return
-
-
 
 ~Capslock & Left::
-
 Send +{F9 DownTemp}
-
 return
-
-
 
 ; ======================
 ; miscellaneous
@@ -150,6 +140,65 @@ Sleep 50
 Send {Space}
 return
 
+:*:genchart::
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [hgen ; CHANGE to hpi autotext
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [rgen ; CHANGE to ros autotext
+Sleep 1200
+Send {Enter}
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [pgen ; CHANGE to pe autotext
+Sleep 1200
+Send {Enter}
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [mdm_per ; CHANGE to mdm autotext
+Sleep 1200
+Send {Enter}
+; attestation starts here
+Loop, 6 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send {Enter}
+Sleep 50
+Send [attest ; CHANGE to attestation autotext
+Sleep 1200
+Send {Enter}
+Sleep 50
+; go back to the hpi
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {End}
+Sleep 50 
+Send {Space}
+return
+
 ; sign
 ; ======================
 !^s::
@@ -163,7 +212,6 @@ Click 948, 664
 Sleep 100
 MouseMove %x%, %y%
 return
-
 
 
 ; ======================
@@ -537,13 +585,16 @@ return
 
 ; pe
 ; ======================
-
 :*:\tend::
 Send tenderness
 return
 
 :*:\exud::
 Send exudate
+return
+
+:*:\nms::
+Send no meningeal signs
 return
 
 ; ======================
