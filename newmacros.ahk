@@ -1,6 +1,7 @@
 ; ======================
 ; capslock to hyper key
 ; ======================
+
 #NoEnv 
 #UseHook
 #InstallKeybdHook
@@ -15,19 +16,28 @@ SetCapslockState, AlwaysOff
  if (A_PriorKey = "Capslock") {
      Send {Esc}
  }
+
+
 ; ======================
 
 
 ; remap f9 navigation
 ; ======================
-
 ~Capslock & Right::
+
 Send {F9 DownTemp}
+
 return
+
+
 
 ~Capslock & Left::
+
 Send +{F9 DownTemp}
+
 return
+
+
 
 ; ======================
 ; miscellaneous
@@ -212,6 +222,7 @@ Click 948, 664
 Sleep 100
 MouseMove %x%, %y%
 return
+
 
 
 ; ======================
@@ -585,16 +596,13 @@ return
 
 ; pe
 ; ======================
+
 :*:\tend::
 Send tenderness
 return
 
 :*:\exud::
 Send exudate
-return
-
-:*:\nms::
-Send no meningeal signs
 return
 
 ; ======================
