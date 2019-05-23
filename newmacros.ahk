@@ -424,6 +424,10 @@ return
 Send sore throat
 return
 
+:*:\nvi::
+Send neurovascular intact
+return
+
 :*:\earp::
 Send ear pain
 return
