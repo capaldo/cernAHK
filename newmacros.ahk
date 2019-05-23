@@ -24,19 +24,12 @@ SetCapslockState, AlwaysOff
 ; remap f9 navigation
 ; ======================
 ~Capslock & Right::
-
 Send {F9 DownTemp}
-
 return
-
-
 
 ~Capslock & Left::
-
 Send +{F9 DownTemp}
-
 return
-
 
 
 ; ======================
@@ -224,7 +217,6 @@ MouseMove %x%, %y%
 return
 
 
-
 ; ======================
 ; bolding
 ; ======================
@@ -369,7 +361,6 @@ Send {Tab 6}
 Sleep 100
 Send {Enter}
 return
-
 
 
 
@@ -605,7 +596,20 @@ return
 Send exudate
 return
 
+; misc. anatomical
 ; ======================
+:*:\ruq::
+Send right upper quadrant
+return
+
+:*:\luq::
+Send left upper quadrant
+return
+
+:*:\llq::
+Send left llq quadrant
+return
+
 
 
 ; ======================
