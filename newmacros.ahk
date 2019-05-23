@@ -17,18 +17,26 @@ SetCapslockState, AlwaysOff
      Send {Esc}
  }
 
+
 ; ======================
 
 
 ; remap f9 navigation
 ; ======================
 ~Capslock & Right::
-Send {F9}
+
+Send {F9 DownTemp}
+
 return
 
+
+
 ~Capslock & Left::
-Send +{F9}
+
+Send +{F9 DownTemp}
+
 return
+
 
 
 ; ======================
@@ -360,10 +368,6 @@ return
 Send dizziness
 return
 
-:*:\tend::
-Send tenderness
-return
-
 :*:\naus::
 Send nausea
 return
@@ -424,10 +428,6 @@ return
 Send sore throat
 return
 
-:*:\nvi::
-Send neurovascular intact
-return
-
 :*:\earp::
 Send ear pain
 return
@@ -473,6 +473,10 @@ Send Patient reports
 return
 
 :*:\pts::
+Send Patient states
+return
+
+:*:\ptd::
 Send Patient states
 return
 
@@ -528,6 +532,18 @@ return
 
 :*:\seve::
 Send severe
+return
+
+
+; pe
+; ======================
+
+:*:\tend::
+Send tenderness
+return
+
+:*:\exud::
+Send exudate
 return
 
 ; ======================
