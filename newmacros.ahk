@@ -15,12 +15,10 @@ SetCapslockState, AlwaysOff
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
  if (A_PriorKey = "Capslock") {
      Send {Esc}
- }
+     }
 
 
 ; ======================
-
-
 ; remap f9 navigation
 ; ======================
 ~Capslock & Right::
@@ -37,11 +35,9 @@ return
 ; ======================
 
 ; reload ahk (either due to newly added script or to stop running macro)
-; ======================
 #x::Reload
 
 ; open a blank notepad
-; ======================
 ~Capslock & n::
 IfWinExist Untitled - Notepad
    WinActivate
