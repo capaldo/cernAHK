@@ -15,9 +15,19 @@ SetCapslockState, AlwaysOff
  Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
  if (A_PriorKey = "Capslock") {
      Send {Esc}
- }
+     }
+
 
 ; ======================
+; remap f9 navigation
+; ======================
+~Capslock & Right::
+Send {F9 DownTemp}
+return
+
+~Capslock & Left::
+Send +{F9 DownTemp}
+return
 
 
 ; ======================
@@ -25,11 +35,9 @@ SetCapslockState, AlwaysOff
 ; ======================
 
 ; reload ahk (either due to newly added script or to stop running macro)
-; ======================
 #x::Reload
 
 ; open a blank notepad
-; ======================
 ~Capslock & n::
 IfWinExist Untitled - Notepad
    WinActivate
@@ -45,81 +53,15 @@ MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 
 ; opens cerner login
-; =================
+; ======================
 #!^F1::Run http://cernerm/
 
-
-
-
-
 ; ======================
-; launchpoint
+; combo stuff
 ; ======================
-
-; assign staff
-; ======================
-
-; scribe and doc
-!^a::
-MouseGetPos x, y
-Sleep 100
-MouseMove 335, %y%
-Sleep 100
-MouseMove 335, %y%
-Sleep 100
-MouseGetPos x, y
-Click, left
-Sleep 100
-MouseMove 430, 190, 0, R
-Sleep 1000
-Click, left
-Sleep 1500
-MouseMove %x%, %y%
-Sleep 200
-Click, right
-Sleep 200
-MouseMove, 15, 200, 0, R
-Sleep 500
-Click, left
-Sleep 2000
-Click, 155, 178 ; CHANGE based on site, staff selection varies
-Sleep 200
-Send DOC ; CHANGE based on name
-Sleep 100
-Send {Enter}
-Sleep 100
-Send {Enter}
-return
-
-; assign dr only
-; ======================
-!a::
-MouseGetPos x, y
-Sleep 100
-MouseMove 335, %y%
-Sleep 100
-MouseMove 335, %y%
-Sleep 100
-MouseGetPos x, y
-MouseMove %x%, %y%
-Sleep 200
-Click, right
-Sleep 200
-MouseMove, 15, 200, 0, R
-Sleep 500
-Click, left
-Sleep 2000
-Click, 165, 220 ; CHANGE to modify staff selection
-Sleep 200
-Send cab ; CHANGE based on name
-Sleep 100
-Send {Enter}
-Sleep 100
-Send {Enter}
-return
 
 ; open new chart and insert template
-; ===============================
+; ======================
 ~Capslock & o::
 MouseGetPos x, y
 Send !p
@@ -153,7 +95,7 @@ Sleep 50
 Send [rgen ; CHANGE to ros autotext
 Sleep 1200
 Send {Enter}
-Loop, 1 {
+Loop, 3 {
     Sleep 50
     Send {Tab}
     Sleep 50
@@ -195,6 +137,79 @@ Sleep 50
 Send {End}
 Sleep 50 
 Send {Space}
+return
+
+:*:genchart::
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [hgen ; CHANGE to hpi autotext
+Sleep 1200
+Send {Enter}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send [rgen ; CHANGE to ros autotext
+Sleep 1200
+Send {Enter}
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [pgen ; CHANGE to pe autotext
+Sleep 1200
+Send {Enter}
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send [mdm_per ; CHANGE to mdm autotext
+Sleep 1200
+Send {Enter}
+; attestation starts here
+Loop, 6 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send {Enter}
+Sleep 50
+Send [attest ; CHANGE to attestation autotext
+Sleep 1200
+Send {Enter}
+Sleep 50
+; go back to the hpi
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {End}
+Sleep 50 
+Send {Space}
+return
+
+; sign
+; ======================
+!^s::
+Send ^g
+WinWait, Sign/Submit Note
+Sleep 100
+MouseGetPos x, y
+KeyWait, LButton, D
+Sleep 250
+Click 948, 664
+Sleep 100
+MouseMove %x%, %y%
 return
 
 
@@ -270,36 +285,6 @@ Sleep 100
 Send {Right}
 return
 
-; smart bold title (currently testing)
-; =================
-!t::
-Sleep 50
-Send {End}
-Sleep 50
-Send ^f
-WinWait, Find
-Send :
-Loop, 4 {
-    Sleep 20
-    Send {Tab}
-    Sleep 20
-}
-Send {Enter}
-Sleep 20
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Send {Right}
-Sleep 20
-Send +{Home}
-Sleep 20
-Send ^b
-Sleep 20
-Send {End}
-return
-
-
-
 ; ======================
 ; printing
 ; ======================
@@ -373,206 +358,46 @@ Sleep 100
 Send {Enter}
 return
 
-; select tab 1
+
+
 ; ======================
-!1::
-Sleep 50
-Click, 115, 140
-return
-
-; select tab 2
+; Time Stamp
 ; ======================
-!2::
-Sleep 50
-Click, 265, 140
-return
 
-; select tab 3
+; current time
 ; ======================
-!3::
-Sleep 50
-Click, 450, 140
-return
 
-; select tab 4
-; ======================
-!4::
-Sleep 50
-Click, 630, 140
-return
-
-; select line left or right
-; ======================
-~Capslock & Up::
-Send +{Home}
-return
-
-~Capslock & Down::
-Send +{End}
-return
-
-
-; sign
-; ======================
-!^s::
-Send ^g
-WinWait, Sign/Submit Note
+~Capslock & t::
+Send !c
 Sleep 100
-MouseGetPos x, y
-KeyWait, LButton, D
-Sleep 100
-Click 948, 664
-Sleep 100
-MouseMove %x%, %y%
-return
-
-; open work note
-; ======================
-~Capslock & w::
-Send !p
+Send a
+SetTitleMatchMode, 2
+WinWait, Ad Hoc
+Send {Tab}
+Sleep 50
+Send u
+Sleep 50
+Send {Space}
+Sleep 50
+Send {Tab}
 Sleep 50
 Send {Enter}
-Sleep 100
+SetTitleMatchMode, 2
+WinWait, Time Seen
+Sleep 1000
+Send t
+Sleep 50
+Send {Tab}
+Sleep 50
 Send n
-Sleep 100
-Send d
-Sleep 3000
-MouseMove 688, 422
-Click, 688, 422, 2
-return
-
-; go to workflow
-; ======================
-^!w::
-MouseMove 1163, 585
-Sleep 200
-Send !c
-Sleep 200
-Send {Down}
-Sleep 100
-Send {Enter}
-return
-
-; open patient pharmacy
-; ======================
-^p::
-Send !c
-Sleep 100
-Send {Enter}
 Sleep 50
-Send pa
-Sleep 50
-Click, 149, 162
-return
-
-; tracking select
-; ======================
-^Numpad1::
-Sleep 100
-MouseMove 65,327
-Sleep 50
-Click 65, 327
-return
-
-^Numpad2::
-Sleep 100
-MouseMove 65, 355
-Sleep 50
-Click 65, 355
-return
-
-^Numpad3::
-Sleep 100
-MouseMove 65,399
-Sleep 50
-Click 65, 390
-return
-
-^Numpad4::
-Sleep 100
-MouseMove 65,420
-Sleep 50
-Click 65, 420
-return
-
-^Numpad5::
-Sleep 100
-MouseMove 65,465
-Sleep 50
-Click 65, 465
-return
-
-^Numpad6::
-Sleep 100
-MouseMove 65, 490
-Sleep 50
-Click 65, 490
-return
-
-^Numpad7::
-Sleep 100
-MouseMove 65, 530
-Sleep 50
-Click 65, 530
-return
-
-^Numpad8::
-Sleep 100
-MouseMove 65, 570
-Sleep 50
-Click 65, 570					
-return
-
-^Numpad9::
-Sleep 100
-MouseMove 65, 600
-Sleep 50
-Click 65, 600
-return
-
-; select tab1 inside chart
-; ======================
-^]::
-Sleep 50
-MouseMove 421, 289
-Sleep 50
-Click 421, 289
-return
-
-; select tab2 inside chart
-; ======================
-^[::
-Sleep 50
-MouseMove 290, 289
-Sleep 50
-Click 290, 289
+MouseMove 22, 37
+Sleep 500
+Click 22, 37
 return
 
 ; ======================
-; remap keys
-; ======================
 
-; end
-^e::
-Send {End}
-return
-
-; home
-^h::
-Send {Home}
-return
-
-; ctrl + g saves the chart, this is built-in
-
-; remap f9 navigation
-; ======================
-~Capslock & Right::
-Send {F9}
-return
-
-~Capslock & Left::
-Send +{F9}
-return
 
 ; ======================
 ; auto-text
@@ -580,16 +405,13 @@ return
 
 ; hpi / ros
 ; ======================
+
 :*:\lace::
 Send laceration
 return
 
 :*:\dizz::
 Send dizziness
-return
-
-:*:\tend::
-Send tenderness
 return
 
 :*:\naus::
@@ -700,6 +522,10 @@ return
 Send Patient states
 return
 
+:*:\ptd::
+Send Patient states
+return
+
 :*:\loc::
 Send loss of consciousness
 return
@@ -726,9 +552,9 @@ return
 ; ======================
 
 
-
 ; history
-; =================
+; ======================
+
 :*:\htn::
 Send hypertension
 return
@@ -736,8 +562,8 @@ return
 :*:\dm::
 Send diabetes mellitus
 return
-; =================
 
+; ======================
 
 
 ; severity
@@ -754,90 +580,20 @@ return
 Send severe
 return
 
-; =================
-
-
-
 
 ; pe
-; =================
-:*:\nms::
-Send no meningeal signs
-return
+; ======================
 
-:*:\eryth::
-Send erythema
-return
-
-:*:\macu::
-Send macular
-return
-
-:*:\nvi::
-Send neurovascular intact
+:*:\tend::
+Send tenderness
 return
 
 :*:\exud::
 Send exudate
 return
 
-:*:\dull::
-Send dullness
-return
-
-:*:\perf::
-Send perforation
-return
-
-:*:\nfnd::
-Send no focal neurological deficits
-return
-
-:*:\guard::
-Send guarding
-return
-
-:*:\rebo::
-Send rebound
-return
-
-:*:\ecch::
-Send ecchymosis
-return
+; misc. anatomical
 ; ======================
-
-
-
-; anatomical position
-; ======================
-:*:\dist::
-Send distal
-return
-
-:*:\medi::
-Send medial
-return
-
-:*:\ante::
-Send anterior
-return
-
-:*:\post::
-Send posterior
-return
-
-:*:\late::
-Send lateral
-return
-
-:*:\llq::
-Send left lower quadrant
-return
-
-:*:\rlq::
-Send right lower quadrant
-return
-
 :*:\ruq::
 Send right upper quadrant
 return
@@ -845,913 +601,24 @@ return
 :*:\luq::
 Send left upper quadrant
 return
-; ======================
 
-
-
-; diagnosis
-; ======================
-:*:=uri::
-Send infection J06.9
+:*:\llq::
+Send left llq quadrant
 return
-
-:*:=phar::
-Send phary j02.9
-return
-
-:*:=uti::
-Send urinary tract N39.0
-return
-
-:*:=fu::
-Send z09
-return
-; ======================
 
 
 
 ; ======================
-; other functions
+; Phrases
 ; ======================
-
-; general
-; ======================
-
-; delete line
-:*:dd::
-Send {End}
-Sleep 50
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send {Backspace}
-return
-
-; clear box
-:*:cc::
-Send ^a
-Sleep 50
-Send {Backspace}
-return
-
-; immunizations utd
-:*:\imm::
-Send ^f
-WinWait, Find
-Send Immunizations
-Sleep 50
-Send {Enter}
-Sleep 50
-Send {Escape}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send [immUTD
-Sleep 1200
-Send {Enter}
-return
-
-; teta utd
-:*:\teta::
-Send ^f
-WinWait, Find
-Send Immunizations: up-to-date
-Sleep 50
-Send {Escape}
-Sleep 50
-Send {End}
-Sleep 50
-Send {Enter}
-Sleep 50
-Send [teta
-Sleep 1200
-Send {Enter}
-return
-
-; smart clear line
-; =================
-~Capslock & c::
-Send ^f
-WinWait, Find
-Send :
-Loop, 4 {
-    Sleep 20
-    Send {Tab}
-    Sleep 20
-}
-Send {Enter}
-Sleep 20
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Send {Right}
-Sleep 20
-Send +{End}
-Sleep 20
-Send {Backspace}
-Sleep 20
-Send {Space}
-return
-
-
 
 ; hpi
-; =================
-
-; change hpi to peds
-; ======================
-:*:\hpeds::
-Sleep 100
-Send +{F9}
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 100
-Send {End}
-return
-
-; patient denies shortcut
-; ======================
-:*:\ptd::
-Send ptd
-Sleep 500
-Send {Enter}
-return
-
-; physical exam
 ; ======================
 
-
-; pediatric general section
-:*:\pgenpeds::
-Send {End}
-Sleep 50
-Send +{Home}
-Sleep 50
-Send {Delete}
-Sleep 50
-Send [pGeneral_peds
-Sleep 1000
-Send {Enter}
+:*:\modc::
+Send Patient describes the symptoms as moderate in severity and constant.
 return
 
-; discharge
-; ======================
-
-; change discharge to peds
-:*:\dpeds::
-Sleep 100
-Send +{F9}
-Send {Down}
-Send {Enter}
-Send +{F9}
-Send +{F9}
-Send {Down}
-Send {Enter}
-Sleep 50
-Send {End}
+:*:\sevd::
+Send that began "several days ago"
 return
-
-; discharge with medication
-:*:\dcmed::
-Send ^x
-Sleep 50
-Send ^f
-WinWait Find
-Send Impression and Plan
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 100
-Send ^f
-Sleep 50
-WinWait Find
-Sleep 50
-Send ^v
-Sleep 50
-Send {Escape}
-Sleep 50
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 50
-Send {Tab}
-Sleep 50
-Send [dmed
-Sleep 1200
-Loop, 2 {
-    Sleep 50
-    Send {Enter}
-    Sleep 50
-}
-Send [script
-Sleep 1200
-Send {Enter}
-return
-
-; insert medication with testing
-:*:\dctest::
-Send ^x
-Sleep 50
-Send ^f
-WinWait Find
-Send Impression and Plan
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 100
-Send ^f
-Sleep 50
-WinWait Find
-Sleep 50
-Send ^v
-Sleep 50
-Send {Escape}
-Sleep 50
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 50
-Send {Tab}
-Sleep 50
-Send [dmedtest
-Sleep 1200
-Loop, 2 {
-    Sleep 50
-    Send {Enter}
-    Sleep 50
-}
-; insert prescription
-Send [script
-Sleep 1200
-Send {Enter}
-return
-
-; =================
-; blurbs
-; =================
-
-; ama blurb
-:*:\ama::
-Send [ama
-Sleep 500
-Send {Enter}
-return
-
-; insert moderate + constant blurb
-:*:\hmodc::
-Send hmo
-Sleep 500
-Send {Enter}
-return
-
-; insert moderate + fluctuating blurb
-:*:\hmodf::
-Send hmo
-Sleep 500
-Send {Down 2}
-Sleep 300
-Send {Enter}
-return
-
-; insert exacerbated blurb
-:*:\hexac::
-Send hexac
-Sleep 500
-Send {Enter}
-return
-
-; deletes neuro and adds expanded normal exam
-:*:\normalneuro::
-Sleep 50
-Send +{Home}
-Sleep 50
-Send {Backspace}
-Sleep 50
-Send [pNEURO
-Sleep 1000
-Send {Enter}
-Sleep 50
-Send {Up}
-Sleep 50
-Send {Home}
-Sleep 50
-Send ^!{End}
-Sleep 50
-Send ^b
-return
-
-
-
-
-; =================
-; Time Stamp
-; =================
-
-; current time
-~Capslock & t::
-Send !c
-Sleep 100
-Send {Enter}
-Sleep 100
-Send a
-SetTitleMatchMode, 2
-WinWait, Ad Hoc
-Send {Tab}
-Sleep 50
-Send u
-Sleep 50
-Send {Space}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {Enter}
-SetTitleMatchMode, 2
-WinWait, Time Seen
-Sleep 200
-Send t
-Sleep 50
-Send {Tab}
-Sleep 50
-Send n
-Sleep 50
-MouseMove 22, 37
-Sleep 500
-Click 22, 37
-return
-
-; edit time with clipboard
-^t::
-Send ^a
-Sleep 50
-Send ^x
-Sleep 100
-Send !c
-Sleep 100
-Send {Enter}
-Sleep 100
-Send a
-Sleep 500
-Send {Tab}
-Sleep 50
-Send u
-Sleep 50
-Send {Space}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {Enter}
-Sleep 300
-Send t
-Sleep 50
-Send {Tab}
-Sleep 50
-Send ^v
-Sleep 100
-MouseMove 22, 37
-Sleep 100
-Click 22, 37
-return
-
-; =================
-; chart framework
-; =================
-
-; general chart
-:*:genchart::
-Loop, 3 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
-Send [hgen
-Sleep 1200
-Send {Enter}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send [rgen
-Sleep 1200
-Send {Enter}
-Loop, 1 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
-Send [pgen
-Sleep 1200
-Send {Enter}
-Loop, 3 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
-Send [mdm_per
-Sleep 1200
-Send {Enter}
-; send attestation (2 tabs if inputting discharge)
-Loop, 6 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
-Send {Enter}
-Sleep 50
-Send [attest
-Sleep 1200
-Send {Enter}
-; go to hpi
-Sleep 50
-Send ^f
-WinWait, Find
-Send History of Present
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send {Tab}
-Sleep 50
-Send {End}
-Sleep 50 
-Send {Space}
-return
-
-; =================
-; Work Note Template
-; =================
-
-:*:work1::
-Send [workexcuse1
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:work2::
-Send [workexcuse2
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:work3::
-Send [workexcuse3
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:work4::
-Send [workexcuse4
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:work5::
-Send [workexcuse5
-Sleep 1200
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:school1::
-Send [schoolexcuse1
-Sleep 1100
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:school2::
-Send [schoolexcuse2
-Sleep 1100
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:school3::
-Send [schoolexcuse3
-Sleep 1100
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:school4::
-Send [schoolexcuse4
-Sleep 1100
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-:*:school5::
-Send [schoolexcuse5
-Sleep 1100
-Send {Enter}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Enter}
-return
-
-; =================
-; =================
-; =================
-; =================
-; =================
-; =================
-; =================
-; =================
-; =================
-
-
-; =================
-; beta
-; =================
-
-; auto insert ROS based on HPI
-; ===============================
-~Capslock & r::
-Sleep 100
-Send ^c
-Clipboard := RegExReplace(Clipboard, "and")
-str:= clipboard
-s:=StrSplit(str, ", ")
-Loop, % s.MaxIndex()
-{
-Sleep 50
-Send ^c
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send Review of Systems
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send {Tab}
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send % s[A_Index]
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send +{F9}
-Sleep 50
-Send {F9}
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 100
-Send +{F9}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-}
-return
-
-; tester command for above
-; ========================
-~Capslock & z::
-Clipboard := RegExReplace(Clipboard, "and")
-str:= clipboard
-s:=StrSplit(str, ", ")
-Loop, % s.MaxIndex()
-{
-Send ^f
-Send % s[A_Index]
-Sleep 1000
-Send {Escape}
-}
-return
-
-:*:s3::
-Send ^f
-clipboard = History of Present Illness
-WinWait Find
-Send ^v
-Sleep 50
-Send {Escape}
-Sleep 500
-Send {Tab}
-Sleep 50
-Send ^f
-clipboard = Urgent Care Center with
-Winwait Find
-Send ^v
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait Opened by
-Sleep 500
-Send {Right}
-Sleep 50
-Loop, 6 {
-Sleep 50
-Send +^{Right}
-Sleep 50
-}
-return
-
-
-; go to different PE sections
-; =================================================================
-:*:pmusc::
-Send ^f
-WinWait, Find
-Sleep 50
-Send Physical Examination
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 200
-Send {Tab}
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send Musculoskeletal
-Send {:}
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 200
-Send {End}
-return
-
-:*:penmt::
-Send ^f
-WinWait, Find
-Sleep 50
-Send Physical Examination
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 200
-Send {Tab}
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send ENMT:
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 200
-Send {End}
-return
-
-:*:pback::
-Send ^f
-WinWait, Find
-Sleep 50
-Send Physical Examination
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 200
-Send {Tab}
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send Back:
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 200
-Send {End}
-return
-
-:*:pneuro::
-Send ^f
-WinWait, Find
-Sleep 20
-Send Physical Examination
-Sleep 20
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 200
-Send {Tab}
-Sleep 20
-Send ^f
-WinWait, Find
-Sleep 20
-Send Neurological:
-Send {Enter}
-Sleep 20
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 100
-Send {End}
-return
-; ============================================================
-
-:*:\chestwall::
-clipboard = Chest wall: no tenderness
-Send ^v
-return
-
-; quotes
-; ================
-:*:"::
-Send ""
-Sleep 20
-Send {Left}
-return
-
-; parenthesis
-; =================
-:*:(::
-Send ()
-Sleep 20
-Send {Left}
-return
-
-; =================
-; =================
-; =================
-; =================
-; =================
-; =================
-; =================
-
-; office macros
-
-; =================
-; =================
-; =================
-; =================
-; =================
-; =================
-
-
-; =================
-; airtable
-; =================
-
-
-; airtable check and copy
-; =================
-NumpadMult::
-Send {Right}
-Sleep 50
-Send {Enter}
-Sleep 50
-Send {Down}
-Sleep 50
-Send {Left}
-Sleep 50
-Send ^c
-Sleep 50
-Click, 1300, 530
-return
-
-;airtable cleanup site name
-; =================
-~Capslock & =::
-InputBox, recNUM,,Number of Records: 
-Loop, %recNUM% {
-Send {Enter}
-Sleep 50
-Send ^{Backspace}
-Sleep 50
-Send ^{Left}
-Sleep 50
-Send ^{Backspace}
-Sleep 50
-Send {Enter}
-}
-return
-
-; chart review
-; =================
-
-; copy phys name
-; =================
-!F1::
-Sleep 200
-SendEvent {Click 854, 771, down}{click 1800, 771, up}
-Sleep 100
-Send ^c
-return
-
-; close all charts
-; =================
-F6::
-Send !c
-Sleep 100
-Send {Enter}
-Sleep 50
-Send c
-Sleep 50
-Send c
-Sleep 50
-Send {Enter}
-return
-
-; forward chart
-; =================
-F10::
-Send ^w
-Sleep 300
-Send {Tab}
-Sleep 50
-Send {Space}
-Sleep 50
-Send {Tab}
-Sleep 50
-Send ^v
-Loop, 5 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
-Send {Enter}
-return
-
-; search for fin
-; ======================
-F1::
-Send !p
-Sleep 100
-Send {Enter}
-Sleep 50
-Send {Enter}
-Sleep 500
-Send {Tab}
-Sleep 50
-Send ^v
-Sleep 100
-Send {Enter}
-Sleep 50
-Send {Enter}
-return
-
