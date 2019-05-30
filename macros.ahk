@@ -523,7 +523,7 @@ Send Patient states
 return
 
 :*:\ptd::
-Send Patient states
+Send Patient denies
 return
 
 :*:\loc::
