@@ -549,6 +549,11 @@ return
 :*:\rpt::
 Send reports
 return
+
+:*:\prod::
+Send productive
+return
+
 ; ======================
 
 
@@ -592,6 +597,10 @@ return
 Send exudate
 return
 
+:*:\eryt::
+Send erythema
+return
+
 ; misc. anatomical
 ; ======================
 :*:\ruq::
@@ -605,7 +614,6 @@ return
 :*:\llq::
 Send left llq quadrant
 return
-
 
 
 ; ======================
