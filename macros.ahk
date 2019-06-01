@@ -56,6 +56,14 @@ return
 ; ======================
 #!^F1::Run http://cernerm/
 
+; clear box
+; ======================
+:*:cc::
+Send ^a
+Sleep 50
+Send {Backspace}
+return
+
 ; ======================
 ; combo stuff
 ; ======================
