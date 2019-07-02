@@ -487,6 +487,10 @@ return
 Send resolving abscess
 return
 
+:*:\resolvc::
+Send resolving cellulitis
+return
+
 :*:\st::
 Send sore throat
 return
