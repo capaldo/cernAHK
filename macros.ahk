@@ -734,3 +734,16 @@ return
 :*:\5d::
 Send that began 5 day ago
 return
+
+; =======================
+; diagnosis codes
+; =======================
+
+; abscess
+; =======================
+
+scalp_abscess := "L02.811 scalp"
+face_abscess := "L02.01 facial"
+leftear_abscess := "H60.02 external ear"
+rightear_abscess := "H60.01 external ear"
+mouth_abscess := "K12.2 mouth abscess"
