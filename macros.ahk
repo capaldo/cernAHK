@@ -629,7 +629,11 @@ Send left upper quadrant
 return
 
 :*:\llq::
-Send left llq quadrant
+Send left lower quadrant
+return
+
+:*:\rlq::
+Send right lower quadrant
 return
 
 
