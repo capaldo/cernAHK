@@ -1,4 +1,10 @@
 ; ======================
+; variables
+; ======================
+
+ros := [rgen
+
+; ======================
 ; capslock to hyper key
 ; ======================
 
@@ -100,7 +106,7 @@ Send {Enter}
 Sleep 50
 Send {Tab}
 Sleep 50
-Send [rgen ; CHANGE to ros autotext
+Send %ros%
 Sleep 1200
 Send {Enter}
 Loop, 3 {
