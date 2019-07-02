@@ -1,8 +1,11 @@
 ; ======================
 ; variables
 ; ======================
-
-ros := [rgen
+hpi := "[hgen"
+ros := "[rgen"
+pe := "[pgen"
+mdm := "[mdm"
+attest := "[attest"
 
 ; ======================
 ; capslock to hyper key
@@ -90,39 +93,39 @@ Send {Enter}
 MouseMove %x%, %y%
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 4000
+Sleep 3000
 Click 1080, 395, 2
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 2500
+Sleep 2000
 Loop, 3 {
     Sleep 50
     Send {Tab}
     Sleep 50
 }
-Send [hgen ; CHANGE to hpi autotext
-Sleep 1200
+Send %hpi% ; CHANGE to hpi autotext
+Sleep 1000
 Send {Enter}
 Sleep 50
 Send {Tab}
 Sleep 50
 Send %ros%
-Sleep 1200
+Sleep 1000
 Send {Enter}
 Loop, 3 {
     Sleep 50
     Send {Tab}
     Sleep 50
 }
-Send [pgen ; CHANGE to pe autotext
-Sleep 1200
+Send %pe% 
+Sleep 1000
 Send {Enter}
 Loop, 3 {
     Sleep 50
     Send {Tab}
     Sleep 50
 }
-Send [mdm_per ; CHANGE to mdm autotext
+Send %mdm% 
 Sleep 1200
 Send {Enter}
 ; attestation starts here
@@ -133,8 +136,8 @@ Loop, 6 {
 }
 Send {Enter}
 Sleep 50
-Send [attest ; CHANGE to attestation autotext
-Sleep 1200
+Send %attest% 
+Sleep 1000
 Send {Enter}
 Sleep 50
 ; go back to the hpi
@@ -159,29 +162,29 @@ Loop, 3 {
     Send {Tab}
     Sleep 50
 }
-Send [hgen ; CHANGE to hpi autotext
-Sleep 1200
+Send %hpi% ; CHANGE to hpi autotext
+Sleep 1000
 Send {Enter}
 Sleep 50
 Send {Tab}
 Sleep 50
-Send [rgen ; CHANGE to ros autotext
-Sleep 1200
+Send %ros%
+Sleep 1000
 Send {Enter}
 Loop, 3 {
     Sleep 50
     Send {Tab}
     Sleep 50
 }
-Send [pgen ; CHANGE to pe autotext
-Sleep 1200
+Send %pe% 
+Sleep 1000
 Send {Enter}
 Loop, 3 {
     Sleep 50
     Send {Tab}
     Sleep 50
 }
-Send [mdm_per ; CHANGE to mdm autotext
+Send %mdm% 
 Sleep 1200
 Send {Enter}
 ; attestation starts here
@@ -192,8 +195,8 @@ Loop, 6 {
 }
 Send {Enter}
 Sleep 50
-Send [attest ; CHANGE to attestation autotext
-Sleep 1200
+Send %attest% 
+Sleep 1000
 Send {Enter}
 Sleep 50
 ; go back to the hpi
