@@ -639,6 +639,37 @@ return
 
 ; hpi
 ; ======================
+:*:\mdc::
+Send Patient describes the symptoms as moderate in severity and constant.
+return
+
+:*:\mdf::
+Send Patient describes the symptoms as moderate in severity and fluctuatin in intensity.
+return
+
+:*:\mdsep::
+Send Patient describes the symptoms as moderate in severity and several episodes have occurred.
+return
+
+:*:\md1ep::
+Send Patient describes the symptoms as moderate in severity and 1 episode has occurred.
+return
+
+:*:\md2ep::
+Send Patient describes the symptoms as moderate in severity and 2 episodes has occurred.
+return
+
+:*:\md3ep::
+Send Patient describes the symptoms as moderate in severity and 3 episodes has occurred.
+return
+
+:*:\md4ep::
+Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
+return
+
+:*:\md5ep::
+Send Patient describes the symptoms as moderate in severity and 5 episodes has occurred.
+return
 
 :*:\modc::
 Send Patient describes the symptoms as moderate in severity and constant.
@@ -668,6 +699,30 @@ return
 Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
 return
 
+:*:\mod5ep::
+Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
+return
+
 :*:\sevd::
 Send that began "several days ago"
+return
+
+:*:\1d::
+Send that began 1 day ago
+return
+
+:*:\2d::
+Send that began 2 day ago
+return
+
+:*:\3d::
+Send that began 3 day ago
+return
+
+:*:\4d::
+Send that began 4 day ago
+return
+
+:*:\5d::
+Send that began 5 day ago
 return
