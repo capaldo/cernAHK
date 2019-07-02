@@ -1,3 +1,15 @@
+global ros := "Constitutional: no fever, no chills, no body aches
+Skin: no rash, no jaundice
+Eye: no recent visual changes, no discharge
+ENMT: no ear pain, no sore throat, no nasal congestion
+Respiratory: no shortness of breath, no cough
+Cardiovascular: no chest pain, no palpitations, no peripheral edema
+Gastrointestinal: no abdominal pain, no nausea, no vomiting, no diarrhea
+Genitourinary: no dysuria, no hematuria
+Musculoskeletal: no back pain, no joint pain
+Neurologic: no headache, no dizziness"
+return
+
 ; ======================
 ; capslock to hyper key
 ; ======================
