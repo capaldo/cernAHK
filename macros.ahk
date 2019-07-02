@@ -635,6 +635,30 @@ return
 Send Patient describes the symptoms as moderate in severity and constant.
 return
 
+:*:\modf::
+Send Patient describes the symptoms as moderate in severity and fluctuatin in intensity.
+return
+
+:*:\modsep::
+Send Patient describes the symptoms as moderate in severity and several episodes have occurred.
+return
+
+:*:\mod1ep::
+Send Patient describes the symptoms as moderate in severity and 1 episode has occurred.
+return
+
+:*:\mod2ep::
+Send Patient describes the symptoms as moderate in severity and 2 episodes has occurred.
+return
+
+:*:\mod3ep::
+Send Patient describes the symptoms as moderate in severity and 3 episodes has occurred.
+return
+
+:*:\mod4ep::
+Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
+return
+
 :*:\sevd::
 Send that began "several days ago"
 return
