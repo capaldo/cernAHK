@@ -423,6 +423,10 @@ return
 ; hpi / ros
 ; ======================
 
+:*:\usx::
+Send urinary symptoms
+return 
+
 :*:\lace::
 Send laceration
 return
@@ -720,19 +724,51 @@ Send that began 1 day ago
 return
 
 :*:\2d::
-Send that began 2 day ago
+Send that began 2 days ago
 return
 
 :*:\3d::
-Send that began 3 day ago
+Send that began 3 days ago
 return
 
 :*:\4d::
-Send that began 4 day ago
+Send that began 4 days ago
 return
 
 :*:\5d::
-Send that began 5 day ago
+Send that began 5 days ago
+return
+
+:*:\6d::
+Send that began 6 days ago
+return
+
+:*:\1w::
+Send that began 1 week ago
+return
+
+:*:\2w::
+Send that began 2 weeks ago
+return
+
+:*:\3w::
+Send that began 3 weeks ago
+return
+
+:*:\4w::
+Send that began 4 weeks ago
+return
+
+:*:\1m::
+Send that began 1 month ago
+return
+
+:*:\2m::
+Send that began 2 months ago
+return
+
+:*:\3m::
+Send that began 3 months ago
 return
 
 ; =======================
