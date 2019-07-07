@@ -656,7 +656,7 @@ Send Patient describes the symptoms as moderate in severity and constant.
 return
 
 :*:\mdf::
-Send Patient describes the symptoms as moderate in severity and fluctuatin in intensity.
+Send Patient describes the symptoms as moderate in severity and fluctuating in intensity.
 return
 
 :*:\mdsep::
@@ -688,7 +688,7 @@ Send Patient describes the symptoms as moderate in severity and constant.
 return
 
 :*:\modf::
-Send Patient describes the symptoms as moderate in severity and fluctuatin in intensity.
+Send Patient describes the symptoms as moderate in severity and fluctuating in intensity.
 return
 
 :*:\modsep::
