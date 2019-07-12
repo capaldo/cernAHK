@@ -11,7 +11,7 @@ attest := "[attest"
 ; capslock to hyper key
 ; ======================
 
-#NoEnv 
+#NoEnv
 #UseHook
 #InstallKeybdHook
 #SingleInstance force
@@ -19,13 +19,13 @@ SendMode Input
 SetCapslockState, AlwaysOff
 
 ~Capslock::
- Send {Ctrl DownTemp}{Shift DownTemp}{Alt DownTemp}{LWin DownTemp}
- KeyWait, Capslock
- Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
- if (A_PriorKey = "Capslock") {
-     Send {Esc}
-     }
-
+    Send {Ctrl DownTemp}{Shift DownTemp}{Alt DownTemp}{LWin DownTemp}
+    KeyWait, Capslock
+    Send {Ctrl Up}{Shift Up}{Alt Up}{LWin Up}
+    if (A_PriorKey = "Capslock") {
+        Send {Esc}
+    }
+return
 
 ; ======================
 ; remap f9 navigation
