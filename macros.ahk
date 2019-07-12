@@ -720,55 +720,68 @@ Send that began "several days ago"
 return
 
 :*:\1d::
-Send that began 1 day ago
+Send that began 1 day ago.
+Send {Space}
 return
 
 :*:\2d::
-Send that began 2 days ago
+Send that began 2 days ago.
+Send {Space}
 return
 
 :*:\3d::
-Send that began 3 days ago
+Send that began 3 days ago.
+Send {Space}
 return
 
 :*:\4d::
-Send that began 4 days ago
+Send that began 4 days ago.
+Send {Space}
 return
 
 :*:\5d::
-Send that began 5 days ago
+Send that began 5 days ago.
+Send {Space}
 return
 
 :*:\6d::
-Send that began 6 days ago
+Send that began 6 days ago.
+Send {Space}
 return
 
 :*:\1w::
-Send that began 1 week ago
+Send that began 1 week ago.
+Send {Space}
 return
 
 :*:\2w::
-Send that began 2 weeks ago
+Send that began 2 weeks ago.
+Send {Space}
 return
 
 :*:\3w::
-Send that began 3 weeks ago
+Send that began 3 weeks ago.
+Send {Space}
 return
 
 :*:\4w::
-Send that began 4 weeks ago
+Send that began 4 weeks ago.
+Send {Space}
 return
 
 :*:\1m::
-Send that began 1 month ago
+Send that began 1 month ago.
+Send {Space}
 return
 
 :*:\2m::
-Send that began 2 months ago
+Send that began 2 months ago.
+Send {Space}
 return
 
 :*:\3m::
-Send that began 3 months ago
+Send that began 3 months ago.
+Send {Space}
 return
 
 ; =======================
