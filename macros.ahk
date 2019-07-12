@@ -551,6 +551,10 @@ return
 Send Patient denies
 return
 
+:*:\ptfd::
+Send Patients family denies
+return
+
 :*:\loc::
 Send loss of consciousness
 return
