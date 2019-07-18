@@ -33,3 +33,5 @@ All scripts do not venture into the orders section of the chart but, as always, 
 - [X] needs a prelude description to ensure user setup is correct
 - [X] update to be in line with new system changes
 - [X] make all text snippets universal, making the hotstrings and hotkey universal
+- [ ] add a banner
+- [ ] add a wiki
