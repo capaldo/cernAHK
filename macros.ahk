@@ -604,14 +604,17 @@ return
 ; ======================
 :*:\mode::
 Send moderate
+Send {Space}
 return
 
 :*:\md::
 Send mild
+Send {Space}
 return
 
 :*:\seve::
 Send severe
+Send {Space}
 return
 
 
@@ -620,32 +623,49 @@ return
 
 :*:\tend::
 Send tenderness
+Send {Space}
 return
 
 :*:\exud::
 Send exudate
+Send {Space}
 return
 
 :*:\eryt::
 Send erythema
+Send {Space}
+return
+
+:*:\fluc::
+Send fluctuance
+Send {Space}
+return
+
+:*:\stre::
+Send streaking
+Send {Space}
 return
 
 ; misc. anatomical
 ; ======================
 :*:\ruq::
 Send right upper quadrant
+Send {Space}
 return
 
 :*:\luq::
 Send left upper quadrant
+Send {Space}
 return
 
 :*:\llq::
 Send left lower quadrant
+Send {Space}
 return
 
 :*:\rlq::
 Send right lower quadrant
+Send {Space}
 return
 
 
@@ -657,70 +677,87 @@ return
 ; ======================
 :*:\mdc::
 Send Patient describes the symptoms as moderate in severity and constant.
+Send {Space}
 return
 
 :*:\mdf::
 Send Patient describes the symptoms as moderate in severity and fluctuating in intensity.
+Send {Space}
 return
 
 :*:\mdsep::
 Send Patient describes the symptoms as moderate in severity and several episodes have occurred.
+Send {Space}
 return
 
 :*:\md1ep::
 Send Patient describes the symptoms as moderate in severity and 1 episode has occurred.
+Send {Space}
 return
 
 :*:\md2ep::
 Send Patient describes the symptoms as moderate in severity and 2 episodes has occurred.
+Send {Space}
 return
 
 :*:\md3ep::
 Send Patient describes the symptoms as moderate in severity and 3 episodes has occurred.
+Send {Space}
 return
 
 :*:\md4ep::
 Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
+Send {Space}
 return
 
 :*:\md5ep::
 Send Patient describes the symptoms as moderate in severity and 5 episodes has occurred.
+Send {Space}
 return
 
 :*:\modc::
 Send Patient describes the symptoms as moderate in severity and constant.
+Send {Space}
 return
 
 :*:\modf::
 Send Patient describes the symptoms as moderate in severity and fluctuating in intensity.
+Send {Space}
 return
 
 :*:\modsep::
 Send Patient describes the symptoms as moderate in severity and several episodes have occurred.
+Send {Space}
 return
 
 :*:\mod1ep::
 Send Patient describes the symptoms as moderate in severity and 1 episode has occurred.
+Send {Space}
 return
 
 :*:\mod2ep::
 Send Patient describes the symptoms as moderate in severity and 2 episodes has occurred.
+Send {Space}
 return
 
 :*:\mod3ep::
 Send Patient describes the symptoms as moderate in severity and 3 episodes has occurred.
+Send {Space}
 return
 
 :*:\mod4ep::
 Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
+Send {Space}
 return
 
 :*:\mod5ep::
 Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
+Send {Space}
 return
 
 :*:\sevd::
-Send that began "several days ago"
+Send that began "several days ago".
+Send {Space}
 return
 
 :*:\1d::
