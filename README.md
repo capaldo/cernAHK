@@ -26,10 +26,10 @@ All scripts do not venture into the orders section of the chart but, as always, 
 * **12/01/18:** Added toolbar setup to prevent the buttons from "stealing" keyboard shortcuts.
 * **02/12/19:** Added more code snippets and macros.
 * **04/16/19:** Working to update the scripts to function with the recent changes.
+* **07/18/19:** Added phrases and additional words to hotstrings.
 
 ## TODO
 - [X] update the readme
 - [X] needs a prelude description to ensure user setup is correct
-- [ ] update to be in line with new system changes
-- [ ] make all text snippets universal, making the hotstrings and hotkey universal
-- [ ] website for easier navigation
+- [X] update to be in line with new system changes
+- [X] make all text snippets universal, making the hotstrings and hotkey universal
