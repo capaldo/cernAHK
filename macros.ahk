@@ -73,6 +73,14 @@ Sleep 50
 Send {Backspace}
 return
 
+; clear line
+; ======================
+:*:dd::
+Send +{Home}
+Sleep 50
+Send {Backspace}
+return
+
 ; ======================
 ; combo stuff
 ; ======================
