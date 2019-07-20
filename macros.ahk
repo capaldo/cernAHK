@@ -389,14 +389,12 @@ Send {Enter}
 return
 
 
-
 ; ======================
 ; Time Stamp
 ; ======================
 
 ; current time
 ; ======================
-
 ~Capslock & t::
 Send !c
 Sleep 100
@@ -425,7 +423,6 @@ MouseMove 22, 37
 Sleep 500
 Click 22, 37
 return
-
 ; ======================
 
 
@@ -435,7 +432,6 @@ return
 
 ; hpi / ros
 ; ======================
-
 :*:\usx::
 Send urinary symptoms
 return 
@@ -603,13 +599,11 @@ return
 :*:\jointp::
 Send joint pain
 return
-
 ; ======================
 
 
 ; history
 ; ======================
-
 :*:\htn::
 Send hypertension
 return
@@ -617,7 +611,6 @@ return
 :*:\dm::
 Send diabetes mellitus
 return
-
 ; ======================
 
 
@@ -625,23 +618,19 @@ return
 ; ======================
 :*:\mode::
 Send moderate
-Send {Space}
 return
 
 :*:\md::
 Send mild
-Send {Space}
 return
 
 :*:\seve::
 Send severe
-Send {Space}
 return
 
 
 ; pe
 ; ======================
-
 :*:\tend::
 Send tenderness
 Send {Space}
