@@ -77,8 +77,12 @@ return
 ; ======================
 :*:dd::
 Send +{Home}
-Sleep 50
-Send {Backspace}
+Send ^c
+Sleep 100
+string := Clipboard
+cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
+Send %cleanstring%
+Send :
 return
 
 ; ======================
