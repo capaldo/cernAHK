@@ -83,6 +83,7 @@ string := Clipboard
 cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
 Send %cleanstring%
 Send :
+Send {Space}
 return
 
 ; ======================
