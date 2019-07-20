@@ -537,6 +537,10 @@ return
 Send radiation of pain
 return
 
+:*:\toep::
+Send toe pain
+return
+
 :*:\ucc::
 Send Urgent Care Center
 return
