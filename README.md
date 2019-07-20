@@ -20,4 +20,4 @@ All scripts do not venture into the orders section of the chart but, as always, 
 - [X] update to be in line with new system changes
 - [X] make all text snippets universal, making the hotstrings and hotkey universal
 - [ ] add a banner
-- [ ] add a wiki
+- [X] add a wiki
