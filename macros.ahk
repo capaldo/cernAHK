@@ -77,13 +77,14 @@ return
 ; ======================
 :*:dd::
 Send +{Home}
-Send ^c
 Sleep 100
-string := Clipboard
+Send ^c
+Sleep 200
+colon := ": "
+string := clipboard
 cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
-Send %cleanstring%
-Send :
-Send {Space}
+Sleep 100
+Send %cleanstring%%colon%
 return
 
 ; ======================
