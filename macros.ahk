@@ -926,8 +926,8 @@ return
 ; miscellaneous
 ; =======================
 :*:\deg::
-Send {Alt Down}
-Send Numpad0 Numpad1 Numpad7 Numpad6 
+transform,s,chr,176
+send,%s%
 return
 
 ; =======================
