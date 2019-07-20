@@ -1,13 +1,6 @@
 # Warnings
 All scripts do not venture into the orders section of the chart but, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes.
 
-## Requirements
-* the main screen (aka launchpoint) needs to be set at 75%, otherwise, many of the commands on that screen may not work
-* the main screen toolbar must be set by unchecking all options under View > Toolbar > Navigation Toolbar and enabling the "Patient Toolbar" under View > Toolbar >
-* all code listed below that is labeled REQUIRED
-* knowledge on how to edit Autohotkey (use Google)
-
-
 ## Vocabulary
 * **Key Combination** – the keyboard keys that need to be pressed.
 * **Hot String** – the typed phrase that will automatically execute the macro.
