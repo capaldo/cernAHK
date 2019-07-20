@@ -587,6 +587,10 @@ return
 Send productive
 return
 
+:*:\jointp::
+Send joint pain
+return
+
 ; ======================
 
 
