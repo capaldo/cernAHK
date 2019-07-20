@@ -1,10 +1,6 @@
 # Warnings
 All scripts do not venture into the orders section of the chart but, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes.
 
-## General Information
-* using the script *"as-is"* will disable capslock entirely
-* use ctrl-f inside the script to find the portions of the script which may or may not need to be modified depending on your setup
-
 ## Requirements
 * the main screen (aka launchpoint) needs to be set at 75%, otherwise, many of the commands on that screen may not work
 * the main screen toolbar must be set by unchecking all options under View > Toolbar > Navigation Toolbar and enabling the "Patient Toolbar" under View > Toolbar >
