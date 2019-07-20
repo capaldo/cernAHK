@@ -683,6 +683,13 @@ Send right lower quadrant
 Send {Space}
 return
 
+:*:\medi::
+Send medial
+return
+
+:*:\lateral::
+Send lateral
+return
 
 ; ======================
 ; Phrases
