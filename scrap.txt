@@ -1,7 +1,1 @@
-https://onlinelibrary.wiley.com/doi/full/10.1046/j.1469-0691.2003.00790.x
-https://chem.libretexts.org/Courses/Remixer_University/Construction_Guide/6%3A_Disseminating_Texts/6.1%3A_Importing_LibreTexts_into_a_LMS
-https://bio.libretexts.org/Bookshelves/Microbiology/Book%3A_Microbiology_(Boundless)/13%3A_Antimicrobial_Drugs/13.5%3A_Measuring_Drug_Susceptibility/13.5A%3A_Minimal_Inhibitory_Concentration_(MIC)
-https://aac.asm.org/content/53/3/1074
-https://www.nature.com/articles/nprot.2007.521
-https://www.thoracic.org/patients/patient-resources/resources/laryngomalacia.pdf
-https://en.wikipedia.org/wiki/Cubital_fossa
+
