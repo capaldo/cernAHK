@@ -523,6 +523,10 @@ return
 Send tingling
 return
 
+:*:\radp::
+Send radiation of pain
+return
+
 :*:\ucc::
 Send Urgent Care Center
 return
