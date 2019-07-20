@@ -13,6 +13,7 @@ All scripts do not venture into the orders section of the chart but, as always, 
 * **02/12/19:** Added more code snippets and macros.
 * **04/16/19:** Working to update the scripts to function with the recent changes.
 * **07/18/19:** Added phrases and additional words to hotstrings.
+* **07/20/19:** Added clear line script and additional *onset* snippets.
 
 ## TODO
 - [X] update the readme
