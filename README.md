@@ -7,9 +7,6 @@ All scripts do not venture into the orders section of the chart but, as always, 
 * all code listed below that is labeled REQUIRED
 * knowledge on how to edit Autohotkey (use Google)
 
-## Included Files
-* Portable Autohotkey executable with stable macros
-* Macros.ahk file with macros currently being tested and some personal extras for use with other programs
 
 ## Vocabulary
 * **Key Combination** – the keyboard keys that need to be pressed.
