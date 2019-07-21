@@ -806,6 +806,11 @@ Send that began "several days ago".
 Send {Space}
 return
 
+:*:\tod::
+Send that began today.
+Send {Space}
+return
+
 :*:\1d::
 Send that began 1 day ago.
 Send {Space}
@@ -863,6 +868,36 @@ return
 
 :*:\13d::
 Send that began 13 days ago.
+Send {Space}
+return
+
+:*:\15d::
+Send that began 15 days ago.
+Send {Space}
+return
+
+:*:\16d::
+Send that began 16 days ago.
+Send {Space}
+return
+
+:*:\17d::
+Send that began 17 days ago.
+Send {Space}
+return
+
+:*:\18d::
+Send that began 18 days ago.
+Send {Space}
+return
+
+:*:\19d::
+Send that began 19 days ago.
+Send {Space}
+return
+
+:*:\20d::
+Send that began 20 days ago.
 Send {Space}
 return
 
