@@ -1,5 +1,5 @@
 <p align="center">
-  <i><b>L</b>ight <b>E</b>fficient <b>Ch</b>arting of EMR <b>N</b>otes</i>
+  <i><b>L</b>ight & <b>E</b>fficient <b>Ch</b>arting of EMR <b>N</b>otes</i>
 </p>
 
 ## Warnings
