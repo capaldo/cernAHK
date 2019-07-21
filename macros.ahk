@@ -561,6 +561,10 @@ return
 Send Patient reports
 return
 
+:*:\ptc::
+Send Patient characterizes
+return
+
 :*:\pts::
 Send Patient states
 return
@@ -695,6 +699,13 @@ return
 Send lateral
 retun
 
+:*:\lt::
+Send left
+retun
+
+:*:\rt::
+Send right
+return
 
 ; ======================
 ; Phrases
