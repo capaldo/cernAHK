@@ -675,7 +675,7 @@ return
 
 :*:\lymphi::
 Send lymphangitis
-retun
+return
 
 ; misc. anatomical
 ; ======================
@@ -709,11 +709,11 @@ return
 
 :*:\lat::
 Send lateral
-retun
+return
 
 :*:\lt::
 Send left
-retun
+return
 
 :*:\rt::
 Send right
