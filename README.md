@@ -1,5 +1,5 @@
 <p align="center">
-  <i><b>L</b>earning <b>E</b>xpedited <b>Ch</b>arting <b>o</b>f <b>E</b>M<b>R</b> Documentation</i>
+  <i><b>L</b>ight and <b>E</b>xcellent <b>Ch</b>arting of EMR <b>N</b>otes</i>
 </p>
 
 ## Warnings
