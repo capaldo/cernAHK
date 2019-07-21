@@ -687,9 +687,14 @@ return
 Send medial
 return
 
-:*:\lateral::
-Send lateral
+:*:\dis::
+Send distal
 return
+
+:*:\lat::
+Send lateral
+retun
+
 
 ; ======================
 ; Phrases
