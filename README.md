@@ -26,3 +26,4 @@ All scripts do not venture into the orders section of the chart but, as always, 
 - [X] make all text snippets universal, making the hotstrings and hotkey universal
 - [ ] add a banner
 - [X] add a wiki
+- [ ] add low acuity ICD-10 codes
