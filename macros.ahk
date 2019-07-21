@@ -673,6 +673,10 @@ return
 Send limited ROM due to pain
 return
 
+:*:\lymphi::
+Send lymphangitis
+retun
+
 ; misc. anatomical
 ; ======================
 :*:\ruq::
