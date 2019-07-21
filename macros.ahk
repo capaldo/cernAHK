@@ -642,27 +642,35 @@ return
 ; ======================
 :*:\tend::
 Send tenderness
-Send {Space}
 return
 
 :*:\exud::
 Send exudate
-Send {Space}
 return
 
 :*:\eryt::
 Send erythema
-Send {Space}
 return
 
 :*:\fluc::
 Send fluctuance
-Send {Space}
 return
 
 :*:\stre::
 Send streaking
 Send {Space}
+return
+
+:*:\nrom::
+Send normal ROM
+return
+
+:*:\lrom::
+Send limited ROM
+return
+
+:*:\lprom::
+Send limited ROM due to pain
 return
 
 ; misc. anatomical
