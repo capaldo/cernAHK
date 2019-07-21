@@ -1,3 +1,5 @@
+<center>***L**earning **E**xpedited **Ch**arting **o**f **E**M**R** Documentation*</center>
+
 ## Warnings
 All scripts do not venture into the orders section of the chart but, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes.
 
