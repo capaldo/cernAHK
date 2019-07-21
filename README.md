@@ -1,4 +1,6 @@
-<center><i><b>L</b>earning <b>E</b>xpedited <b>Ch</b>arting <b>o</b>f <b>E</b>M<b>R</b> Documentation</i></center>
+<center>
+  <i><b>L</b>earning <b>E</b>xpedited <b>Ch</b>arting <b>o</b>f <b>E</b>M<b>R</b> Documentation</i>
+</center>
 
 ## Warnings
 All scripts do not venture into the orders section of the chart but, as always, **use at your own risk** and make sure to test all commands on a test patient. It is generally recommended to keep an eye on all processes.
