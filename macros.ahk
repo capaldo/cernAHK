@@ -132,7 +132,7 @@ Loop, 3 {
     Sleep 50
 }
 Send %pe% 
-Sleep 1000
+Sleep 1200
 Send {Enter}
 Loop, 3 {
     Sleep 50
@@ -191,7 +191,7 @@ Loop, 3 {
     Sleep 50
 }
 Send %pe% 
-Sleep 1000
+Sleep 1200
 Send {Enter}
 Loop, 3 {
     Sleep 50
