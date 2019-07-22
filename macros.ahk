@@ -521,6 +521,14 @@ return
 Send abdominal pain
 return
 
+:*:\chestp::
+Send chest pain
+return
+
+:*:\neckp::
+Send neck pain
+return
+
 :*:\nc::
 Send nasal congestion
 return
