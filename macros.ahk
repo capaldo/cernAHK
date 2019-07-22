@@ -988,9 +988,12 @@ return
 ; =======================
 ; miscellaneous
 ; =======================
+:*:\bull::
+Send {ASC 00149}
+return
+
 :*:\deg::
-transform,s,chr,176
-send,%s%
+Send {ASC 00176}
 return
 
 ; =======================
