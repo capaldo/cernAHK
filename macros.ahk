@@ -733,83 +733,132 @@ return
 
 ; hpi
 ; ======================
+
 :*:\mdc::
-Send Patient describes the symptoms as mild in severity and constant.
+sxs := "Patient describes the symptoms as mild in severity and constant."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\mdf::
-Send Patient describes the symptoms as mild in severity and fluctuating in intensity.
+sxs := "Patient describes the symptoms as mild in severity and fluctuating in intensity."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\mdsep::
-Send Patient describes the symptoms as mild in severity and several episodes have occurred.
+sxs := "Patient describes the symptoms as mild in severity and several episodes have occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\md1ep::
-Send Patient describes the symptoms as mild in severity and 1 episode has occurred.
+sxs := "Patient describes the symptoms as mild in severity and 1 episode has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\md2ep::
-Send Patient describes the symptoms as mild in severity and 2 episodes has occurred.
+sxs := "Patient describes the symptoms as mild in severity and 2 episodes has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\md3ep::
-Send Patient describes the symptoms as mild in severity and 3 episodes has occurred.
+sxs := "Patient describes the symptoms as mild in severity and 3 episodes has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\md4ep::
-Send Patient describes the symptoms as mild in severity and 4 episodes has occurred.
+sxs := "Patient describes the symptoms as mild in severity and 4 episodes has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\md5ep::
-Send Patient describes the symptoms as mild in severity and 5 episodes has occurred.
+sxs := "Patient describes the symptoms as mild in severity and 5 episodes has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\modc::
-Send Patient describes the symptoms as moderate in severity and constant.
+sxs := "Patient describes the symptoms as moderate in severity and constant."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\modf::
-Send Patient describes the symptoms as moderate in severity and fluctuating in intensity.
+sxs := "Patient describes the symptoms as moderate in severity and fluctuating in intensity."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\modsep::
-Send Patient describes the symptoms as moderate in severity and several episodes have occurred.
+sxs := "Patient describes the symptoms as moderate in severity and several episodes have occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\mod1ep::
-Send Patient describes the symptoms as moderate in severity and 1 episode has occurred.
+sxs := "Patient describes the symptoms as moderate in severity and 1 episode has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\mod2ep::
-Send Patient describes the symptoms as moderate in severity and 2 episodes has occurred.
+sxs := "Patient describes the symptoms as moderate in severity and 2 episodes has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\mod3ep::
-Send Patient describes the symptoms as moderate in severity and 3 episodes has occurred.
+sxs := "Patient describes the symptoms as moderate in severity and 3 episodes has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\mod4ep::
-Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
+sxs := "Patient describes the symptoms as moderate in severity and 4 episodes has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
 :*:\mod5ep::
-Send Patient describes the symptoms as moderate in severity and 4 episodes has occurred.
+sxs := "Patient describes the symptoms as moderate in severity and 5 episodes has occurred."
+clipboard = %sxs%
+Sleep 200
+Send ^v
 Send {Space}
 return
 
