@@ -424,6 +424,45 @@ MouseMove 22, 37
 Sleep 500
 Click 22, 37
 return
+
+^!t::
+Send ^a
+Send ^x
+Sleep 300
+Send !c
+Sleep 100
+Send a
+SetTitleMatchMode, 2
+WinWait, Ad Hoc
+Send {Tab}
+Sleep 50
+Send u
+Sleep 50
+Send {Space}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Enter}
+SetTitleMatchMode, 2
+WinWait, Time Seen
+Sleep 1000
+Send t
+Sleep 50
+Send {Tab}
+Sleep 50
+Send ^v
+Sleep 50
+MouseMove 257, 79
+Sleep 100
+Click 257, 79
+Sleep 100
+Send ^a
+Send ^v
+Sleep 50
+MouseMove 22, 37
+Sleep 500
+Click 22, 37
+return
 ; ======================
 
 
