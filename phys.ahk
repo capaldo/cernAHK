@@ -5,7 +5,7 @@ F10::
 Send !c
 Sleep 50
 Send {Enter}
-Sleep 1500
+Sleep 2500
 Click 274, 564
 Sleep 4000
 Click 1577, 975
