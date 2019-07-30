@@ -192,11 +192,7 @@ Sleep 50
 Send %ros%
 Sleep 1000
 Send {Enter}
-Loop, 3 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
+GoSub gotoPE
 Send %pe% 
 GoSub gotoMDM
 Send %mdm% 
@@ -1152,6 +1148,14 @@ Sleep 50
 Send {End}
 Sleep 50 
 Send {Space}
+return
+
+gotoPE:
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
 return
 
 gotoMDM:
