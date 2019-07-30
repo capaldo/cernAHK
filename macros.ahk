@@ -774,57 +774,69 @@ return
 ; ======================
 
 :*:\mdc::
+clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and constant."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\mdf::
+clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and fluctuating in intensity."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\mdsep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and several episodes have occurred."
 clipboard = %sxs%
 Sleep 200
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\md1ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 1 episode has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\md2ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 2 episodes has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\md3ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 3 episodes has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\md4ep::
@@ -835,87 +847,106 @@ Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\md5ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 5 episodes has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\modc::
+clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and constant."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\modf::
+clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and fluctuating in intensity."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\modsep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and several episodes have occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\mod1ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 1 episode has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\mod2ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 2 episodes has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\mod3ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 3 episodes has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\mod4ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 4 episodes has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\mod5ep::
+clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 5 episodes has occurred."
 clipboard = %sxs%
 Sleep 100
 Send ^v
 Sleep 100
 Send {Space}
+clipboard = %old%
 return
 
 :*:\sevd::
