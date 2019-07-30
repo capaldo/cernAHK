@@ -178,11 +178,7 @@ Send {Space}
 return
 
 :*:genchart::
-Loop, 3 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
+GoSub gotoHPI
 Send %hpi% 
 Sleep 1000
 Send {Enter}
@@ -194,6 +190,8 @@ Sleep 1000
 Send {Enter}
 GoSub gotoPE
 Send %pe% 
+Sleep 1200
+Send {Enter}
 GoSub gotoMDM
 Send %mdm% 
 Sleep 1200
@@ -202,7 +200,7 @@ GoSub gotoATTESTATION
 Send %attest% 
 Sleep 1000
 Send {Enter}
-GoSub gotoHPI
+GoSub jumptoHPI
 return
 
 ; sign
@@ -1133,7 +1131,7 @@ mouth_abscess := "K12.2 mouth abscess"
 
 
 
-gotoHPI:
+jumptoHPI:
 ; go back to the hpi
 Send ^f
 WinWait, Find
@@ -1158,9 +1156,15 @@ Loop, 3 {
 }
 return
 
+gotoHPI:
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+return
+
 gotoMDM:
-Sleep 1200
-Send {Enter}
 Loop, 3 {
     Sleep 50
     Send {Tab}
