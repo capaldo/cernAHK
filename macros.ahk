@@ -79,13 +79,15 @@ return
 Send +{Home}
 Sleep 100
 Send ^c
-Sleep 100
-colon := ": "
+Sleep 200
+colon := ":"
 string := clipboard
 cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
-Sleep 100
-IfInString, %cleanstring%, %colon% {
+IfInString, string, %colon% 
+{
 Send %cleanstring%%colon%
+Sleep 50 
+Send {Space}
 }
 else {
 Send {Backspace}
