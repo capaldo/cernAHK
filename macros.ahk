@@ -1,11 +1,21 @@
 ; ======================
 ; variables
 ; ======================
+
+; charting
+; ======================
 hpi := "[hgen"
 ros := "[rgen"
 pe := "[pgen"
 mdm := "[mdm"
 attest := "[attest"
+
+; timing
+; ======================
+pause1 = 50
+pause2 = 100
+pause3 = 250
+pause4 = 1000
 
 ; ======================
 ; capslock to hyper key
@@ -69,7 +79,7 @@ return
 ; ======================
 :*:cc::
 Send ^a
-Sleep 50
+Sleep %pause1%
 Send {Backspace}
 return
 
@@ -86,7 +96,7 @@ cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
 IfInString, string, %colon% 
 {
 Send %cleanstring%%colon%
-Sleep 50 
+Sleep %pause1%
 Send {Space}
 }
 else {
@@ -103,13 +113,13 @@ return
 ~Capslock & o::
 MouseGetPos x, y
 Send !p
-Sleep 100
+Sleep %pause1%
 MouseMove 1163, 585
-Sleep 100
+Sleep %pause1%
 Send n
-Sleep 50
+Sleep %pause1%
 Send d
-Sleep 50
+Sleep %pause1%
 Send {Enter}
 MouseMove %x%, %y%
 SetTitleMatchMode, 2
@@ -120,21 +130,21 @@ SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 2000
 Loop, 3 {
-    Sleep 50
+    Sleep %pause1%
     Send {Tab}
-    Sleep 50
+    Sleep %pause1%
 }
 Send %hpi%
 Sleep 1000
 Send {Enter}
-Sleep 50
+Sleep %pause1%
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send %ros%
 Sleep 1000
 Send {Enter}
 Loop, 3 {
-    Sleep 50
+    Sleep %pause1%
     Send {Tab}
     Sleep 50
 }
@@ -182,9 +192,9 @@ GoSub gotoHPI
 Send %hpi% 
 Sleep 1000
 Send {Enter}
-Sleep 50
+Sleep %pause1%
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send %ros%
 Sleep 1000
 Send {Enter}
@@ -248,9 +258,9 @@ return
 ; ======================
 ~Capslock & j::
 Send +{Home}
-Sleep 50
+Sleep %pause1%
 Send ^b
-Sleep 50
+Sleep %pause1%
 Send {Right DownTemp}
 return
 
@@ -377,23 +387,23 @@ Send a
 SetTitleMatchMode, 2
 WinWait, Ad Hoc
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send u
-Sleep 50
+Sleep %pause1%
 Send {Space}
-Sleep 50
+Sleep %pause1%
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send {Enter}
 SetTitleMatchMode, 2
 WinWait, Time Seen
 Sleep 1000
 Send t
-Sleep 50
+Sleep %pause1%
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send n
-Sleep 50
+Sleep %pause1%
 MouseMove 22, 37
 Sleep 500
 Click 22, 37
@@ -411,30 +421,29 @@ Send a
 SetTitleMatchMode, 2
 WinWait, Ad Hoc
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send u
-Sleep 50
+Sleep %pause1%
 Send {Space}
-Sleep 50
+Sleep %pause1%
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send {Enter}
 SetTitleMatchMode, 2
 WinWait, Time Seen
 Sleep 1000
 Send t
-Sleep 50
+Sleep %pause1%
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send ^v
-Sleep 50
+Sleep %pause1%
 MouseMove 257, 79
 Sleep 100
 Click 257, 79
 Sleep 100
 Send ^a
 Send ^v
-Sleep 50
 MouseMove 22, 37
 Sleep 500
 Click 22, 37
@@ -1136,48 +1145,48 @@ jumptoHPI:
 Send ^f
 WinWait, Find
 Send History of Present
-Sleep 50
+Sleep %pause1%
 Send {Escape}
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 50
+Sleep %pause1%
 Send {Tab}
-Sleep 50
+Sleep %pause1%
 Send {End}
-Sleep 50 
+Sleep %pause1%
 Send {Space}
 return
 
 gotoPE:
 Loop, 3 {
-    Sleep 50
+    Sleep %pause1%
     Send {Tab}
-    Sleep 50
+    Sleep %pause1%
 }
 return
 
 gotoHPI:
 Loop, 3 {
-    Sleep 50
+    Sleep %pause1%
     Send {Tab}
-    Sleep 50
+    Sleep %pause1%
 }
 return
 
 gotoMDM:
 Loop, 3 {
-    Sleep 50
+    Sleep %pause1%
     Send {Tab}
-    Sleep 50
+    Sleep %pause1%
 }
 return
 
 gotoATTESTATION:
 Loop, 6 {
-    Sleep 50
+    Sleep %pause1%
     Send {Tab}
-    Sleep 50
+    Sleep %pause1%
 }
 Send {Enter}
-Sleep 50
+Sleep %pause1%
 return
