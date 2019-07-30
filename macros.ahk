@@ -198,42 +198,15 @@ Loop, 3 {
     Sleep 50
 }
 Send %pe% 
-Sleep 1200
-Send {Enter}
-Loop, 3 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
+GoSub gotoMDM
 Send %mdm% 
 Sleep 1200
 Send {Enter}
-; attestation starts here
-Loop, 6 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
-Send {Enter}
-Sleep 50
+GoSub gotoATTESTATION
 Send %attest% 
 Sleep 1000
 Send {Enter}
-Sleep 50
-; go back to the hpi
-Send ^f
-WinWait, Find
-Send History of Present
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {End}
-Sleep 50 
-Send {Space}
+GoSub gotoHPI
 return
 
 ; sign
@@ -1161,3 +1134,42 @@ face_abscess := "L02.01 facial"
 leftear_abscess := "H60.02 external ear"
 rightear_abscess := "H60.01 external ear"
 mouth_abscess := "K12.2 mouth abscess"
+
+
+
+gotoHPI:
+; go back to the hpi
+Send ^f
+WinWait, Find
+Send History of Present
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {End}
+Sleep 50 
+Send {Space}
+return
+
+gotoMDM:
+Sleep 1200
+Send {Enter}
+Loop, 3 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+return
+
+gotoATTESTATION:
+Loop, 6 {
+    Sleep 50
+    Send {Tab}
+    Sleep 50
+}
+Send {Enter}
+Sleep 50
+return
