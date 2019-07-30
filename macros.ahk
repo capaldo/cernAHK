@@ -114,10 +114,7 @@ return
 ; ======================
 ~Capslock & o::
 GoSub openNEWDOC
-Click 1080, 395, 2
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 2000
+
 Loop, 3 {
     Sleep %pause1%
     Send {Tab}
@@ -420,7 +417,7 @@ Sleep %pause1%
 Send {Enter}
 SetTitleMatchMode, 2
 WinWait, Time Seen
-Sleep 1000
+Sleep %pause4%
 Send t
 Sleep %pause1%
 Send {Tab}
@@ -1195,4 +1192,8 @@ MouseMove %x%, %y%
 SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 3000
+Click 1080, 395, 2
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 2000
 return
