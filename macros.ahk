@@ -432,6 +432,8 @@ Sleep 500
 Click 22, 37
 return
 
+; use time on clipboard
+; ======================
 ^!t::
 Send ^a
 Send ^x
