@@ -16,6 +16,8 @@ pause1 = 50
 pause2 = 100
 pause3 = 250
 pause4 = 1000
+pause5 = 2000
+pause6 = 3000
 
 ; ======================
 ; capslock to hyper key
@@ -111,20 +113,7 @@ return
 ; open new chart and insert template
 ; ======================
 ~Capslock & o::
-MouseGetPos x, y
-Send !p
-Sleep %pause1%
-MouseMove 1163, 585
-Sleep %pause1%
-Send n
-Sleep %pause1%
-Send d
-Sleep %pause1%
-Send {Enter}
-MouseMove %x%, %y%
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 3000
+GoSub openNEWDOC
 Click 1080, 395, 2
 SetTitleMatchMode, 2
 WinWait, Opened by
@@ -190,13 +179,13 @@ return
 :*:genchart::
 GoSub gotoHPI
 Send %hpi% 
-Sleep 1000
+Sleep %pause4%
 Send {Enter}
 Sleep %pause1%
 Send {Tab}
 Sleep %pause1%
 Send %ros%
-Sleep 1000
+Sleep %pause4%
 Send {Enter}
 GoSub gotoPE
 Send %pe% 
@@ -208,7 +197,7 @@ Sleep 1200
 Send {Enter}
 GoSub gotoATTESTATION
 Send %attest% 
-Sleep 1000
+Sleep %pause4%
 Send {Enter}
 GoSub jumptoHPI
 return
@@ -1189,4 +1178,21 @@ Loop, 6 {
 }
 Send {Enter}
 Sleep %pause1%
+return
+
+openNEWDOC:
+MouseGetPos x, y
+Send !p
+Sleep %pause1%
+MouseMove 1163, 585
+Sleep %pause1%
+Send n
+Sleep %pause1%
+Send d
+Sleep %pause1%
+Send {Enter}
+MouseMove %x%, %y%
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 3000
 return
