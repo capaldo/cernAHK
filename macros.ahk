@@ -14,7 +14,7 @@ attest := "[attest"
 ; ======================
 pause1 = 50
 pause2 = 100
-pause3 = 250
+pause3 = 200
 pause4 = 1000
 pause5 = 2000
 pause6 = 3000
@@ -89,7 +89,7 @@ return
 ; ======================
 :*:dd::
 Send +{Home}
-Sleep 100
+Sleep %pause2%
 Send ^c
 Sleep 200
 colon := ":"
@@ -121,13 +121,13 @@ Loop, 3 {
     Sleep %pause1%
 }
 Send %hpi%
-Sleep 1000
+Sleep %pause2%
 Send {Enter}
 Sleep %pause1%
 Send {Tab}
 Sleep %pause1%
 Send %ros%
-Sleep 1000
+Sleep %pause2%
 Send {Enter}
 Loop, 3 {
     Sleep %pause1%
@@ -143,7 +143,7 @@ Loop, 3 {
     Sleep 50
 }
 Send %mdm% 
-Sleep 1200
+Sleep %pause4%
 Send {Enter}
 ; attestation starts here
 Loop, 6 {
@@ -154,7 +154,7 @@ Loop, 6 {
 Send {Enter}
 Sleep 50
 Send %attest% 
-Sleep 1000
+Sleep %pause2%
 Send {Enter}
 Sleep 50
 ; go back to the hpi
@@ -204,12 +204,12 @@ return
 !^s::
 Send ^g
 WinWait, Sign/Submit Note
-Sleep 100
+Sleep %pause2%
 MouseGetPos x, y
 KeyWait, LButton, D
 Sleep 250
 Click 948, 664
-Sleep 100
+Sleep %pause2%
 MouseMove %x%, %y%
 return
 
@@ -222,11 +222,11 @@ return
 ; ======================
 !b::
 Send {Home}
-Sleep 100
+Sleep %pause2%
 Send +{Down}
-Sleep 100
+Sleep %pause2%
 Send ^b
-Sleep 100
+Sleep %pause2%
 Send {Right}
 return
 
@@ -234,9 +234,9 @@ return
 ; ======================
 ~Capslock & l::
 Send +{End}
-Sleep 200
+Sleep %pause2%
 Send ^b
-Sleep 200
+Sleep %pause2%
 Send {Right DownTemp}
 return
 
@@ -244,9 +244,9 @@ return
 ; ======================
 ~Capslock & j::
 Send +{Home}
-Sleep %pause1%
+Sleep %pause2%
 Send ^b
-Sleep %pause1%
+Sleep %pause2%
 Send {Right DownTemp}
 return
 
@@ -258,15 +258,15 @@ return
 ; ======================
 ~Capslock & i::
 Send {F9}
-Sleep 100
+Sleep %pause2%
 Send {Up}
-Sleep 100
+Sleep %pause2%
 Send {Enter}
-Sleep 100
+Sleep %pause2%
 Send +{F9}
-Sleep 100
+Sleep %pause2%
 Send ^b
-Sleep 100
+Sleep %pause2%
 Send {Right}
 return
 
@@ -274,15 +274,15 @@ return
 ; ======================
 ~Capslock & k::
 Send {F9}
-Sleep 100
+Sleep %pause2%
 Send {Down}
-Sleep 100
+Sleep %pause2%
 Send {Enter}
-Sleep 100
+Sleep %pause2%
 Send +{F9}
-Sleep 100
+Sleep %pause2%
 Send ^b
-Sleep 100
+Sleep %pause2%
 Send {Right}
 return
 
@@ -295,7 +295,7 @@ return
 !p::
 Sleep 200
 Send {Alt}
-Sleep 100
+Sleep %pause2%
 Send t
 Send {Down 3} ; possible change back, new option above print called report
 Sleep 300
@@ -317,7 +317,7 @@ return
 ; ======================
 ^1::
 Send !v
-Sleep 100
+Sleep %pause2%
 Send {Enter}
 return
 
@@ -325,7 +325,7 @@ return
 ; ======================
 ^2::
 Send !v
-Sleep 100
+Sleep %pause2%
 Send t
 return
 
@@ -333,13 +333,13 @@ return
 ; ======================
 ^d::
 MouseMove 1163, 585
-Sleep 100
+Sleep %pause2%
 Send !c
-Sleep 100
+Sleep %pause2%
 Send {Down}
-Sleep 100
+Sleep %pause2%
 Send d
-Sleep 100
+Sleep %pause2%
 Send {Enter}
 return
 
@@ -347,7 +347,7 @@ return
 ; ======================
 ~Capslock & s::
 Send !d
-Sleep 100
+Sleep %pause2%
 Send {Enter}
 return
 
@@ -355,7 +355,7 @@ return
 ; ======================
 #s::
 Send {Tab 6}
-Sleep 100
+Sleep %pause2%
 Send {Enter}
 return
 
@@ -368,7 +368,7 @@ return
 ; ======================
 ~Capslock & t::
 Send !c
-Sleep 100
+Sleep %pause2%
 Send a
 SetTitleMatchMode, 2
 WinWait, Ad Hoc
@@ -402,7 +402,7 @@ Send ^a
 Send ^x
 Sleep 300
 Send !c
-Sleep 100
+Sleep %pause2%
 Send a
 SetTitleMatchMode, 2
 WinWait, Ad Hoc
@@ -425,9 +425,9 @@ Sleep %pause1%
 Send ^v
 Sleep %pause1%
 MouseMove 257, 79
-Sleep 100
+Sleep %pause2%
 Click 257, 79
-Sleep 100
+Sleep %pause2%
 Send ^a
 Send ^v
 MouseMove 22, 37
@@ -748,9 +748,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and constant."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -759,9 +759,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and fluctuating in intensity."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -772,7 +772,7 @@ sxs := "Patient describes the symptoms as mild in severity and several episodes 
 clipboard = %sxs%
 Sleep 200
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -781,9 +781,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 1 episode has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -792,9 +792,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 2 episodes has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -803,9 +803,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 3 episodes has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -814,9 +814,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 4 episodes has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -825,9 +825,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as mild in severity and 5 episodes has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -836,9 +836,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and constant."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -847,9 +847,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and fluctuating in intensity."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -858,9 +858,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and several episodes have occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -869,9 +869,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 1 episode has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -880,9 +880,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 2 episodes has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -891,9 +891,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 3 episodes has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -902,9 +902,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 4 episodes has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
@@ -913,9 +913,9 @@ return
 clipboard = %old%
 sxs := "Patient describes the symptoms as moderate in severity and 5 episodes has occurred."
 clipboard = %sxs%
-Sleep 100
+Sleep %pause2%
 Send ^v
-Sleep 100
+Sleep %pause2%
 Send {Space}
 clipboard = %old%
 return
