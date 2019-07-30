@@ -117,7 +117,7 @@ Loop, 3 {
     Send {Tab}
     Sleep 50
 }
-Send %hpi% ; CHANGE to hpi autotext
+Send %hpi%
 Sleep 1000
 Send {Enter}
 Sleep 50
@@ -176,7 +176,7 @@ Loop, 3 {
     Send {Tab}
     Sleep 50
 }
-Send %hpi% ; CHANGE to hpi autotext
+Send %hpi% 
 Sleep 1000
 Send {Enter}
 Sleep 50
