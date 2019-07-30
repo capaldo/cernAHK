@@ -79,12 +79,17 @@ return
 Send +{Home}
 Sleep 100
 Send ^c
-Sleep 200
+Sleep 100
 colon := ": "
 string := clipboard
 cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
 Sleep 100
+IfInString, %cleanstring%, %colon% {
 Send %cleanstring%%colon%
+}
+else {
+Send {Backspace}
+}
 return
 
 ; ======================
