@@ -178,9 +178,7 @@ GoSub gotoHPI
 Send %hpi% 
 Sleep %pause4%
 Send {Enter}
-Sleep %pause1%
-Send {Tab}
-Sleep %pause1%
+GoSub gotoROS
 Send %ros%
 Sleep %pause4%
 Send {Enter}
@@ -1135,6 +1133,13 @@ Loop, 6 {
 }
 Send {Enter}
 Sleep %pause1%
+return
+
+gotoROS:
+Sleep %pause1%
+Send {Tab}
+Sleep %pause1%
+Send {Tab}
 return
 
 openNEWDOC:
