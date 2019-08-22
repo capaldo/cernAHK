@@ -110,6 +110,20 @@ Send {Backspace}
 }
 return
 
+; delete left of caret
+; ======================
+:*:\dl::
+Send +{Home}
+Send {Delete}
+return
+
+; delete right of caret
+; ======================
+:*:\dr::
+Send +{End}
+Send {Delete}
+return
+
 ; ======================
 ; combo stuff
 ; ======================
