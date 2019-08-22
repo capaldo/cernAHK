@@ -120,7 +120,7 @@ return
 
 :*:genchart::
 GoSub genchart
-returm
+return
 
 ; sign
 ; ======================
