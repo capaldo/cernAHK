@@ -286,6 +286,15 @@ Sleep %pause2%
 Send d
 Sleep %pause2%
 Send {Enter}
+Sleep %pause4%
+SetTitleMatchMode, 2
+if(winActive("Discern"))
+{
+Send {Enter}
+}
+else
+{
+}
 return
 
 ; save chart
