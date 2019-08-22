@@ -1063,6 +1063,17 @@ return
 Send {ASC 00176}
 return
 
+; make Patient convert to Patients family
+:*:\makepeds::
+Send ^a
+Sleep %pause1%
+Send ^c
+Sleep %pause3%
+StringReplace, Clipboard, Clipboard, Patient, Patients family, All
+Sleep %pause3%
+Send ^v
+return
+
 ; =======================
 ; diagnosis codes
 ; =======================
