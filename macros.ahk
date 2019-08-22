@@ -10,6 +10,10 @@ pe := "[pgen"
 mdm := "[mdm"
 attest := "[attest"
 
+thpi := "//uchpi"
+tros := "//ucros"
+tpe := "//ucpe"
+
 ; timing
 ; ======================
 pause1 = 50
@@ -120,6 +124,10 @@ return
 
 :*:genchart::
 GoSub genchart
+return
+
+:*:tchart::
+GoSub tchart
 return
 
 ; sign
@@ -1103,7 +1111,6 @@ WinWait, Opened by
 Sleep 2000
 return
 
-
 genchart:
 GoSub gotoHPI
 Send %hpi% 
@@ -1115,6 +1122,33 @@ Sleep %pause4%
 Send {Enter}
 GoSub gotoPE
 Send %pe% 
+Sleep 1200
+Send {Enter}
+GoSub gotoMDM
+Send %mdm% 
+Sleep 1200
+Send {Enter}
+GoSub gotoATTESTATION
+Send %attest% 
+Sleep %pause4%
+Send {Enter}
+GoSub jumptoHPI
+return
+
+tchart:
+GoSub gotoHPI
+Send %thpi% 
+Send %clipboard%
+Sleep %pause4%
+Send {Enter}
+GoSub gotoROS
+Send %tros%
+Send %clipboard%
+Sleep %pause4%
+Send {Enter}
+GoSub gotoPE
+Send %tpe% 
+Send %clipboard%
 Sleep 1200
 Send {Enter}
 GoSub gotoMDM
