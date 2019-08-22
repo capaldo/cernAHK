@@ -114,88 +114,13 @@ return
 ; ======================
 ~Capslock & o::
 GoSub openNEWDOC
-
-Loop, 3 {
-    Sleep %pause1%
-    Send {Tab}
-    Sleep %pause1%
-}
-Send %hpi%
-Sleep %pause2%
-Send {Enter}
-Sleep %pause1%
-Send {Tab}
-Sleep %pause1%
-Send %ros%
-Sleep %pause2%
-Send {Enter}
-Loop, 3 {
-    Sleep %pause1%
-    Send {Tab}
-    Sleep 50
-}
-Send %pe% 
-Sleep 1200
-Send {Enter}
-Loop, 3 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
-Send %mdm% 
-Sleep %pause4%
-Send {Enter}
-; attestation starts here
-Loop, 6 {
-    Sleep 50
-    Send {Tab}
-    Sleep 50
-}
-Send {Enter}
-Sleep 50
-Send %attest% 
-Sleep %pause2%
-Send {Enter}
-Sleep 50
-; go back to the hpi
-Send ^f
-WinWait, Find
-Send History of Present
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 50
-Send {Tab}
-Sleep 50
-Send {End}
-Sleep 50 
-Send {Space}
+Sleep 3000
+GoSub genchart
 return
 
 :*:genchart::
-GoSub gotoHPI
-Send %hpi% 
-Sleep %pause4%
-Send {Enter}
-GoSub gotoROS
-Send %ros%
-Sleep %pause4%
-Send {Enter}
-GoSub gotoPE
-Send %pe% 
-Sleep 1200
-Send {Enter}
-GoSub gotoMDM
-Send %mdm% 
-Sleep 1200
-Send {Enter}
-GoSub gotoATTESTATION
-Send %attest% 
-Sleep %pause4%
-Send {Enter}
-GoSub jumptoHPI
-return
+GoSub genchart
+returm
 
 ; sign
 ; ======================
@@ -1161,4 +1086,29 @@ Click 1080, 395, 2
 SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 2000
+return
+
+
+genchart:
+GoSub gotoHPI
+Send %hpi% 
+Sleep %pause4%
+Send {Enter}
+GoSub gotoROS
+Send %ros%
+Sleep %pause4%
+Send {Enter}
+GoSub gotoPE
+Send %pe% 
+Sleep 1200
+Send {Enter}
+GoSub gotoMDM
+Send %mdm% 
+Sleep 1200
+Send {Enter}
+GoSub gotoATTESTATION
+Send %attest% 
+Sleep %pause4%
+Send {Enter}
+GoSub jumptoHPI
 return
