@@ -14,6 +14,8 @@ thpi := "//uchpi"
 tros := "//ucros"
 tpe := "//ucpe"
 
+mattest := "[attest"
+
 ; timing
 ; ======================
 pause1 = 50
@@ -142,6 +144,10 @@ return
 
 :*:tchart::
 GoSub tchart
+return
+
+:*:mchart::
+GoSub mchart
 return
 
 ; sign
@@ -1202,6 +1208,33 @@ Sleep 1200
 Send {Enter}
 GoSub gotoATTESTATION
 Send %attest% 
+Sleep %pause4%
+Send {Enter}
+GoSub jumptoHPI
+return
+
+mchart:
+GoSub gotoHPI
+Send %thpi% 
+Send %clipboard%
+Sleep %pause4%
+Send {Enter}
+GoSub gotoROS
+Send %tros%
+Send %clipboard%
+Sleep %pause4%
+Send {Enter}
+GoSub gotoPE
+Send %tpe% 
+Send %clipboard%
+Sleep 1200
+Send {Enter}
+GoSub gotoMDM
+Send %mdm% 
+Sleep 1200
+Send {Enter}
+GoSub gotoATTESTATION
+Send %mattest% 
 Sleep %pause4%
 Send {Enter}
 GoSub jumptoHPI
