@@ -980,6 +980,18 @@ Send {Space}
 return
 
 ; =======================
+; mdm phrases
+; =======================
+
+:*:\dpain::
+Send ^b 
+Send Notes:
+Send {Space}
+Send ^b
+Send Notes: Patient declines pain medication at the Urgent Care Center. 
+return
+
+; =======================
 ; miscellaneous
 ; =======================
 :*:\bull::
@@ -1002,6 +1014,9 @@ face_abscess := "L02.01 facial"
 leftear_abscess := "H60.02 external ear"
 rightear_abscess := "H60.01 external ear"
 mouth_abscess := "K12.2 mouth abscess"
+
+
+
 
 
 
