@@ -294,16 +294,21 @@ return
 Send !d
 Sleep %pause2%
 Send {Enter}
-return
-
-; initial save dialog
-; ======================
-#s::
-Send {Tab 6}
-Sleep %pause2%
+Sleep %pause4%
+SetTitleMatchMode, 2
+if(winActive("Save"))
+{
+Loop, 6 {
+	Sleep %pause1%
+	Send {Tab}
+	Sleep %pause1%
+}
 Send {Enter}
+}
+else
+{
+}
 return
-
 
 ; ======================
 ; Time Stamp
