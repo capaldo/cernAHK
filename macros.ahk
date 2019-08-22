@@ -406,6 +406,7 @@ Send ^c
 Sleep 300
 StringReplace, Clipboard, Clipboard, no tenderness`,` , , All
 StringReplace, Clipboard, Clipboard, normal inspection`,` , , All
+StringReplace, Clipboard, Clipboard, `_` , , All
 Send ^v
 return
 
