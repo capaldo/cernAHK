@@ -1047,7 +1047,7 @@ Send ^b
 Send Notes:
 Send {Space}
 Send ^b
-Send Notes: Patient declines pain medication at the Urgent Care Center. 
+Send Patient declines pain medication at the Urgent Care Center. 
 return
 
 ; =======================
