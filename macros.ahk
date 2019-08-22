@@ -365,6 +365,22 @@ MouseMove 22, 37
 Sleep 500
 Click 22, 37
 return
+
+; ======================
+
+; pe
+; ======================
+
+; clear normal inspection and no tenderness under extremities
+:*:\cit::
+Send +{Home}
+Send ^c
+Sleep 300
+StringReplace, Clipboard, Clipboard, no tenderness`,` , , All
+StringReplace, Clipboard, Clipboard, normal inspection`,` , , All
+Send ^v
+return
+
 ; ======================
 
 
