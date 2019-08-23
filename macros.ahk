@@ -408,11 +408,23 @@ return
 ; ======================
 :*:+cough::
 Send ^a
-Sleep %pause1%
+Sleep %pause2%
 Send ^c
-Sleep %pause1%
+Sleep %pause2%
 StringReplace, Clipboard, Clipboard, no cough, reports cough, All
-Sleep %pause1%
+StringReplace, Clipboard, Clipboard, no cough, reports cough, All
+Sleep %pause2%
+Send ^v
+return
+
+:*:+nc::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause2%
+StringReplace, Clipboard, Clipboard, no nasa congestion, reports nasal congestion, All
+StringReplace, Clipboard, Clipboard, no nasal congestion, reports nasal congestion, All
+Sleep %pause2%
 Send ^v
 return
 
