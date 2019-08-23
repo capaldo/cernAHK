@@ -172,7 +172,7 @@ Click 948, 664
 Sleep %pause2%
 MouseMove %x%, %y%
 Sleep %pause4%
-Send !{F4}
+WinClose A
 return
 
 
