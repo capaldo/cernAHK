@@ -411,7 +411,7 @@ Send ^a
 Sleep %pause2%
 Send ^c
 Sleep %pause2%
-StringReplace, Clipboard, Clipboard, no cough, reports cough, All
+StringReplace, Clipboard, Clipboard, denies cough, admits cough, All
 StringReplace, Clipboard, Clipboard, no cough, reports cough, All
 Sleep %pause2%
 Send ^v
@@ -422,7 +422,7 @@ Send ^a
 Sleep %pause2%
 Send ^c
 Sleep %pause2%
-StringReplace, Clipboard, Clipboard, no nasal congestion, reports nasal congestion, All
+StringReplace, Clipboard, Clipboard, denies nasal congestion, admits nasal congestion, All
 StringReplace, Clipboard, Clipboard, no nasal congestion, reports nasal congestion, All
 Sleep %pause2%
 Send ^v
@@ -433,7 +433,7 @@ Send ^a
 Sleep %pause2%
 Send ^c
 Sleep %pause2%
-StringReplace, Clipboard, Clipboard, no back pain, reports back pain, All
+StringReplace, Clipboard, Clipboard, denies back pain, admits back pain, All
 StringReplace, Clipboard, Clipboard, no back pain, reports back pain, All
 Sleep %pause2%
 Send ^v
@@ -444,11 +444,23 @@ Send ^a
 Sleep %pause2%
 Send ^c
 Sleep %pause2%
-StringReplace, Clipboard, Clipboard, no chest pain, reports chest pain, All
+StringReplace, Clipboard, Clipboard, denies chest pain, admits chest pain, All
 StringReplace, Clipboard, Clipboard, no chest pain, reports chest pain, All
 Sleep %pause2%
 Send ^v
 return
+
+:*:+palp::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause2%
+StringReplace, Clipboard, Clipboard, denies palpitations, admits palpitations, All
+StringReplace, Clipboard, Clipboard, no palpitations, reports palpitations, All
+Sleep %pause2%
+Send ^v
+return
+
 ; pe
 ; ======================
 
