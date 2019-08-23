@@ -422,8 +422,19 @@ Send ^a
 Sleep %pause2%
 Send ^c
 Sleep %pause2%
-StringReplace, Clipboard, Clipboard, no nasa congestion, reports nasal congestion, All
 StringReplace, Clipboard, Clipboard, no nasal congestion, reports nasal congestion, All
+StringReplace, Clipboard, Clipboard, no nasal congestion, reports nasal congestion, All
+Sleep %pause2%
+Send ^v
+return
+
+:*:+backp::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause2%
+StringReplace, Clipboard, Clipboard, no back pain, reports back pain, All
+StringReplace, Clipboard, Clipboard, no back pain, reports back pain, All
 Sleep %pause2%
 Send ^v
 return
