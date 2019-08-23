@@ -596,7 +596,8 @@ Send urgency
 return
 
 :*:\fahren::
-Send ∞F
+Send {ASC 00176}
+Send F
 return
 
 :*:\rpt::
