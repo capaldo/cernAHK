@@ -407,7 +407,13 @@ return
 ; ros
 ; ======================
 :*:+cough::
+Send ^a
+Sleep %pause1%
+Send ^c
+Sleep %pause1%
 StringReplace, Clipboard, Clipboard, no cough, reports cough, All
+Sleep %pause1%
+Send ^v
 return
 
 ; pe
