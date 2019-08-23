@@ -404,6 +404,12 @@ return
 
 ; ======================
 
+; ros
+; ======================
+:*:+cough::
+StringReplace, Clipboard, Clipboard, no cough, reports cough, All
+return
+
 ; pe
 ; ======================
 
