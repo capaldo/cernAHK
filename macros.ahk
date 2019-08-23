@@ -275,6 +275,34 @@ return
 ; navigation
 ; ======================
 
+; open pt 1
+!1::
+Send #1
+Send #1
+return
+
+!2::
+Send #1
+Send #1
+Send #1
+return
+
+!3::
+Send #1
+Send #1
+Send #1
+Send #1
+return
+
+!4::
+Send #1
+Send #1
+Send #1
+Send #1
+Send #1
+return
+
+
 ; launchpoint
 ; ======================
 ^1::
