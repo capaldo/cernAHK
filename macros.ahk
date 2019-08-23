@@ -62,9 +62,11 @@ return
 ; ======================
 
 ; reload ahk (either due to newly added script or to stop running macro)
+; ======================
 #x::Reload
 
 ; open a blank notepad
+; ======================
 ~Capslock & n::
 IfWinExist Untitled - Notepad
    WinActivate
@@ -78,6 +80,13 @@ return
 MouseGetPos, xpos, ypos
 MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
+
+; get window title
+^!t::
+WinGetTitle, Title, A
+MsgBox, The active window is "%Title%".
+return
+
 
 ; opens cerner login
 ; ======================
@@ -269,9 +278,8 @@ return
 ; launchpoint
 ; ======================
 ^1::
-Send !v
-Sleep %pause2%
-Send {Enter}
+SetTitleMatchMode, 2
+WinActivate, FirstNet Organizer
 return
 
 ;tracking list
