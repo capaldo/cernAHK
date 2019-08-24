@@ -82,7 +82,7 @@ MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 
 ; get window title
-^!t::
+^#!t::
 WinGetTitle, Title, A
 MsgBox, The active window is "%Title%".
 return
