@@ -275,31 +275,48 @@ return
 ; navigation
 ; ======================
 
-; open pt 1
 !1::
-Send #1
-Send #1
+Send {LWin Down}
+Sleep %pause1%
+Loop, 2 {
+Sleep %pause1%
+Send 1
+Sleep %pause1%
+}
+Send {LWin Up}
 return
 
 !2::
-Send #1
-Send #1
-Send #1
+Send {LWin Down}
+Sleep %pause1%
+Loop, 3 {
+Sleep %pause1%
+Send 1
+Sleep %pause1%
+}
+Send {LWin Up}
 return
 
 !3::
-Send #1
-Send #1
-Send #1
-Send #1
+Send {LWin Down}
+Sleep %pause1%
+Loop, 4 {
+Sleep %pause1%
+Send 1
+Sleep %pause1%
+}
+Send {LWin Up}
 return
 
 !4::
-Send #1
-Send #1
-Send #1
-Send #1
-Send #1
+Send {LWin Down}
+Sleep %pause1%
+Loop, 5 {
+Sleep %pause1%
+Send 1
+Sleep %pause1%
+}
+Send {LWin Up}
 return
 
 
