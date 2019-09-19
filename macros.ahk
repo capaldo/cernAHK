@@ -1272,26 +1272,35 @@ abdominalpain := "RUQ,LUQ,RLQ,LLQ,abdominal pain"
 sorethroat := "sore throat,throat,Sore throat"
 headache := "headache"
 uti := "urination,dysuria,vaginal"
-backpain := "back pain"
+backpain := "back"
+uri := "cough,cold,gripe"
 
 decision:
 theComplaint = %clipboard%
-if theComplaint contains %sorethroat%
+if (theComplaint contains %uri%) {
 	clipboard := ""
-	Sleep 200
+	clipboard := "uri"
+}
+else if (theComplaint contains %sorethroat%) {
+	clipboard := ""
 	clipboard := "sore"
-if theComplaint contains %abdominalpain%
-	clipboard := ""
-	clipboard := "abd"
-if theComplaint contains %headache%
-	clipboard := ""
-	clipboard := "headache"
-if theComplaint contains %uti%
-	clipboard := ""
-	clipboard := "uti"
-if theComplaint contains %backpain%
+}
+else if (theComplaint contains %backpain%) {
 	clipboard := ""
 	clipboard := "back"
+}
+else if (theComplaint contains %abdominalpain%) {
+	clipboard := ""
+	clipboard := "abd"
+}
+else if (theComplaint contains %headache%) {
+	clipboard := ""
+	clipboard := "headache"
+}
+else if (theComplaint contains %uti%) {
+	clipboard := ""
+	clipboard := "uti"
+}
 return
 
 genchart:
