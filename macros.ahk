@@ -525,6 +525,17 @@ Sleep %pause2%
 Send ^v
 return
 
+:*:+fev::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause2%
+StringReplace, Clipboard, Clipboard, denies fever, admits fever, All
+StringReplace, Clipboard, Clipboard, no fever, reports fever, All
+Sleep %pause2%
+Send ^v
+return
+
 ; pe
 ; ======================
 
