@@ -514,6 +514,17 @@ Sleep %pause2%
 Send ^v
 return
 
+:*:+naus::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause2%
+StringReplace, Clipboard, Clipboard, denies nausea, admits nausea, All
+StringReplace, Clipboard, Clipboard, no nausea, reports nausea, All
+Sleep %pause2%
+Send ^v
+return
+
 ; pe
 ; ======================
 
