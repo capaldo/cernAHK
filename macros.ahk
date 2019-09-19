@@ -1268,39 +1268,45 @@ WinWait, Opened by
 Sleep 2000
 return
 
-abdominalpain := "RUQ,LUQ,RLQ,LLQ,abdominal pain"
-sorethroat := "sore throat,throat,Sore throat"
-headache := "headache"
-uti := "urination,dysuria,vaginal"
-backpain := "back"
-uri := "cough,cold,gripe"
+abdComplaint := "RUQ,LUQ,RLQ,LLQ,abdominal pain"
+stComplaint := "sore throat,throat,Sore throat"
+haComplaint := "headache"
+utiComplaint := "urination,dysuria,vaginal"
+backComplaint := "back pain,lumbar"
+uriComplaint := "cough,chest congestion,nasal congestion"
+skinComplaint := "allergic reaction,hives"
 
 decision:
 theComplaint = %clipboard%
-if (theComplaint contains %uri%) {
-	clipboard := ""
-	clipboard := "uri"
-}
-else if (theComplaint contains %sorethroat%) {
+
+if theComplaint contains %stComplaint%
 	clipboard := ""
 	clipboard := "sore"
-}
-else if (theComplaint contains %backpain%) {
-	clipboard := ""
-	clipboard := "back"
-}
-else if (theComplaint contains %abdominalpain%) {
+
+if theComplaint contains %abdComplaint%
 	clipboard := ""
 	clipboard := "abd"
-}
-else if (theComplaint contains %headache%) {
+
+if theComplaint contains %haComplaint%
 	clipboard := ""
 	clipboard := "headache"
-}
-else if (theComplaint contains %uti%) {
+
+if theComplaint contains %utiComplaint%
 	clipboard := ""
 	clipboard := "uti"
-}
+
+if theComplaint contains %backComplaint%
+	clipboard := ""
+	clipboard := "back"
+
+if theComplaint contains %uriComplaint%
+	clipboard := ""
+	clipboard := "uri"
+
+if theComplaint contains %skinComplaint%
+	clipboard := ""
+	clipboard := "skin"
+
 return
 
 genchart:
