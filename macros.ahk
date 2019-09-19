@@ -14,7 +14,7 @@ thpi := "//uchpi"
 tros := "//ucros"
 tpe := "//ucpe"
 
-mattest := "[attest"
+mattest := "[jessana"
 
 ; timing
 ; ======================
@@ -1186,24 +1186,6 @@ Send ^v
 return
 
 ; =======================
-; diagnosis codes
-; =======================
-
-; abscess
-; =======================
-
-scalp_abscess := "L02.811 scalp"
-face_abscess := "L02.01 facial"
-leftear_abscess := "H60.02 external ear"
-rightear_abscess := "H60.01 external ear"
-mouth_abscess := "K12.2 mouth abscess"
-
-
-
-
-
-
-; =======================
 ; subroutines
 ; =======================
 
@@ -1286,6 +1268,32 @@ WinWait, Opened by
 Sleep 2000
 return
 
+abdominalpain := "RUQ,LUQ,RLQ,LLQ,abdominal pain"
+sorethroat := "sore throat,throat,Sore throat"
+headache := "headache"
+uti := "urination,dysuria,vaginal"
+backpain := "back pain"
+
+decision:
+theComplaint = %clipboard%
+if theComplaint contains %sorethroat%
+	clipboard := ""
+	Sleep 200
+	clipboard := "sore"
+if theComplaint contains %abdominalpain%
+	clipboard := ""
+	clipboard := "abd"
+if theComplaint contains %headache%
+	clipboard := ""
+	clipboard := "headache"
+if theComplaint contains %uti%
+	clipboard := ""
+	clipboard := "uti"
+if theComplaint contains %backpain%
+	clipboard := ""
+	clipboard := "back"
+return
+
 genchart:
 GoSub gotoHPI
 Send %hpi% 
@@ -1311,6 +1319,7 @@ GoSub jumptoHPI
 return
 
 tchart:
+GoSub decision
 GoSub gotoHPI
 Send %thpi% 
 Send %clipboard%
@@ -1338,6 +1347,7 @@ GoSub jumptoHPI
 return
 
 mchart:
+GoSub decision
 GoSub gotoHPI
 Send %thpi% 
 Send %clipboard%
