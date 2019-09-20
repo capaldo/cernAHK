@@ -1298,6 +1298,7 @@ backComplaint := "back pain,lumbar"
 uriComplaint := "cough,chest congestion,nasal congestion"
 skinComplaint := "allergic reaction,hives"
 
+;TODO fix mechanism of setting the clipboard
 decision:
 theComplaint = %clipboard%
 
@@ -1328,7 +1329,6 @@ if theComplaint contains %uriComplaint%
 if theComplaint contains %skinComplaint%
 	clipboard := ""
 	clipboard := "skin"
-
 return
 
 genchart:
@@ -1356,7 +1356,6 @@ GoSub jumptoHPI
 return
 
 tchart:
-GoSub decision
 GoSub gotoHPI
 Send %thpi% 
 Send %clipboard%
@@ -1384,7 +1383,6 @@ GoSub jumptoHPI
 return
 
 mchart:
-GoSub decision
 GoSub gotoHPI
 Send %thpi% 
 Send %clipboard%
