@@ -159,6 +159,15 @@ return
 GoSub mchart
 return
 
+; auto-insert hpi and ros
+~Capslock & r::
+Send +{Home}
+Sleep %pause1%
+Send ^x
+Sleep %pause3%
+GoSub autoinsert
+return
+
 ; sign
 ; ======================
 !^s::
@@ -1290,47 +1299,6 @@ WinWait, Opened by
 Sleep 2000
 return
 
-abdComplaint := "RUQ,LUQ,RLQ,LLQ,abdominal pain"
-stComplaint := "sore throat,throat,Sore throat"
-haComplaint := "headache"
-utiComplaint := "urination,dysuria,vaginal"
-backComplaint := "back pain,lumbar"
-uriComplaint := "cough,chest congestion,nasal congestion"
-skinComplaint := "allergic reaction,hives"
-
-;TODO fix mechanism of setting the clipboard
-decision:
-theComplaint = %clipboard%
-
-if theComplaint contains %stComplaint%
-	clipboard := ""
-	clipboard := "sore"
-
-if theComplaint contains %abdComplaint%
-	clipboard := ""
-	clipboard := "abd"
-
-if theComplaint contains %haComplaint%
-	clipboard := ""
-	clipboard := "headache"
-
-if theComplaint contains %utiComplaint%
-	clipboard := ""
-	clipboard := "uti"
-
-if theComplaint contains %backComplaint%
-	clipboard := ""
-	clipboard := "back"
-
-if theComplaint contains %uriComplaint%
-	clipboard := ""
-	clipboard := "uri"
-
-if theComplaint contains %skinComplaint%
-	clipboard := ""
-	clipboard := "skin"
-return
-
 genchart:
 GoSub gotoHPI
 Send %hpi% 
@@ -1407,4 +1375,81 @@ Send %mattest%
 Sleep %pause4%
 Send {Enter}
 GoSub jumptoHPI
+return
+
+autoinsert:
+Clipboard := RegExReplace(Clipboard, "and")
+str:= clipboard
+s:=StrSplit(str, ", ")
+Loop, % s.MaxIndex()
+{
+Sleep 50
+Send ^c
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send Review of Systems
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send % s[A_Index]
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send +{F9}
+Sleep 100
+Send {Down}
+Sleep 100
+Send {Enter}
+Sleep 100
+Send +{F9}
+Sleep 50
+Send ^b
+Sleep 50
+Send {Right}
+Sleep 50
+Send +^{Right}
+Sleep 50
+Send +^{Right}
+Send ^b
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send History of Present Illness
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send {Tab}
+Sleep 50
+Send ^f
+WinWait, Find
+Sleep 50
+Send % s[A_Index]
+Sleep 50
+Send {Escape}
+SetTitleMatchMode, 2
+WinWait, Opened by
+Sleep 500
+Send +{F9}
+Sleep 100
+Send {Down}
+Sleep 100
+Send {Enter}
+Sleep 100
+Send +{F9}
+Sleep 50
+}
 return
