@@ -4,14 +4,19 @@
 ; ======================
 ; ======================
 
+; ======================
 ; charting
 ; ======================
+
 ; general auto-texts
+; ======================
 hpi := "[hgen"
 ros := "[rgen"
 pe := "[pgen"
 mdm := "[mdm"
+
 ; template auto-texts
+; ======================
 thpi := "//uchpi"
 tros := "//ucros"
 tpe := "//ucpe"
@@ -31,6 +36,7 @@ pause3 = 200
 pause4 = 1000
 pause5 = 2000
 pause6 = 3000
+
 
 ; ======================
 ; ======================
@@ -95,10 +101,15 @@ return
 ; ======================
 #!^F1::Run http://cernerm/
 
+
 ; ======================
 ; ======================
 ; ===txt manipulation===
 ; ======================
+; ======================
+
+; ======================
+; removing/clearing text
 ; ======================
 
 ; clear box
@@ -180,6 +191,10 @@ Sleep %pause2%
 Send {Right DownTemp}
 return
 
+; ======================
+; changing list items
+; ======================
+
 ; select up the list item ahead of the caret
 ; ======================
 ~Capslock & i::
@@ -213,8 +228,11 @@ Send {Right}
 return
 
 ; ======================
-; combo stuff
 ; ======================
+; ========macros========
+; ======================
+; ======================
+
 
 ; open new chart
 ; ======================
@@ -222,19 +240,26 @@ return
 GoSub openNEWDOC
 return
 
+; insert general chart
+; ======================
 :*:genchart::
 GoSub genchart
 return
 
+; insert template chart
+; ======================
 :*:tchart::
 GoSub tchart
 return
 
+; insert mid-level chart
+; ======================
 :*:mchart::
 GoSub mchart
 return
 
 ; auto-insert hpi and ros
+; ======================
 ~Capslock & r::
 Send +{Home}
 Sleep %pause1%
@@ -243,7 +268,7 @@ Sleep %pause3%
 GoSub autoinsert
 return
 
-; sign
+; sign chart
 ; ======================
 !^s::
 Send ^g
@@ -277,11 +302,37 @@ Sleep 1000
 Send {Enter}
 return
 
+; save chart
+; ======================
+~Capslock & s::
+Send !d
+Sleep %pause2%
+Send {Enter}
+Sleep %pause4%
+SetTitleMatchMode, 2
+if(winActive("Save"))
+{
+Loop, 6 {
+	Sleep %pause1%
+	Send {Tab}
+	Sleep %pause1%
+}
+Send {Enter}
+}
+else
+{
+}
+return
+
 
 ; ======================
-; navigation
+; ======================
+; ======navigation======
+; ======================
 ; ======================
 
+; select patient tabs
+; ======================
 !1::
 Send {LWin Down}
 Sleep %pause1%
@@ -292,7 +343,6 @@ Sleep %pause1%
 }
 Send {LWin Up}
 return
-
 !2::
 Send {LWin Down}
 Sleep %pause1%
@@ -303,7 +353,6 @@ Sleep %pause1%
 }
 Send {LWin Up}
 return
-
 !3::
 Send {LWin Down}
 Sleep %pause1%
@@ -314,7 +363,6 @@ Sleep %pause1%
 }
 Send {LWin Up}
 return
-
 !4::
 Send {LWin Down}
 Sleep %pause1%
@@ -325,7 +373,6 @@ Sleep %pause1%
 }
 Send {LWin Up}
 return
-
 
 ; launchpoint
 ; ======================
@@ -365,30 +412,11 @@ else
 }
 return
 
-; save chart
-; ======================
-~Capslock & s::
-Send !d
-Sleep %pause2%
-Send {Enter}
-Sleep %pause4%
-SetTitleMatchMode, 2
-if(winActive("Save"))
-{
-Loop, 6 {
-	Sleep %pause1%
-	Send {Tab}
-	Sleep %pause1%
-}
-Send {Enter}
-}
-else
-{
-}
-return
 
 ; ======================
-; Time Stamp
+; ======================
+; =======timestamp======
+; ======================
 ; ======================
 
 ; current time
