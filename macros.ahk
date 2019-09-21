@@ -139,12 +139,10 @@ return
 ; combo stuff
 ; ======================
 
-; open new chart and insert template
+; open new chart
 ; ======================
 ~Capslock & o::
 GoSub openNEWDOC
-Sleep 3000
-GoSub genchart
 return
 
 :*:genchart::
@@ -1294,9 +1292,6 @@ SetTitleMatchMode, 2
 WinWait, Opened by
 Sleep 3000
 Click 1080, 395, 2
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 2000
 return
 
 genchart:
