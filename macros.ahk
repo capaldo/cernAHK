@@ -558,9 +558,6 @@ Send ^v
 return
 
 ; ======================
-
-
-; ======================
 ; auto-text
 ; ======================
 
@@ -845,7 +842,7 @@ return
 Send medial
 return
 
-:*:\dis::
+:*:\dist::
 Send distal
 return
 
