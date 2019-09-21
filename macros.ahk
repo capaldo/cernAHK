@@ -1,19 +1,26 @@
 ; ======================
-; variables
+; ======================
+; ======variables=======
+; ======================
 ; ======================
 
 ; charting
 ; ======================
+; general auto-texts
 hpi := "[hgen"
 ros := "[rgen"
 pe := "[pgen"
 mdm := "[mdm"
-attest := "[attest"
-
+; template auto-texts
 thpi := "//uchpi"
 tros := "//ucros"
 tpe := "//ucpe"
 
+; attestations
+; ======================
+; provider 
+attest := "[attest"
+; mid-level
 mattest := "[mattest"
 
 ; timing
@@ -26,16 +33,19 @@ pause5 = 2000
 pause6 = 3000
 
 ; ======================
-; capslock to hyper key
+; ======================
+; ====miscellaneous=====
+; ======================
 ; ======================
 
+; capslock to hyper key
+; ======================
 #NoEnv
 #UseHook
 #InstallKeybdHook
 #SingleInstance force
 SendMode Input
 SetCapslockState, AlwaysOff
-
 ~Capslock::
     Send {Ctrl DownTemp}{Shift DownTemp}{Alt DownTemp}{LWin DownTemp}
     KeyWait, Capslock
@@ -45,21 +55,14 @@ SetCapslockState, AlwaysOff
     }
 return
 
-; ======================
-; remap f9 navigation
+; remap jumping to lists
 ; ======================
 ~Capslock & Right::
 Send {F9 DownTemp}
 return
-
 ~Capslock & Left::
 Send +{F9 DownTemp}
 return
-
-
-; ======================
-; miscellaneous
-; ======================
 
 ; reload ahk (either due to newly added script or to stop running macro)
 ; ======================
@@ -82,15 +85,21 @@ MsgBox, The cursor is at X%xpos% Y%ypos%.
 return
 
 ; get window title
+; ======================
 ^#!t::
 WinGetTitle, Title, A
 MsgBox, The active window is "%Title%".
 return
 
-
 ; opens cerner login
 ; ======================
 #!^F1::Run http://cernerm/
+
+; ======================
+; ======================
+; ===txt manipulation===
+; ======================
+; ======================
 
 ; clear box
 ; ======================
@@ -133,6 +142,74 @@ return
 :*:\dr::
 Send +{End}
 Send {Delete}
+return
+
+; ======================
+; bolding text
+; ======================
+
+; whole line
+; ======================
+!b::
+Send {Home}
+Sleep %pause2%
+Send +{Down}
+Sleep %pause2%
+Send ^b
+Sleep %pause2%
+Send {Right}
+return
+
+; right of caret
+; ======================
+~Capslock & l::
+Send +{End}
+Sleep %pause2%
+Send ^b
+Sleep %pause2%
+Send {Right DownTemp}
+return
+
+; left of caret
+; ======================
+~Capslock & j::
+Send +{Home}
+Sleep %pause2%
+Send ^b
+Sleep %pause2%
+Send {Right DownTemp}
+return
+
+; select up the list item ahead of the caret
+; ======================
+~Capslock & i::
+Send {F9}
+Sleep %pause2%
+Send {Up}
+Sleep %pause2%
+Send {Enter}
+Sleep %pause2%
+Send +{F9}
+Sleep %pause2%
+Send ^b
+Sleep %pause2%
+Send {Right}
+return
+
+; select down the list item ahead of the caret
+; ======================
+~Capslock & k::
+Send {F9}
+Sleep %pause2%
+Send {Down}
+Sleep %pause2%
+Send {Enter}
+Sleep %pause2%
+Send +{F9}
+Sleep %pause2%
+Send ^b
+Sleep %pause2%
+Send {Right}
 return
 
 ; ======================
@@ -181,83 +258,6 @@ MouseMove %x%, %y%
 Sleep %pause4%
 WinClose A
 return
-
-
-; ======================
-; bolding
-; ======================
-
-; whole line
-; ======================
-!b::
-Send {Home}
-Sleep %pause2%
-Send +{Down}
-Sleep %pause2%
-Send ^b
-Sleep %pause2%
-Send {Right}
-return
-
-; bold right of caret
-; ======================
-~Capslock & l::
-Send +{End}
-Sleep %pause2%
-Send ^b
-Sleep %pause2%
-Send {Right DownTemp}
-return
-
-; bold left of caret
-; ======================
-~Capslock & j::
-Send +{Home}
-Sleep %pause2%
-Send ^b
-Sleep %pause2%
-Send {Right DownTemp}
-return
-
-; ======================
-; change list item and bold
-; ======================
-
-; select up the list item ahead of the caret
-; ======================
-~Capslock & i::
-Send {F9}
-Sleep %pause2%
-Send {Up}
-Sleep %pause2%
-Send {Enter}
-Sleep %pause2%
-Send +{F9}
-Sleep %pause2%
-Send ^b
-Sleep %pause2%
-Send {Right}
-return
-
-; select down the list item ahead of the caret
-; ======================
-~Capslock & k::
-Send {F9}
-Sleep %pause2%
-Send {Down}
-Sleep %pause2%
-Send {Enter}
-Sleep %pause2%
-Send +{F9}
-Sleep %pause2%
-Send ^b
-Sleep %pause2%
-Send {Right}
-return
-
-; ======================
-; printing
-; ======================
 
 ; print from inside the chart
 ; ======================
