@@ -324,6 +324,22 @@ else
 }
 return
 
+; insert discharge
+; ======================
+:*:\dc::
+Send //ucdischarge
+Sleep %pause4%
+Send {Enter}
+Sleep %pause3%
+Send {Enter}
+Sleep %pause3%
+Send {Enter}
+Sleep %pause2%
+Send [script
+Sleep %pause4%
+Send {Enter}
+return
+
 
 ; ======================
 ; ======================
