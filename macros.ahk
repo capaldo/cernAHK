@@ -117,7 +117,8 @@ Sleep 200
 colon := ":"
 string := clipboard
 cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
-IfInString, string, %colon% {
+IfInString, string, %colon% 
+{
 Send %cleanstring%%colon%
 Sleep %pause1%
 Send {Space}
@@ -503,7 +504,7 @@ Send ^c
 Sleep %pause2%
 StringReplace, Clipboard, Clipboard, denies nasal congestion, admits nasal congestion, All
 StringReplace, Clipboard, Clipboard, no nasal congestion, reports nasal congestion, All
-Sleep %pause3
+Sleep %pause3%
 Send ^v
 return
 
