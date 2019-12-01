@@ -179,6 +179,16 @@ Send {Right DownTemp}
 return
 
 ; bolding words in front of caret
+; ======================
+
+:*:\1bw::
+Loop, 1 {
+Send ^+{Right}
+}
+Sleep %pause3%
+Send ^b
+Send {Right}
+return
 
 :*:\2bw::
 Loop, 2 {
@@ -191,6 +201,24 @@ return
 
 :*:\3bw::
 Loop, 3 {
+Send ^+{Right}
+}
+Sleep %pause3%
+Send ^b
+Send {Right}
+return
+
+:*:\4bw::
+Loop, 4 {
+Send ^+{Right}
+}
+Sleep %pause3%
+Send ^b
+Send {Right}
+return
+
+:*:\5bw::
+Loop, 4 {
 Send ^+{Right}
 }
 Sleep %pause3%
