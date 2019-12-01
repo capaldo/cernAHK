@@ -178,6 +178,21 @@ Sleep %pause2%
 Send {Right DownTemp}
 return
 
+; bolding words in front of caret
+
+:*:\2bw::
+Loop, 2 {
+Send ^+{Right}
+}
+return
+
+:*:\3bw::
+Loop, 3 {
+Send ^+{Right}
+}
+return
+
+
 ; ======================
 ; changing list items
 ; ======================
@@ -375,7 +390,7 @@ SetTitleMatchMode, 2
 WinActivate, FirstNet Organizer
 return
 
-;tracking list
+; tracking list
 ; ======================
 ^2::
 Send !v
@@ -482,9 +497,8 @@ Sleep %pause3%
 Click 22, 37
 return
 
-; ======================
 
-; ros
+; hpi / ros
 ; ======================
 :*:+cough::
 Send ^a
@@ -565,14 +579,26 @@ return
 
 ; pe
 ; ======================
-
-; clear normal inspection and no tenderness under extremities
+; clear normal inspection and no tenderness under MS section
 :*:\cit::
 Send +{Home}
 Send ^c
 Sleep 300
 StringReplace, Clipboard, Clipboard, no tenderness`,` , , All
 StringReplace, Clipboard, Clipboard, normal inspection`,` , , All
+StringReplace, Clipboard, Clipboard, `_` , , All
+Sleep %pause3%
+Send ^v
+return
+
+; clear normal inspection, no tenderness, and swelling under MS section
+:*:\ciwt::
+Send +{Home}
+Send ^c
+Sleep 300
+StringReplace, Clipboard, Clipboard, no tenderness`,` , , All
+StringReplace, Clipboard, Clipboard, normal inspection`,` , , All
+StringReplace, Clipboard, Clipboard, no swelling`,` , , All
 StringReplace, Clipboard, Clipboard, `_` , , All
 Sleep %pause3%
 Send ^v
@@ -768,7 +794,6 @@ return
 :*:\jointp::
 Send joint pain
 return
-; ======================
 
 
 ; history
