@@ -278,7 +278,7 @@ return
 
 ; insert template chart
 ; ======================
-:*:tchart::
+Insert::
 GoSub tchart
 return
 
