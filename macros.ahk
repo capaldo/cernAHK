@@ -307,7 +307,7 @@ Sleep %pause2%
 MouseGetPos x, y
 KeyWait, LButton, D
 Sleep 250
-Click 948, 664
+Click 1740, 995
 Sleep %pause2%
 MouseMove %x%, %y%
 Sleep %pause4%
