@@ -184,12 +184,18 @@ return
 Loop, 2 {
 Send ^+{Right}
 }
+Sleep %pause3%
+Send ^b
+Send {Right}
 return
 
 :*:\3bw::
 Loop, 3 {
 Send ^+{Right}
 }
+Sleep %pause3%
+Send ^b
+Send {Right}
 return
 
 
