@@ -1375,6 +1375,10 @@ Click 1080, 395, 2
 return
 
 genchart:
+Send ^a
+Sleep %pause2%
+Send ^x
+Sleep %pause3%
 GoSub gotoHPI
 Send %hpi% 
 Sleep %pause4%
@@ -1399,6 +1403,10 @@ GoSub jumptoHPI
 return
 
 tchart:
+Send ^a
+Sleep %pause2%
+Send ^x
+Sleep %pause3%
 GoSub gotoHPI
 Send %thpi% 
 Send %clipboard%
