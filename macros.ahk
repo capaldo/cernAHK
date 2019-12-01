@@ -386,6 +386,7 @@ Sleep %pause1%
 }
 Send {LWin Up}
 return
+
 !2::
 Send {LWin Down}
 Sleep %pause1%
@@ -396,6 +397,7 @@ Sleep %pause1%
 }
 Send {LWin Up}
 return
+
 !3::
 Send {LWin Down}
 Sleep %pause1%
@@ -406,6 +408,7 @@ Sleep %pause1%
 }
 Send {LWin Up}
 return
+
 !4::
 Send {LWin Down}
 Sleep %pause1%
