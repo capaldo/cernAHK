@@ -941,6 +941,10 @@ return
 Send right
 return
 
+:*:\bilat::
+Send right
+return
+
 ; ======================
 ; Phrases
 ; ======================
