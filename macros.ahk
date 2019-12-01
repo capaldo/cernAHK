@@ -1,27 +1,21 @@
 ; ======================
-; ======================
-; ======variables=======
-; ======================
+; ======VARIABLES=======
 ; ======================
 
-; ======================
-; charting
-; ======================
-
-; general auto-texts
+; charting - general auto-texts
 ; ======================
 hpi := "[hgen"
 ros := "[rgen"
 pe := "[pgen"
 mdm := "[mdm"
 
-; template auto-texts
+; charting - template auto-texts
 ; ======================
 thpi := "//uchpi"
 tros := "//ucros"
 tpe := "//ucpe"
 
-; attestations
+; charting - attestations
 ; ======================
 ; provider 
 attest := "[attest"
@@ -39,9 +33,7 @@ pause6 = 3000
 
 
 ; ======================
-; ======================
 ; ====miscellaneous=====
-; ======================
 ; ======================
 
 ; capslock to hyper key
@@ -60,6 +52,7 @@ SetCapslockState, AlwaysOff
         Send {Esc}
     }
 return
+
 
 ; remap jumping to lists
 ; ======================
@@ -103,13 +96,7 @@ return
 
 
 ; ======================
-; ======================
 ; ===txt manipulation===
-; ======================
-; ======================
-
-; ======================
-; removing/clearing text
 ; ======================
 
 ; clear box
@@ -130,8 +117,7 @@ Sleep 200
 colon := ":"
 string := clipboard
 cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
-IfInString, string, %colon% 
-{
+IfInString, string, %colon% {
 Send %cleanstring%%colon%
 Sleep %pause1%
 Send {Space}
@@ -206,8 +192,6 @@ Send {Enter}
 Sleep %pause2%
 Send +{F9}
 Sleep %pause2%
-Send ^b
-Sleep %pause2%
 Send {Right}
 return
 
@@ -222,17 +206,13 @@ Send {Enter}
 Sleep %pause2%
 Send +{F9}
 Sleep %pause2%
-Send ^b
-Sleep %pause2%
 Send {Right}
 return
 
-; ======================
+
 ; ======================
 ; ========macros========
 ; ======================
-; ======================
-
 
 ; open new chart
 ; ======================
@@ -287,18 +267,18 @@ return
 ; print from inside the chart
 ; ======================
 !p::
-Sleep 200
+Sleep %pause3%
 Send {Alt}
-Sleep %pause2%
+Sleep %pause3%
 Send t
-Send {Down 3} ; possible change back, new option above print called report
-Sleep 300
+Send {Down 3}
+Sleep %pause3%
 Send {Right DownTemp}
-Sleep 300
+Sleep %pause3%
 Send {Enter}
-Sleep 300
+Sleep %pause3%
 Send {Enter}
-Sleep 1000
+Sleep %pause4%
 Send {Enter}
 return
 
@@ -315,7 +295,6 @@ if(winActive("Save"))
 Loop, 6 {
 	Sleep %pause1%
 	Send {Tab}
-	Sleep %pause1%
 }
 Send {Enter}
 }
@@ -342,9 +321,7 @@ return
 
 
 ; ======================
-; ======================
 ; ======navigation======
-; ======================
 ; ======================
 
 ; select patient tabs
@@ -430,9 +407,7 @@ return
 
 
 ; ======================
-; ======================
 ; =======timestamp======
-; ======================
 ; ======================
 
 ; current time
@@ -454,7 +429,7 @@ Sleep %pause1%
 Send {Enter}
 SetTitleMatchMode, 2
 WinWait, Time Seen
-Sleep 1000
+Sleep %pause4%
 Send t
 Sleep %pause1%
 Send {Tab}
@@ -462,7 +437,7 @@ Sleep %pause1%
 Send n
 Sleep %pause1%
 MouseMove 22, 37
-Sleep 500
+Sleep %pause4%
 Click 22, 37
 return
 
@@ -502,7 +477,7 @@ Sleep %pause2%
 Send ^a
 Send ^v
 MouseMove 22, 37
-Sleep 500
+Sleep %pause3
 Click 22, 37
 return
 
@@ -517,7 +492,7 @@ Send ^c
 Sleep %pause2%
 StringReplace, Clipboard, Clipboard, denies cough, admits cough, All
 StringReplace, Clipboard, Clipboard, no cough, reports cough, All
-Sleep %pause2%
+Sleep %pause3%
 Send ^v
 return
 
@@ -528,7 +503,7 @@ Send ^c
 Sleep %pause2%
 StringReplace, Clipboard, Clipboard, denies nasal congestion, admits nasal congestion, All
 StringReplace, Clipboard, Clipboard, no nasal congestion, reports nasal congestion, All
-Sleep %pause2%
+Sleep %pause3
 Send ^v
 return
 
@@ -539,7 +514,7 @@ Send ^c
 Sleep %pause2%
 StringReplace, Clipboard, Clipboard, denies back pain, admits back pain, All
 StringReplace, Clipboard, Clipboard, no back pain, reports back pain, All
-Sleep %pause2%
+Sleep %pause3%
 Send ^v
 return
 
@@ -550,7 +525,7 @@ Send ^c
 Sleep %pause2%
 StringReplace, Clipboard, Clipboard, denies chest pain, admits chest pain, All
 StringReplace, Clipboard, Clipboard, no chest pain, reports chest pain, All
-Sleep %pause2%
+Sleep %pause3%
 Send ^v
 return
 
@@ -561,7 +536,7 @@ Send ^c
 Sleep %pause2%
 StringReplace, Clipboard, Clipboard, denies palpitations, admits palpitations, All
 StringReplace, Clipboard, Clipboard, no palpitations, reports palpitations, All
-Sleep %pause2%
+Sleep %pause3%
 Send ^v
 return
 
@@ -572,7 +547,7 @@ Send ^c
 Sleep %pause2%
 StringReplace, Clipboard, Clipboard, denies nausea, admits nausea, All
 StringReplace, Clipboard, Clipboard, no nausea, reports nausea, All
-Sleep %pause2%
+Sleep %pause3%
 Send ^v
 return
 
@@ -583,7 +558,7 @@ Send ^c
 Sleep %pause2%
 StringReplace, Clipboard, Clipboard, denies fever, admits fever, All
 StringReplace, Clipboard, Clipboard, no fever, reports fever, All
-Sleep %pause2%
+Sleep %pause3%
 Send ^v
 return
 
@@ -598,6 +573,7 @@ Sleep 300
 StringReplace, Clipboard, Clipboard, no tenderness`,` , , All
 StringReplace, Clipboard, Clipboard, normal inspection`,` , , All
 StringReplace, Clipboard, Clipboard, `_` , , All
+Sleep %pause3%
 Send ^v
 return
 
