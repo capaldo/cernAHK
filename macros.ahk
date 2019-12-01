@@ -1081,182 +1081,182 @@ Send {Space}
 return
 
 :*:\sevd::
-Send that began "several days ago".
+Send "several days ago".
 Send {Space}
 return
 
 :*:\tod::
-Send that began today.
+Send today
 Send {Space}
 return
 
 :*:\1d::
-Send that began 1 day ago.
+Send 1 day ago
 Send {Space}
 return
 
 :*:\2d::
-Send that began 2 days ago.
+Send 2 days ago
 Send {Space}
 return
 
 :*:\3d::
-Send that began 3 days ago.
+Send 3 days ago
 Send {Space}
 return
 
 :*:\4d::
-Send that began 4 days ago.
+Send 4 days ago
 Send {Space}
 return
 
 :*:\5d::
-Send that began 5 days ago.
+Send 5 days ago
 Send {Space}
 return
 
 :*:\6d::
-Send that began 6 days ago.
+Send 6 days ago
 Send {Space}
 return
 
 :*:\8d::
-Send that began 8 days ago.
+Send 8 days ago
 Send {Space}
 return
 
 :*:\9d::
-Send that began 9 days ago.
+Send 9 days ago
 Send {Space}
 return
 
 :*:\10d::
-Send that began 10 days ago.
+Send 10 days ago
 Send {Space}
 return
 
 :*:\11d::
-Send that began 11 days ago.
+Send 11 days ago
 Send {Space}
 return
 
 :*:\12d::
-Send that began 12 days ago.
+Send 12 days ago
 Send {Space}
 return
 
 :*:\13d::
-Send that began 13 days ago.
+Send 13 days ago
 Send {Space}
 return
 
 :*:\15d::
-Send that began 15 days ago.
+Send 15 days ago
 Send {Space}
 return
 
 :*:\16d::
-Send that began 16 days ago.
+Send 16 days ago
 Send {Space}
 return
 
 :*:\17d::
-Send that began 17 days ago.
+Send 17 days ago
 Send {Space}
 return
 
 :*:\18d::
-Send that began 18 days ago.
+Send 18 days ago
 Send {Space}
 return
 
 :*:\19d::
-Send that began 19 days ago.
+Send 19 days ago
 Send {Space}
 return
 
 :*:\20d::
-Send that began 20 days ago.
+Send 20 days ago
 Send {Space}
 return
 
 :*:\1w::
-Send that began 1 week ago.
+Send 1 week ago
 Send {Space}
 return
 
 :*:\2w::
-Send that began 2 weeks ago.
+Send 2 weeks ago
 Send {Space}
 return
 
 :*:\3w::
-Send that began 3 weeks ago.
+Send 3 weeks ago
 Send {Space}
 return
 
 :*:\4w::
-Send that began 4 weeks ago.
+Send 4 weeks ago
 Send {Space}
 return
 
 :*:\1m::
-Send that began 1 month ago.
+Send 1 month ago
 Send {Space}
 return
 
 :*:\2m::
-Send that began 2 months ago.
+Send 2 months ago
 Send {Space}
 return
 
 :*:\3m::
-Send that began 3 months ago.
+Send 3 months ago
 Send {Space}
 return
 
 :*:\4m::
-Send that began 4 months ago.
+Send 4 months ago
 Send {Space}
 return
 
 :*:\5m::
-Send that began 5 months ago.
+Send 5 months ago
 Send {Space}
 return
 
 :*:\6m::
-Send that began 6 months ago.
+Send 6 months ago
 Send {Space}
 return
 
 :*:\7m::
-Send that began 7 months ago.
+Send 7 months ago
 Send {Space}
 return
 
 :*:\8m::
-Send that began 8 months ago.
+Send 8 months ago
 Send {Space}
 return
 
 :*:\9m::
-Send that began 9 months ago.
+Send 9 months ago
 Send {Space}
 return
 
 :*:\10m::
-Send that began 10 months ago.
+Send 10 months ago
 Send {Space}
 return
 
 :*:\11m::
-Send that began 11 months ago.
+Send 11 months ago
 Send {Space}
 return
 
 :*:\1y::
-Send that began 1 year ago.
+Send 1 year ago
 Send {Space}
 return
 
