@@ -12,7 +12,7 @@ All scripts do not venture into the orders section of the chart but, as always, 
 ## Updates
 *This section is to provide in easy-to-read area for users to read up on what changes have been made.*
 
-* **12/01/19:** Updated scripts, cleaned up formatting, `Sleep` variables, added more string replacement and text manibulation macros.
+* **12/01/19:** Updated scripts, cleaned up formatting, `Sleep` variables, added more string replacement and text manipulation macros.
 * **07/20/19:** Added clear line script and additional *onset* snippets.
 * **07/18/19:** Added phrases and additional words to hotstrings.
 * **04/16/19:** Working to update the scripts to function with the recent changes.
