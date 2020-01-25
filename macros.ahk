@@ -284,7 +284,7 @@ return
 
 ; insert mid-level chart
 ; ======================
-^{Insert}::
+^Insert::
 GoSub mchart
 return
 
