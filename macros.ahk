@@ -533,6 +533,57 @@ return
 
 ; hpi / ros
 ; ======================
+
+; ======================
+; hpi / ros
+; ======================
+
+; CONSTITUTIONAL
+; ======================
+:*:+fev::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause3%
+StringReplace, Clipboard, Clipboard, denies fever, admits fever, All
+StringReplace, Clipboard, Clipboard, no fever, reports fever, All
+Sleep %pause3%
+Send ^v
+return
+
+:*:+chills::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause3%
+StringReplace, Clipboard, Clipboard, denies chills, admits chills, All
+StringReplace, Clipboard, Clipboard, no chills, reports chills, All
+Sleep %pause3%
+Send ^v
+return
+
+:*:+fatigue::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause3%
+StringReplace, Clipboard, Clipboard, denies fatigue, admits fatigue, All
+StringReplace, Clipboard, Clipboard, no fatigue, reports fatigue, All
+Sleep %pause3%
+Send ^v
+return
+
+:*:+bodya::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause3%
+StringReplace, Clipboard, Clipboard, denies body aches, admits body aches, All
+StringReplace, Clipboard, Clipboard, no body aches, reports body aches, All
+Sleep %pause3%
+Send ^v
+return
+
 :*:+cough::
 Send ^a
 Sleep %pause2%
@@ -599,20 +650,9 @@ Sleep %pause3%
 Send ^v
 return
 
-:*:+fev::
-Send ^a
-Sleep %pause2%
-Send ^c
-Sleep %pause2%
-StringReplace, Clipboard, Clipboard, denies fever, admits fever, All
-StringReplace, Clipboard, Clipboard, no fever, reports fever, All
-Sleep %pause3%
-Send ^v
-return
-
 ; pe
 ; ======================
-; clear normal inspection and no tenderness under MS section
+; clear normal inspection, no tenderness
 :*:\cit::
 Send +{Home}
 Send ^c
@@ -624,7 +664,7 @@ Sleep %pause3%
 Send ^v
 return
 
-; clear normal inspection, no tenderness, and swelling under MS section
+; clear normal inspection, no tenderness, no swelling
 :*:\ciwt::
 Send +{Home}
 Send ^c
