@@ -486,7 +486,7 @@ Sleep %pause1%
 Send n
 Sleep %pause1%
 MouseMove 22, 37
-Sleep %pause4%
+Sleep %pause3%
 Click 22, 37
 return
 
