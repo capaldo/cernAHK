@@ -760,7 +760,7 @@ Send toe pain
 return
 
 :*:\ucc::
-Send Urgent Care Center
+Send urgent care center
 return
 
 :*:\accfam::
@@ -1269,7 +1269,7 @@ Send ^b
 Send Notes:
 Send {Space}
 Send ^b
-Send Patient declines pain medication at the Urgent Care Center. 
+Send Patient declines pain medication at the urgent care center. 
 return
 
 ; =======================
