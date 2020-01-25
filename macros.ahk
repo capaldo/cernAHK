@@ -342,10 +342,6 @@ Sleep %pause4%
 SetTitleMatchMode, 2
 if(winActive("Save"))
 {
-Loop, 6 {
-	Sleep %pause1%
-	Send {Tab}
-}
 Send {Enter}
 }
 else
