@@ -118,7 +118,7 @@ return
 Send +{Home}
 Sleep %pause2%
 Send ^c
-Sleep 200
+Sleep %pause2%
 colon := ":"
 string := clipboard
 cleanstring := SubStr(String, 1, InStr(string, ":") - 1)
@@ -458,83 +458,6 @@ else
 {
 }
 return
-
-
-; ======================
-; =======timestamp======
-; ======================
-
-; current time
-; ======================
-~Capslock & t::
-Send !c
-Sleep %pause2%
-Send a
-SetTitleMatchMode, 2
-WinWait, Ad Hoc
-Send {Tab}
-Sleep %pause1%
-Send u
-Sleep %pause1%
-Send {Space}
-Sleep %pause1%
-Send {Tab}
-Sleep %pause1%
-Send {Enter}
-SetTitleMatchMode, 2
-WinWait, Time Seen
-Sleep %pause4%
-Send t
-Sleep %pause1%
-Send {Tab}
-Sleep %pause1%
-Send n
-Sleep %pause1%
-MouseMove 22, 37
-Sleep %pause3%
-Click 22, 37
-return
-
-; use time on clipboard
-; ======================
-^!t::
-Send ^a
-Send ^x
-Sleep 300
-Send !c
-Sleep %pause2%
-Send a
-SetTitleMatchMode, 2
-WinWait, Ad Hoc
-Send {Tab}
-Sleep %pause1%
-Send u
-Sleep %pause1%
-Send {Space}
-Sleep %pause1%
-Send {Tab}
-Sleep %pause1%
-Send {Enter}
-SetTitleMatchMode, 2
-WinWait, Time Seen
-Sleep %pause4%
-Send t
-Sleep %pause1%
-Send {Tab}
-Sleep %pause1%
-Send ^v
-Sleep %pause1%
-MouseMove 257, 79
-Sleep %pause2%
-Click 257, 79
-Sleep %pause2%
-Send ^a
-Send ^v
-MouseMove 22, 37
-Sleep %pause3%
-Click 22, 37
-return
-
 
 ; hpi / ros
 ; ======================
