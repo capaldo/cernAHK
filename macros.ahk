@@ -1576,3 +1576,12 @@ Send +{F9}
 Sleep 50
 }
 return
+
+
+:*:\denexposure::
+Send Patient denies COVID-19 exposure.
+return
+
+:*:\exposure::
+Send Patient reports COVID-19 exposure
+return
