@@ -463,7 +463,6 @@ return
 ; hpi / ros
 ; ======================
 
-Patient describes the character of the symptoms as 
 :*:\cleanuri::
 Send ^a
 Sleep %pause2%
