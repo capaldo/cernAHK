@@ -459,12 +459,21 @@ else
 }
 return
 
+; ======================
 ; hpi / ros
 ; ======================
 
-; ======================
-; hpi / ros
-; ======================
+Patient describes the character of the symptoms as 
+:*:\cleanuri::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause3%
+StringReplace, Clipboard, Clipboard, Patient describes the character of the symptoms as _., , All
+StringReplace, Clipboard, Clipboard, Patient denies prior episodes., , All
+Sleep %pause3%
+Send ^v
+return
 
 ; CONSTITUTIONAL
 ; ======================
