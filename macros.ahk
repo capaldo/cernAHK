@@ -15,6 +15,11 @@ thpi := "//uchpi"
 tros := "//ucros"
 tpe := "//ucpe"
 
+; covid specific auto-texts
+chpi := "//uchpiuri"
+cros := "//ucrosuri"
+cmdm := "[mdmcov"
+
 ; charting - attestations
 ; ======================
 ; provider 
@@ -1584,4 +1589,31 @@ return
 
 :*:\exposure::
 Send Patient reports COVID-19 exposure
+return
+
+:*:\coronachart::
+GoSub cchart
+return
+
+cchart:
+GoSub gotoHPI
+Send %chpi%
+Sleep %pause4%
+Send {Enter}
+GoSub gotoROS
+Send %cros%
+Sleep %pause4%
+Send {Enter}
+GoSub gotoPE
+Send //ucpeuri
+Sleep 1200
+Send {Enter}
+GoSub gotoMDM
+Send %cmdm%
+Sleep %pause4%
+Send {Enter}
+GoSub gotoATTESTATION
+Send %attest% 
+Sleep %pause4%
+Send {Enter}
 return
