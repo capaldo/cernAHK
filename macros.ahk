@@ -293,16 +293,6 @@ return
 GoSub mchart
 return
 
-; auto-insert hpi and ros
-; ======================
-~Capslock & r::
-Send +{Home}
-Sleep %pause1%
-Send ^x
-Sleep %pause3%
-GoSub autoinsert
-return
-
 ; sign chart
 ; ======================
 !^s::
