@@ -1343,23 +1343,6 @@ return
 ; subroutines
 ; =======================
 
-jumptoHPI:
-; go back to the hpi
-Send ^f
-WinWait, Find
-Send History of Present
-Sleep %pause1%
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep %pause1%
-Send {Tab}
-Sleep %pause1%
-Send {End}
-Sleep %pause1%
-Send {Space}
-return
-
 gotoPE:
 Loop, 3 {
     Sleep %pause1%
@@ -1415,7 +1398,7 @@ Send {Enter}
 MouseMove %x%, %y%
 SetTitleMatchMode, 2
 WinWait, Opened by
-Sleep 3000
+Sleep %pause4%
 Click 1080, 395, 2
 return
 
@@ -1438,13 +1421,12 @@ Sleep 1200
 Send {Enter}
 GoSub gotoMDM
 Send %mdm% 
-Sleep 1200
+Sleep %pause4%
 Send {Enter}
 GoSub gotoATTESTATION
 Send %attest% 
 Sleep %pause4%
 Send {Enter}
-GoSub jumptoHPI
 return
 
 tchart:
@@ -1465,17 +1447,16 @@ Send {Enter}
 GoSub gotoPE
 Send %tpe% 
 Send %clipboard%
-Sleep 1200
+Sleep %pause4%
 Send {Enter}
 GoSub gotoMDM
 Send %mdm% 
-Sleep 1200
+Sleep %pause4%
 Send {Enter}
 GoSub gotoATTESTATION
 Send %attest% 
 Sleep %pause4%
 Send {Enter}
-GoSub jumptoHPI
 return
 
 mchart:
@@ -1492,7 +1473,7 @@ Send {Enter}
 GoSub gotoPE
 Send %tpe% 
 Send %clipboard%
-Sleep 1200
+Sleep %pause4%
 Send {Enter}
 GoSub gotoMDM
 Send %mdm% 
@@ -1502,86 +1483,7 @@ GoSub gotoATTESTATION
 Send %mattest% 
 Sleep %pause4%
 Send {Enter}
-GoSub jumptoHPI
 return
-
-autoinsert:
-Clipboard := RegExReplace(Clipboard, "and")
-str:= clipboard
-s:=StrSplit(str, ", ")
-Loop, % s.MaxIndex()
-{
-Sleep 50
-Send ^c
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send Review of Systems
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send {Tab}
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send % s[A_Index]
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send +{F9}
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 100
-Send +{F9}
-Sleep 50
-Send ^b
-Sleep 50
-Send {Right}
-Sleep 50
-Send +^{Right}
-Sleep 50
-Send +^{Right}
-Send ^b
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send History of Present Illness
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send {Tab}
-Sleep 50
-Send ^f
-WinWait, Find
-Sleep 50
-Send % s[A_Index]
-Sleep 50
-Send {Escape}
-SetTitleMatchMode, 2
-WinWait, Opened by
-Sleep 500
-Send +{F9}
-Sleep 100
-Send {Down}
-Sleep 100
-Send {Enter}
-Sleep 100
-Send +{F9}
-Sleep 50
-}
-return
-
 
 :*:\denexposure::
 Send Patient denies COVID-19 exposure.
@@ -1606,7 +1508,7 @@ Sleep %pause4%
 Send {Enter}
 GoSub gotoPE
 Send //ucpeuri
-Sleep 1200
+Sleep %pause4%
 Send {Enter}
 GoSub gotoMDM
 Send %cmdm%
