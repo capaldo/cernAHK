@@ -521,6 +521,17 @@ Sleep %pause3%
 Send ^v
 return
 
+:*:+sob::
+Send ^a
+Sleep %pause2%
+Send ^c
+Sleep %pause3%
+StringReplace, Clipboard, Clipboard, denies palpitations, admits shortness of breath, All
+StringReplace, Clipboard, Clipboard, no palpitations, reports shortness of breath, All
+Sleep %pause3%
+Send ^v
+return
+
 :*:+nc::
 Send ^a
 Sleep %pause2%
