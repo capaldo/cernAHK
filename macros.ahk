@@ -457,10 +457,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, Patient describes the character of the symptoms as _., , All
 StringReplace, Clipboard, Clipboard, Patient denies prior episodes., , All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -470,10 +470,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies fever, admits fever, All
 StringReplace, Clipboard, Clipboard, no fever, reports fever, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -481,10 +481,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies chills, admits chills, All
 StringReplace, Clipboard, Clipboard, no chills, reports chills, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -492,10 +492,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies fatigue, admits fatigue, All
 StringReplace, Clipboard, Clipboard, no fatigue, reports fatigue, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -503,10 +503,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies body aches, admits body aches, All
 StringReplace, Clipboard, Clipboard, no body aches, reports body aches, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -514,10 +514,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies cough, admits cough, All
 StringReplace, Clipboard, Clipboard, no cough, reports cough, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -525,10 +525,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies palpitations, admits shortness of breath, All
 StringReplace, Clipboard, Clipboard, no palpitations, reports shortness of breath, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -536,10 +536,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies nasal congestion, admits nasal congestion, All
 StringReplace, Clipboard, Clipboard, no nasal congestion, reports nasal congestion, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -547,10 +547,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies back pain, admits back pain, All
 StringReplace, Clipboard, Clipboard, no back pain, reports back pain, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -558,10 +558,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies chest pain, admits chest pain, All
 StringReplace, Clipboard, Clipboard, no chest pain, reports chest pain, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -569,10 +569,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies palpitations, admits palpitations, All
 StringReplace, Clipboard, Clipboard, no palpitations, reports palpitations, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -580,10 +580,10 @@ return
 Send ^a
 Sleep %pause2%
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, denies nausea, admits nausea, All
 StringReplace, Clipboard, Clipboard, no nausea, reports nausea, All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -593,11 +593,11 @@ return
 :*:\cit::
 Send +{Home}
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, no tenderness`,` , , All
 StringReplace, Clipboard, Clipboard, normal inspection`,` , , All
 StringReplace, Clipboard, Clipboard, `_` , , All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
@@ -605,12 +605,12 @@ return
 :*:\ciwt::
 Send +{Home}
 Send ^c
-Sleep %pause3%
+Sleep %pause4%
 StringReplace, Clipboard, Clipboard, no tenderness`,` , , All
 StringReplace, Clipboard, Clipboard, normal inspection`,` , , All
 StringReplace, Clipboard, Clipboard, no swelling`,` , , All
 StringReplace, Clipboard, Clipboard, `_` , , All
-Sleep %pause3%
+Sleep %pause4%
 Send ^v
 return
 
